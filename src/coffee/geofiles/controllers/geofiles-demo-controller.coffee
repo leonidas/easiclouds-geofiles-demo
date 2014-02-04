@@ -13,11 +13,7 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
   FILES_API = config.apiUrl + '/files'
   SERVERS_API = config.apiUrl + '/servers'
   $scope.url = ''
-  $scope.markers =
-    'amsterdam.swift.example.com':
-      lat: 52.373056
-      lng: 4.892222
-      message: 'amsterdam.swift.example.com'
+  $scope.markers = {}
   $scope.europeCenter =
     lat: 55.0
     lng: 8.0
@@ -37,10 +33,10 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
           lat: s.coordinates.lat
           lng: s.coordinates.lng
           message: s.hostname
-        ), (val) -> val.message)
+        ), (val) -> val.message.replace(/\./g, ''))
         console.log($scope.markers)
       )
       .error((data, status, headers, config) -> console.log("def"))
 
-
+  $scope.queryServers()
 ]
