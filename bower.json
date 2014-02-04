@@ -13,6 +13,11 @@
     "tests"
   ],
   "dependencies": {
+    "jquery": "~1.10.2",
+    "angular": "~1.2.11",
+    "angular-leaflet": "~0.7.3"
+  },
+  "resolutions": {
     "jquery": "~1.10.2"
   }
 }
