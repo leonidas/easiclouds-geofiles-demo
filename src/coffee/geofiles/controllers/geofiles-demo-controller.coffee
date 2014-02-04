@@ -14,9 +14,9 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
   SERVERS_API = config.apiUrl + '/servers'
   icons =
     active:
-      iconUrl: '../../images/marker-icon-active.png'
+      iconUrl: 'images/marker-icon-active.png'
     inactive: 
-      iconUrl: '../../images/marker-icon-inactive.png'
+      iconUrl: 'images/marker-icon-inactive.png'
   $scope.url = 'http://www.leonidasoy.fi'
   $scope.markers = {}
   $scope.europeCenter =
@@ -24,27 +24,30 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
     lng: 8.0
     zoom: 4
 
+  transformMarkers = (m) ->
+    indexBy(m, (val) -> val.message.replace(/\./g, ''))
+
   $scope.queryFile = ->
-    $http(method: 'GET', url: FILES_API, config: params: url: $scope.url)
+    $scope.markers = transformMarkers(_.map($scope.markers,
+      (m) -> _.assign(m, icon: icons.inactive)))
+    $http(method: 'GET', url: FILES_API, params: url: $scope.url)
       .success((data, status, headers, config) ->
-        $scope.markers = _.assign($scope.markers, indexBy(_.map(data.servers, (s) ->
+        $scope.markers = _.assign($scope.markers,
+          transformMarkers(_.map(data.servers, (s) ->
             lat: s.coordinates.lat
             lng: s.coordinates.lng
             message: s.hostname
-            icon: if s.active then icons.active else {}),
-        (val) -> val.message.replace(/\./g, '')))
-        )
+            icon: if s.active then icons.active else {}))))
       .error((data, status, headers, config) -> console.log("def"))
 
   $scope.queryServers = ->
     $http(method: 'GET', url: SERVERS_API)
       .success((data, status, headers, config) ->
-        $scope.markers = indexBy(_.map(data.servers, (s) ->
+        $scope.markers = transformMarkers(_.map(data.servers, (s) ->
           lat: s.coordinates.lat
           lng: s.coordinates.lng
           message: s.hostname
-          icon: icons.inactive
-        ), (val) -> val.message.replace(/\./g, '')))
+          icon: icons.inactive)))
       .error((data, status, headers, config) -> console.log("def"))
 
   $scope.queryServers()
