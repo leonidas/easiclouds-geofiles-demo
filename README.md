@@ -15,8 +15,6 @@ Parameters should be URL encoded into the query string. All content is JSON.
 
 * `GET /api/v1/servers`
   * Get the list of all servers in our storage cloud
-  * Parameters: none
-  * Returns:
 
 ```json
     {
@@ -39,11 +37,9 @@ Parameters should be URL encoded into the query string. All content is JSON.
     }
 ```
 
-* `GET /api/v1/files`
+* `GET /api/v1/files?url=...`
   * Get the list of servers that host a particular file
-  * Parameters:
-    * `url`: The URL of the file whose location you wish to check
-  * Returns:
+  * `url`: The URL of the file whose location you wish to check
 
 ```json
     {
@@ -63,11 +59,11 @@ Parameters should be URL encoded into the query string. All content is JSON.
 
 ## Commands
 
-* npm install
+* `npm install`
   * Installs server-side dependencies from NPM and client-side dependencies from Bower
-* npm start
+* `npm start`
   * Compiles your files, starts watching files for changes, runs the mock API and servers static files at port 9001
-* npm run build
+* `npm run build`
   * Builds & minifies everything
 
 ## Enable LiveReload
