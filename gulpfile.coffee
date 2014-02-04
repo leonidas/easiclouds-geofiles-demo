@@ -44,6 +44,12 @@ compileJade = (debug = false) ->
     .pipe(gulp.dest('public/'))
     .pipe livereload(reloadServer)
 
+  gulp
+    .src('src/coffee/**/*.jade')
+    .pipe(jade(pretty: debug))
+    .pipe(gulp.dest('public/partials'))
+    .pipe livereload(reloadServer)
+
 compileStylus = (debug = false) ->
   styles = gulp
     .src('src/stylus/style.styl')
@@ -76,8 +82,11 @@ gulp.task "watch", ->
   reloadServer.listen 35729, (err) ->
     console.error err if err?
 
-    gulp.watch "src/coffee/*.coffee", ->
+    gulp.watch "src/coffee/**/*.coffee", ->
       gulp.run "coffee"
+
+    gulp.watch "src/coffee/**/*.jade", ->
+      gulp.run "jade"
 
     gulp.watch "src/jade/*.jade", ->
       gulp.run "jade"

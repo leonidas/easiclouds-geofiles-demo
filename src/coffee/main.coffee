@@ -1,4 +1,10 @@
 angular = require 'angular'
 ngRoute = require 'angular-route'
 
-module = angular.module 'app', ['ngRoute']
+require './geofiles/module.coffee'
+
+modul = angular.module 'app', ['ngRoute', 'geofiles']
+modul.config ['$routeProvider', ($routeProvider) ->
+  $routeProvider.otherwise
+    redirectTo: '/geodemo'
+]

@@ -1,9 +1,7 @@
 doctype html
 html(ng-app='app')
   head
-    title Gulp template
+    title EASI-CLOUDS GeoFiles Demo
     link(rel='stylesheet', href='css/style.css')
     script(src='js/bundle.js')
-  body
-    h1 Hello world!
-    span {{ 1 + 2 }}
+  body(ng-view)
