@@ -75,7 +75,10 @@ gulp.task "jade", -> compileJade(true)
 gulp.task 'stylus', -> compileStylus(true)
 gulp.task 'coffee', -> compileCoffee(true)
 
-gulp.task 'copy-vendor-files', ->
+gulp.task 'copy-files', ->
+  gulp.src('src/images/*')
+    .pipe(gulp.dest('public/images'))
+
   gulp.src('vendor/leaflet-dist/leaflet.css')
     .pipe(gulp.dest('public/vendor/leaflet'))
 
@@ -105,7 +108,7 @@ gulp.task "watch", ->
       gulp.run "stylus"
 
 gulp.task "build", ->
-  gulp.run "coffee-production", "jade-production", "stylus-production", "copy-vendor-files"
+  gulp.run "coffee-production", "jade-production", "stylus-production", "copy-files"
 
 gulp.task "default", ->
-  gulp.run "coffee", "jade", "stylus", "watch", "server", "copy-vendor-files"
+  gulp.run "coffee", "jade", "stylus", "watch", "server", "copy-files"
