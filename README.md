@@ -17,24 +17,24 @@ Parameters should be URL encoded into the query string. All content is JSON.
   * Get the list of all servers in our storage cloud
 
 ```json
+{
+  "servers": [
     {
-      "servers": [
-        {
-          "hostname": "foo-west.s3.amazonaws.com",
-          "coordinates": {
-            "lat": 61.525,
-            "lng": 24.254
-          }
-        },
-        {
-          "hostname": "foo-east.s3.amazonaws.com",
-          "coordinates": {
-            "lat": 61.525,
-            "lng": 21.254
-          }
-        }
-      ]
+      "hostname": "foo-west.s3.amazonaws.com",
+      "coordinates": {
+        "lat": 61.525,
+        "lng": 24.254
+      }
+    },
+    {
+      "hostname": "foo-east.s3.amazonaws.com",
+      "coordinates": {
+        "lat": 61.525,
+        "lng": 21.254
+      }
     }
+  ]
+}
 ```
 
 * `GET /api/v1/files?url=...`
@@ -42,19 +42,19 @@ Parameters should be URL encoded into the query string. All content is JSON.
   * `url`: The URL of the file whose location you wish to check
 
 ```json
+{
+  "url": "https://s3.amazonaws.com/foobucket/barfile.mp3",
+  "servers": [
     {
-      "url": "https://s3.amazonaws.com/foobucket/barfile.mp3",
-      "servers": [
-        {
-          "hostname": "foo-west.s3.amazonaws.com",
-          "coordinates": {
-            "lat": 61.525,
-            "lng": 24.254,
-            "active": true
-          }
-        }
-      ]
+      "hostname": "foo-west.s3.amazonaws.com",
+      "coordinates": {
+        "lat": 61.525,
+        "lng": 24.254,
+        "active": true
+      }
     }
+  ]
+}
 ```
 
 ## Commands
