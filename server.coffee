@@ -28,8 +28,6 @@ app.get /^\/api\/v1\/files$/, (req, res) ->
   otherIdx = randInt rng, numServers
   otherIdx += randInt rng, numServers until otherIdx != activeIdx
 
-  console.log 'idx', activeIdx, otherIdx
-
   activeServer = _.extend {}, SERVERS.servers[activeIdx], active: true
   otherServer = SERVERS.servers[otherIdx]
 
