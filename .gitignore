@@ -4,3 +4,6 @@ public/**/*.html
 public/css/*.css
 public/js/*.js
 vendor
+\#*#
+.#*
+npm-debug.log

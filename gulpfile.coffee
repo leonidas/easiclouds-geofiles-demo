@@ -19,12 +19,21 @@ compileCoffee = (debug = false) ->
     debug: debug
     transform: ['coffeeify']
     shim:
-      angular:
+      'angular':
         path: './vendor/angular/angular.js'
         exports: 'angular'
       'angular-route':
         path: './vendor/angular-route/angular-route.js'
         exports: 'ngRoute'
+      'leaflet':
+        path: './vendor/leaflet-dist/leaflet.js'
+        exports: 'leaflet'
+      'angular-leaflet-directive':
+        path: './vendor/angular-leaflet-directive/dist/angular-leaflet-directive.js'
+        exports: 'angular'
+        depends:
+          'angular': 'angular'
+          'leaflet': 'leaflet'
 
   bundle = gulp
     .src('./src/coffee/main.coffee', read: false)
