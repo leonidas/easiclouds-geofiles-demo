@@ -71,12 +71,7 @@ gulp.task 'stylus', -> compileStylus(true)
 gulp.task 'coffee', -> compileCoffee(true)
 
 gulp.task "server", ->
-  staticFiles = new nodeStatic.Server './public'
-  require('http').createServer (req, res) ->
-    req.addListener 'end', ->
-      staticFiles.serve req, res
-    req.resume()
-  .listen 9001
+  require('./server').listen 9001
 
 gulp.task "watch", ->
   reloadServer.listen 35729, (err) ->

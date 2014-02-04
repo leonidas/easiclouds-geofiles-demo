@@ -1,0 +1,18 @@
+{
+  "servers": [
+    {
+      "hostname": "foo-west.s3.amazonaws.com",
+      "coordinates": {
+        "lat": 61.525,
+        "lng": 24.254
+      }
+    },
+    {
+      "hostname": "foo-east.s3.amazonaws.com",
+      "coordinates": {
+        "lat": 61.525,
+        "lng": 21.254
+      }
+    }
+  ]
+}
