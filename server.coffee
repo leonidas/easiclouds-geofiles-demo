@@ -36,7 +36,7 @@ app.get /^\/api\/v1\/files$/, (req, res) ->
     servers: [activeServer, otherServer]
 
 app.use app.router
-app.use express.static(PUBLIC_DIR, maxAge: 24*60*60*1000)
+app.use express.static PUBLIC_DIR
 app.use (req, res, next) -> res.sendfile INDEX_HTML
 
 app.listen 9000 if require.main == module
