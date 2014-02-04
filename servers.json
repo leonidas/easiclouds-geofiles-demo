@@ -1,17 +1,38 @@
 {
   "servers": [
     {
-      "hostname": "foo-west.s3.amazonaws.com",
+      "hostname": "london.swift.example.com",
       "coordinates": {
-        "lat": 61.525,
-        "lng": 24.254
+        "lat": 51.507222,
+        "lng": -0.1275
       }
     },
     {
-      "hostname": "foo-east.s3.amazonaws.com",
+      "hostname": "brussels.swift.example.com",
       "coordinates": {
-        "lat": 61.525,
-        "lng": 21.254
+        "lat": 50.85,
+        "lng": 4.35
+      }
+    },
+    {
+      "hostname": "amsterdam.swift.example.com",
+      "coordinates": {
+        "lat": 52.373056,
+        "lng": 4.892222
+      }
+    },
+    {
+      "hostname": "helsinki.swift.example.com",
+      "coordinates": {
+        "lat": 60.170833,
+        "lng": 24.9375
+      }
+    },
+    {
+      "hostname": "paris.swift.example.com",
+      "coordinates": {
+        "lat": 48.8567,
+        "lng": 2.3508
       }
     }
   ]
