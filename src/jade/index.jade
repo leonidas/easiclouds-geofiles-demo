@@ -1,9 +1,9 @@
 doctype html
-html
+html(ng-app='app')
   head
     title Gulp template
     link(rel='stylesheet', href='css/style.css')
     script(src='js/bundle.js')
-  body(ng-app='app')
+  body
     h1 Hello world!
     span {{ 1 + 2 }}
