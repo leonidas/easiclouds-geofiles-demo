@@ -14,7 +14,9 @@
   "author": "",
   "dependencies": {
     "coffee-script": "~1.6.3",
-    "express": "~3.4.8"
+    "express": "~3.4.8",
+    "seed-random": "~2.2.0",
+    "lodash": "~2.4.1"
   },
   "devDependencies": {
     "bower": "~1.2.8",
