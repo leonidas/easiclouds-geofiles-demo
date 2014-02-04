@@ -12,7 +12,12 @@ indexBy = (coll, keyFn) ->
 module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $http) ->
   FILES_API = config.apiUrl + '/files'
   SERVERS_API = config.apiUrl + '/servers'
-  $scope.url = ''
+  icons =
+    active:
+      iconUrl: '../../images/marker-icon-active.png'
+    inactive: 
+      iconUrl: '../../images/marker-icon-inactive.png'
+  $scope.url = 'http://www.leonidasoy.fi'
   $scope.markers = {}
   $scope.europeCenter =
     lat: 55.0
@@ -22,8 +27,13 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
   $scope.queryFile = ->
     $http(method: 'GET', url: FILES_API, config: params: url: $scope.url)
       .success((data, status, headers, config) ->
-                        
-      )
+        $scope.markers = _.assign($scope.markers, indexBy(_.map(data.servers, (s) ->
+            lat: s.coordinates.lat
+            lng: s.coordinates.lng
+            message: s.hostname
+            icon: if s.active then icons.active else {}),
+        (val) -> val.message.replace(/\./g, '')))
+        )
       .error((data, status, headers, config) -> console.log("def"))
 
   $scope.queryServers = ->
@@ -33,9 +43,8 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
           lat: s.coordinates.lat
           lng: s.coordinates.lng
           message: s.hostname
-        ), (val) -> val.message.replace(/\./g, ''))
-        console.log($scope.markers)
-      )
+          icon: icons.inactive
+        ), (val) -> val.message.replace(/\./g, '')))
       .error((data, status, headers, config) -> console.log("def"))
 
   $scope.queryServers()
