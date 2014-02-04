@@ -1,9 +1,9 @@
 _ = require 'lodash'
+config = require '../../../../config.json'
 
 module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $http) ->
-  API_URL = 'http://localhost:9001/api/v1/'
-  FILES_API = API_URL + 'files'
-  SERVERS_API = API_URL + 'servers'
+  FILES_API = config.apiUrl + '/files'
+  SERVERS_API = config.apiUrl + '/servers'
   $scope.url = ''
   $scope.markers = {}
   $scope.europeCenter =
@@ -12,14 +12,14 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
     zoom: 4
 
   $scope.queryFile = ->
-    $http({method: 'GET', url: FILES_API + '?url=' + $scope.url})
+    $http(method: 'GET', url: FILES_API, config: params: url: $scope.url)
       .success((data, status, headers, config) ->
                 
       )
       .error((data, status, headers, config) -> console.log("def"))
 
   $scope.queryServers = ->
-    $http({method: 'GET', url: SERVERS_API + '?url=' + $scope.url})
+    $http(method: 'GET', url: SERVERS_API)
       .success((data, status, headers, config) -> console.log(data))
       .error((data, status, headers, config) -> console.log("def"))
 
