@@ -8,12 +8,15 @@ INDEX_HTML = mkpath 'public', 'index.html'
 PUBLIC_DIR = mkpath 'public'
 SERVERS = JSON.stringify require './servers.json'
 
-app.get /^\/api\/v1\/servers$/, (req, res) -> res.send SERVERS
+respondJSON = (res, code, data) ->
+  res.contentType 'application/json'
+  res.send code, JSON.stringify data
+
+app.get /^\/api\/v1\/servers$/, (req, res) -> respondJSON res, 200, SERVERS
 
 app.get /^\/api\/v1\/files$/, (req, res) ->
   url = req.query.url
-  console.log 'url', url
-  res.send JSON.stringify
+  respondJSON res, 200,
     url: url
     servers: SERVERS
 
