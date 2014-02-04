@@ -18,6 +18,7 @@ Parameters should be URL encoded into the query string. All content is JSON.
   * Parameters: none
   * Returns:
 
+```json
     {
       "servers": [
         {
@@ -36,6 +37,7 @@ Parameters should be URL encoded into the query string. All content is JSON.
         }
       ]
     }
+```
 
 * `GET /api/v1/files`
   * Get the list of servers that host a particular file
@@ -43,6 +45,7 @@ Parameters should be URL encoded into the query string. All content is JSON.
     * `url`: The URL of the file whose location you wish to check
   * Returns:
 
+```json
     {
       "url": "https://s3.amazonaws.com/foobucket/barfile.mp3",
       "servers": [
@@ -56,7 +59,7 @@ Parameters should be URL encoded into the query string. All content is JSON.
         }
       ]
     }
-
+```
 
 ## Commands
 
