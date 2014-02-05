@@ -1,0 +1,12 @@
+description "ITEA EASI-CLOUDS GeoFiles demo"
+author      "Santtu Pajukanta <santtu.pajukanta@leonidasoy.fi>"
+
+start on runlevel [2345]
+stop on runlevel [016]
+
+respawn
+respawn limit 10 5
+
+exec su -s /bin/bash -c 'source {{ nvm_script }} && nvm use {{ project_name }} && cd {{ projects_path }}/{{ public_hostname }} && exec "$0" "$@"' {{ service_user }} -- \
+    node_modules/coffee-script/bin/coffee server.coffee \
+    >> /var/log/{{ public_hostname }}.log 2>&1

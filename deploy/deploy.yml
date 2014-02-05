@@ -1,0 +1,77 @@
+---
+- name: Deploy project
+  hosts: staging
+  gather_facts: no
+  vars_files:
+    - vars.yml
+
+  tasks:
+    - name: Deploy from git
+      remote_user: leonidas
+      action: >
+        git
+        repo="{{ repository_url }}"
+        dest="{{ projects_path }}/{{ public_hostname }}"
+      notify: restart service
+
+    - name: Make sure Node.js is installed and properly aliased
+      command: >
+        bash -c "source {{ nvm_script }} && nvm install {{ nodejs_version }} && nvm alias {{ project_name }} {{ nodejs_version }}"
+      register: nvm_result
+      changed_when: >
+        "already installed" not in nvm_result.stdout
+      remote_user: leonidas
+      notify: restart service
+
+    - name: Install NPM dependencies and build assets
+      command: >
+        bash -c "source {{ nvm_script }} && nvm use {{ project_name }} && cd {{ projects_path }}/{{ public_hostname }} && npm install && node_modules/gulp/bin/gulp.js build"
+      remote_user: leonidas
+      notify: restart service
+
+    - name: Setup Upstart config
+      sudo: yes
+      template: >
+        src=templates/upstart.j2
+        dest="/etc/init/{{ public_hostname }}.conf"
+        mode=664
+      notify: restart service
+
+    - name: Setup nginx vhost
+      sudo: yes
+      template: >
+        src=templates/nginx.j2
+        dest="/etc/nginx/sites-available/{{ public_hostname }}"
+        mode=664
+      notify: restart nginx
+
+    - name: Hash password
+      local_action: command openssl passwd -apr1 -salt Sr7IaeCX {{ basic_auth.password }}
+      register: password_hash
+      changed_when: false
+
+    - name: Setup htpasswd file
+      sudo: yes
+      template: >
+        src=templates/htpasswd.j2
+        dest=/etc/nginx/{{ public_hostname }}.htpasswd
+        mode=664
+      notify: restart nginx
+
+    - name: Enable nginx vhost
+      sudo: yes
+      file: >
+        state=link
+        src=/etc/nginx/sites-available/{{ public_hostname }}
+        dest=/etc/nginx/sites-enabled/{{ public_hostname }}
+
+  handlers:
+    - name: restart nginx
+      raw: sudo service nginx restart
+
+    - name: restart service
+      sudo: true
+      service: >
+        name={{ public_hostname }}
+        state=restarted
+
