@@ -1,18 +1,25 @@
 ---
 - name: Deploy project
-  hosts: staging
+  hosts: demoservers
   gather_facts: no
   vars_files:
     - vars.yml
 
   tasks:
     - name: Deploy from git
-      remote_user: leonidas
+      remote_user: "{{ service_user }}"
       action: >
         git
         repo="{{ repository_url }}"
         dest="{{ projects_path }}/{{ public_hostname }}"
       notify: restart service
+
+    - name: Install NVM
+      remote_user: "{{ service_user }}"
+      action: >
+        git
+        repo="https://github.com/creationix/nvm"
+        dest="{{ nvm_path }}"
 
     - name: Make sure Node.js is installed and properly aliased
       command: >
@@ -20,13 +27,13 @@
       register: nvm_result
       changed_when: >
         "already installed" not in nvm_result.stdout
-      remote_user: leonidas
+      remote_user: "{{ service_user }}"
       notify: restart service
 
     - name: Install NPM dependencies and build assets
       command: >
-        bash -c "source {{ nvm_script }} && nvm use {{ project_name }} && cd {{ projects_path }}/{{ public_hostname }} && npm install && node_modules/gulp/bin/gulp.js build && find public -regex '.*\\.\\(html\\|css\\|js\\)' -exec gzip -k \\{\\} +"
-      remote_user: leonidas
+        bash -c "source {{ nvm_script }} && nvm use {{ project_name }} && cd {{ projects_path }}/{{ public_hostname }} && npm install && node_modules/gulp/bin/gulp.js build && find public -regex '.*\\.\\(html\\|css\\|js\\)' -exec bash -c 'asset={}; gzip -c $asset > $asset.gz' \\;"
+      remote_user: "{{ service_user }}"
       notify: restart service
 
     - name: Setup Upstart config
