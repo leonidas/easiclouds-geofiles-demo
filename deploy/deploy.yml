@@ -64,6 +64,7 @@
         state=link
         src=/etc/nginx/sites-available/{{ public_hostname }}
         dest=/etc/nginx/sites-enabled/{{ public_hostname }}
+      notify: restart nginx
 
   handlers:
     - name: restart nginx
@@ -72,10 +73,8 @@
         name=nginx
         state=restarted
 
-
     - name: restart service
       sudo: true
       service: >
         name={{ public_hostname }}
         state=restarted
-
