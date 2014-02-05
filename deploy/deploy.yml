@@ -25,7 +25,7 @@
 
     - name: Install NPM dependencies and build assets
       command: >
-        bash -c "source {{ nvm_script }} && nvm use {{ project_name }} && cd {{ projects_path }}/{{ public_hostname }} && npm install && node_modules/gulp/bin/gulp.js build"
+        bash -c "source {{ nvm_script }} && nvm use {{ project_name }} && cd {{ projects_path }}/{{ public_hostname }} && npm install && node_modules/gulp/bin/gulp.js build && find public -regex '.*\\.\\(html\\|css\\|js\\)' -exec gzip -k \\{\\} +"
       remote_user: leonidas
       notify: restart service
 
