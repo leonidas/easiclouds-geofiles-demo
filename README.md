@@ -65,6 +65,11 @@ Parameters should be URL encoded into the query string. All content is JSON.
   * Compiles your files, starts watching files for changes, runs the mock API and servers static files at port 9001
 * `npm run build`
   * Builds & minifies everything
+* `npm run deploy`
+  * Deploy the demo on `staging.leonidasoy.fi`.
+  * Asks for a sudo password - this means your password on `staging`.
+  * Uses [Ansible](https://github.com/ansible/ansible). Installed during the first run using `pip` if you don't have it, provided that you have Python 2.7.
+  * Requires that your SSH key is setup on your own user account and the `leonidas` user account.
 
 ## Enable LiveReload
 
