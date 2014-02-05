@@ -67,7 +67,11 @@
 
   handlers:
     - name: restart nginx
-      raw: sudo service nginx restart
+      sudo: true
+      service: >
+        name=nginx
+        state=restarted
+
 
     - name: restart service
       sudo: true

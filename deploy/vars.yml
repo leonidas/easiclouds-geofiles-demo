@@ -6,6 +6,7 @@ repository_url: git@github.com:leonidas/easiclouds-geofiles-demo
 service_user: leonidas # XXX hard-coded everywhere
 nvm_script: /home/leonidas/nvm/nvm.sh
 nodejs_version: v0.10.25
+application_port: 9000 # XXX hard-coded in server.coffee and gulpfile.coffee
 basic_auth:
   username: leonidas
   password: proto2014
