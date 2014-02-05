@@ -12,10 +12,23 @@ indexBy = (coll, keyFn) ->
 module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $http) ->
   FILES_API = config.apiUrl + '/files'
   SERVERS_API = config.apiUrl + '/servers'
+  $scope.legendWithUser =
+    position: 'bottomleft'
+    colors: ['#2981ca', '#00cb73', '#646464']
+    labels: ['Oma sijainti', 'Palvelimet, joissa tiedosto on', 'Palvelimet ilman tiedostoa']
+  $scope.legendWithoutUser =
+    position: 'bottomleft'
+    colors: ['#00cb73', '#2981ca', '#646464']
+    labels: ['Palvelin, jolta tiedosto tarjotaan', 'Palvelimet, joissa tiedosto on', 'Palvelimet ilman tiedostoa']
+
+  # TODO: legend is wrong if user denies geolocation, it doesn't update
+  # after the map has been loaded
+  $scope.legend = if navigator.geolocation then $scope.legendWithUser else $scope.legendWithoutUser
+
   icons =
     active:
       iconUrl: 'images/marker-icon-active.png'
-    inactive: 
+    inactive:
       iconUrl: 'images/marker-icon-inactive.png'
   $scope.url = 'http://www.leonidasoy.fi'
   $scope.markers = {}
@@ -40,6 +53,7 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
   $scope.getUserLocation = ->
     navigator.geolocation.getCurrentPosition((pos) ->
       $scope.userPosition = pos
+      $scope.legend = $scope.legendWithUser
       transformUserPosition()) if navigator.geolocation
 
   $scope.queryFile = ->
@@ -59,7 +73,7 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
           indexBy(_.map(_.filter(data.servers, (s) -> _.identity(s.active)),
             (s) ->
               color: '#008000'
-              weiht: 8
+              weight: 4
               latlngs:
                 [
                   lat: s.coordinates.lat
@@ -70,7 +84,6 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
                 ]),
             (p) ->
               "path" + (Math.random() * 1000).toFixed(0).toString()) if !_.isEmpty($scope.userPosition))
-      .error((data, status, headers, config) -> console.log("def"))
 
   $scope.queryServers = ->
     $http(method: 'GET', url: SERVERS_API)
@@ -80,7 +93,6 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
           lng: s.coordinates.lng
           message: s.hostname
           icon: icons.inactive)))
-      .error((data, status, headers, config) -> console.log("def"))
 
   $scope.queryServers()
   $scope.getUserLocation()
