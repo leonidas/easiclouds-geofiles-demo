@@ -6,6 +6,7 @@ stylus     = require 'gulp-stylus'
 CSSmin     = require 'gulp-minify-css'
 browserify = require 'gulp-browserify'
 rename     = require 'gulp-rename'
+ngmin      = require 'gulp-ngmin'
 uglify     = require 'gulp-uglify'
 coffeeify  = require 'coffeeify'
 nodeStatic = require 'node-static'
@@ -36,7 +37,7 @@ compileCoffee = (debug = false) ->
     .pipe(browserify(config))
     .pipe(rename('bundle.js'))
 
-  bundle.pipe(uglify()) unless debug
+  bundle.pipe(ngmin()).pipe(uglify()) unless debug
 
   bundle
     .pipe(gulp.dest('./public/js/'))
