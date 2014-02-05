@@ -1,11 +1,13 @@
 {
-  "name": "gulp-template",
-  "version": "0.0.0",
-  "description": "Project template for gulp.js",
+  "name": "easiclouds-geofiles-demo",
+  "version": "0.1.0",
+  "description": "Where are my files stored?",
   "main": "gulpfile.js",
+  "private": "true",
   "scripts": {
     "prepublish": "bower install",
-    "start": "gulp"
+    "start": "gulp",
+    "deploy": "bash deploy/deploy.sh"
   },
   "keywords": [
     "gulp",

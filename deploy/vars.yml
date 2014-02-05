@@ -1,0 +1,11 @@
+---
+project_name: geofiles
+projects_path: /home/leonidas/sites
+public_hostname: geofiles.qa.leonidasoy.fi
+repository_url: git@github.com:leonidas/easiclouds-geofiles-demo
+service_user: leonidas # XXX hard-coded everywhere
+nvm_script: /home/leonidas/nvm/nvm.sh
+nodejs_version: v0.10.25
+basic_auth:
+  username: leonidas
+  password: proto2014
