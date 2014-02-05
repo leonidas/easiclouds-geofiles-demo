@@ -15,11 +15,11 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
   $scope.legendWithUser =
     position: 'bottomleft'
     colors: ['#2981ca', '#00cb73', '#646464']
-    labels: ['Oma sijainti', 'Palvelimet, joissa tiedosto on', 'Palvelimet ilman tiedostoa']
+    labels: ['Your location', 'Servers with the file', 'Servers without the file']
   $scope.legendWithoutUser =
     position: 'bottomleft'
     colors: ['#00cb73', '#2981ca', '#646464']
-    labels: ['Palvelin, jolta tiedosto tarjotaan', 'Palvelimet, joissa tiedosto on', 'Palvelimet ilman tiedostoa']
+    labels: ['The server serving you the file', 'Servers with the file', 'Servers without the file']
 
   # TODO: legend is wrong if user denies geolocation, it doesn't update
   # after the map has been loaded
