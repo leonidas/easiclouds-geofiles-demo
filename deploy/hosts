@@ -1,2 +1,2 @@
 [demoservers]
-intentionally-broken.put.new.hostname.here
+geodemo.qa.leonidasoy.fi ansible_ssh_host=146.185.172.120
