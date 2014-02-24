@@ -26,11 +26,15 @@ compileCoffee = (debug = false) ->
       'angular-route':
         path: './vendor/angular-route/angular-route.js'
         exports: 'ngRoute'
+      'leaflet':
+        path: './vendor/leaflet-dist/leaflet.js'
+        exports: 'L'
       'angular-leaflet-directive':
         path: './vendor/angular-leaflet-directive/dist/angular-leaflet-directive.js'
         exports: 'angular'
         depends:
           'angular': 'angular'
+          'leaflet': 'L'
 
   bundle = gulp
     .src('./src/coffee/main.coffee', read: false)
@@ -81,9 +85,6 @@ gulp.task 'copy-files', ->
     .pipe(gulp.dest('public/images'))
 
   gulp.src('vendor/leaflet-dist/leaflet.css')
-    .pipe(gulp.dest('public/vendor/leaflet'))
-
-  gulp.src('vendor/leaflet-dist/leaflet.js')
     .pipe(gulp.dest('public/vendor/leaflet'))
 
   gulp.src('vendor/leaflet-dist/images/*')

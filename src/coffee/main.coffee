@@ -5,6 +5,8 @@ require 'angular-leaflet-directive'
 
 require './geofiles/module.coffee'
 
+L.Icon.Default.imagePath = '/vendor/leaflet/images'
+
 modul = angular.module 'app', ['ngRoute', 'geofiles', 'leaflet-directive']
 modul.config ['$locationProvider', '$routeProvider', ($locationProvider, $routeProvider) ->
   $locationProvider.html5Mode true
