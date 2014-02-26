@@ -12,5 +12,5 @@ modul = angular.module 'app', ['ngRoute', 'geofiles', 'cloud', 'leaflet-directiv
 modul.config ['$locationProvider', '$routeProvider', ($locationProvider, $routeProvider) ->
   $locationProvider.html5Mode true
   $routeProvider.otherwise
-    redirectTo: '/geodemo'
+    redirectTo: '/cloud'
 ]

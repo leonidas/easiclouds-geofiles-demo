@@ -14,7 +14,7 @@ lr         = require 'tiny-lr'
 livereload = require 'gulp-livereload'
 reloadServer = lr()
 
-compileCoffee = (debug = false) ->
+compileCoffee = (debug = true) ->
 
   config =
     debug: debug

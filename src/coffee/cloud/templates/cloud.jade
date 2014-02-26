@@ -1,5 +1,7 @@
 #cloudmap
-  leaflet(height='100%')
+	leaflet(height='100%')
 
-.tunkki
-  | tunkki
+#filters
+	slider-filter(title='Memory', min='1', max='10', val='9')  
+	check-box-filter(title='DataBases', min='1', max='10', val='9')
+	pull-down-filter(title='Location', options='{{options}}')

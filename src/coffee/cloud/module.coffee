@@ -7,3 +7,9 @@ modul.config ['$routeProvider', ($routeProvider) ->
       templateUrl: '/partials/cloud/templates/cloud.html'
       controller:  require './controllers/cloud-controller.coffee'
 ]
+
+# Directives
+modul.directive 'sliderFilter', require './directives/sliderFilter.coffee'
+modul.directive 'pullDownFilter', require './directives/pullDownFilter.coffee'
+modul.directive 'checkBoxFilter', require './directives/checkBoxFilter.coffee'
+
