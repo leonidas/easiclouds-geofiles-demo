@@ -5,6 +5,6 @@ module.exports = ->
     title:  '@'
     min:  '@'
     max:  '@'
-    val:  '@'
+    val:  '='
     unit: '@'
   templateUrl: 	'/partials/cloud/templates/sliderFilter.html'

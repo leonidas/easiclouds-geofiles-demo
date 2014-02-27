@@ -3,4 +3,4 @@ module.exports = ->
 	replace:     	true
 	scope:
 		title:    	'@'
-	templateUrl: 	'/partials/cloud/templates/checkBoxFilter.html'
+	templateUrl: 	'/partials/cloud/templates/checkBoxFilter3.html'
