@@ -62,7 +62,6 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
     $http(method: 'GET', url: SERVERS_API)
       .success((data, status, headers, config) ->
         $scope.markers = transformMarkers(_.map(data.servers, (s) ->
-          alert(s.coordinates.lat)
           title: s.title
           lat: s.coordinates.lat
           lng: s.coordinates.lng
