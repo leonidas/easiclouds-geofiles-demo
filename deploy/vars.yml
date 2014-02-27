@@ -1,7 +1,7 @@
 ---
 project_name: geofiles
 projects_path: /opt/demo
-public_hostname: geofiles.qa.leonidasoy.fi
+public_hostname: geodemo.qa.leonidasoy.fi
 repository_url: git@github.com:leonidas/easiclouds-geofiles-demo
 service_user: demo
 nvm_path: /opt/demo/nvm
