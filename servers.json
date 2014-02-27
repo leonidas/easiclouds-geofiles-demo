@@ -1,6 +1,15 @@
 {
   "servers": [
     {
+      "title":"London",
+      "memory":"12",
+      "cpucores":"10",
+      "storage":"300",
+      "simultaneousjobs":"48",
+      "databases":["MySQL","postgreSQL","MongoDB","Cassandra"],
+      "location":"Finland",
+      "support":"Yes",
+      "security":"Yes",
       "hostname": "london.swift.example.com",
       "coordinates": {
         "lat": 51.507222,
@@ -8,6 +17,15 @@
       }
     },
     {
+      "title":"Brussels",
+      "memory":"12",
+      "cpucores":"10",
+      "storage":"300",
+      "simultaneousjobs":"48",
+      "databases":["MySQL","postgreSQL","MongoDB","Cassandra"],
+      "location":"Finland",
+      "support":"Yes",
+      "security":"Yes",
       "hostname": "brussels.swift.example.com",
       "coordinates": {
         "lat": 50.85,
@@ -15,6 +33,15 @@
       }
     },
     {
+      "title":"Amsterdam",
+      "memory":"12",
+      "cpucores":"10",
+      "storage":"300",
+      "simultaneousjobs":"48",
+      "databases":["MySQL","postgreSQL","MongoDB","Cassandra"],
+      "location":"Finland",
+      "support":"Yes",
+      "security":"Yes",
       "hostname": "amsterdam.swift.example.com",
       "coordinates": {
         "lat": 52.373056,
@@ -22,17 +49,67 @@
       }
     },
     {
-      "hostname": "helsinki.swift.example.com",
-      "coordinates": {
-        "lat": 60.170833,
-        "lng": 24.9375
-      }
-    },
-    {
+      "title":"Thales Paris",
+      "memory":"12",
+      "cpucores":"10",
+      "storage":"300",
+      "simultaneousjobs":"48",
+      "databases":["MySQL","postgreSQL","MongoDB","Cassandra"],
+      "location":"Finland",
+      "support":"Yes",
+      "security":"Yes",
       "hostname": "paris.swift.example.com",
       "coordinates": {
         "lat": 48.8567,
         "lng": 2.3508
+      }
+    },
+    {
+      "title":"TTY",
+      "memory":"12",
+      "cpucores":"10",
+      "storage":"300",
+      "simultaneousjobs":"48",
+      "databases":["MySQL","postgreSQL","MongoDB","Cassandra"],
+      "location":"Finland",
+      "support":"Yes",
+      "security":"Yes",
+      "hostname": "tty.example.com",
+      "coordinates": {
+        "lat": 61.45,
+        "lng": 23.856
+      }
+    },
+    {
+      "title":"Kumpulan kampus",
+      "memory":"12",
+      "cpucores":"10",
+      "storage":"300",
+      "simultaneousjobs":"48",
+      "databases":["MySQL","postgreSQL","MongoDB","Cassandra"],
+      "location":"Finland",
+      "support":"Yes",
+      "security":"Yes",
+      "hostname": "kumpula.example.com",
+      "coordinates": {
+        "lat": 60.2,
+        "lng": 24.96
+      }
+    },
+    {
+      "title":"F-Secure",
+      "memory":"12",
+      "cpucores":"10",
+      "storage":"300",
+      "simultaneousjobs":"48",
+      "databases":["MySQL","postgreSQL","MongoDB","Cassandra"],
+      "location":"Finland",
+      "support":"Yes",
+      "security":"Yes",
+      "hostname": "fsecure.example.com",
+      "coordinates": {
+        "lat": 60.162,
+        "lng": 24.9
       }
     }
   ]

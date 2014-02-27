@@ -1,3 +1,14 @@
+_ = require 'lodash'
+config = require '../../../../config.json'
+
+indexBy = (coll, keyFn) ->
+  result = {}
+  i = 0
+  for val in coll
+    result[i] = val
+    i++
+  result
+
 module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $http) ->
   $scope.options = ['suomi', 'ruotsi']
 
@@ -31,7 +42,7 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
   $scope.userPosition = {}
 
   transformMarkers = (m) ->
-    indexBy(m, (val) -> val.message.replace(/[. ]/g, ''))
+    indexBy(m, (val) -> val.title.replace(/[. ]/g, ''))
 
   transformUserPosition = ->
     $scope.markers = _.assign($scope.markers,
@@ -51,6 +62,8 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
     $http(method: 'GET', url: SERVERS_API)
       .success((data, status, headers, config) ->
         $scope.markers = transformMarkers(_.map(data.servers, (s) ->
+          alert(s.coordinates.lat)
+          title: s.title
           lat: s.coordinates.lat
           lng: s.coordinates.lng
           message: "<h3>" + s.title + "</h3>" + s.memory + 'Gb RAM<br/>' + s.cpucores + ' CPU cores<br/>' + s.storage + 'Gb storage<br/><button id=\'chooseButton\'>CHOOSE</button>'
