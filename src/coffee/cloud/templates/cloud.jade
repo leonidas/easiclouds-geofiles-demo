@@ -2,6 +2,10 @@
   leaflet(height='100%')
 
 #filters
-  slider-filter(title='Memory', min='1', max='10', val='9')  
+  h2 leonidas
+  slider-filter(title='Memory', min='0.5', max='32', val='12', unit='Gb')
+  slider-filter(title='CPU cores', min='1', max='64', val='10', unit='')
+  slider-filter(title='Storage', min='0.25', max='640', val='300', unit = 'Gb')
+  slider-filter(title='Maximum simultaneous jobs', min='1', max='64', val='48', unit='')
   check-box-filter(title='DataBases', min='1', max='10', val='9')
   pull-down-filter(title='Location', options='{{ options }}')

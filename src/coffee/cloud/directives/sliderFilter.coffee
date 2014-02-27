@@ -1,9 +1,10 @@
 module.exports = ->
-	restrict: 		'E'
-	replace:     	true
-	scope:
-		title:    	'@'
-		min:  		'@'
-		max:  		'@'
-		val:  		'@'
-	templateUrl: 	'/partials/cloud/templates/sliderFilter.html'
+  restrict: 		'E'
+  replace:     	true
+  scope:
+    title:  '@'
+    min:  '@'
+    max:  '@'
+    val:  '@'
+    unit: '@'
+  templateUrl: 	'/partials/cloud/templates/sliderFilter.html'

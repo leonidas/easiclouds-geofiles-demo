@@ -1,3 +1,7 @@
 .slider-filter
-	h3 {{ title }}
-	input(type="range" name="points" min="{{ min }}" max="{{ max }}" value="{{ val }}")
+  h3 {{ title }}
+  hr(class="viiva")
+  p {{ min }}{{ unit }} {{ max }}{{ unit }}
+  input(class="slider-slider" type="range" name="points" min="{{ min }}" max="{{ max }}" value="{{ val }}")
+  p {{ val }}{{ unit }}
+
