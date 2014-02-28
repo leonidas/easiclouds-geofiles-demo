@@ -1,6 +1,5 @@
 .slider-filter
-  h3 {{ title }}
-  hr(class="viiva")
+  .title {{ title }}
   .min {{ min }}{{ unit }}
   .max {{ max }}{{ unit }}
   input.slider-slider(type="range" name="points" min="{{ min }}" step="{{ step }}" max="{{ max }}" value="{{ val }}" ng-model="val")
