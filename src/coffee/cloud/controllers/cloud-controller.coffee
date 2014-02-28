@@ -11,6 +11,11 @@ indexBy = (coll, keyFn) ->
 
 module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $http) ->
   $scope.options = ['suomi', 'ruotsi']
+  $scope.filterSelection = {}
+  $scope.filterSelection.memory = 12
+  $scope.filterSelection.cpucores = 10
+  $scope.filterSelection.storage = 300
+  $scope.filterSelection.simultaneousjobs = 48
 
   FILES_API = config.apiUrl + '/files'
   SERVERS_API = config.apiUrl + '/servers'

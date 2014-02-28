@@ -2,11 +2,11 @@
   leaflet(height='100%', center='europeCenter', markers='markers', paths='paths', legend='legend')
 
 #filters
-  h2 leonidas
-  slider-filter(title='Memory', min='0.5', max='32', val='12', unit='Gb')
-  slider-filter(title='CPU cores', min='1', max='64', val='10', unit='')
-  slider-filter(title='Storage', min='0.25', max='640', val='300', unit = 'Gb')
-  slider-filter(title='Maximum simultaneous jobs', min='1', max='64', val='48', unit='')
+h2 leonidas
+  slider-filter(title='Memory', min=0.5, step=0.5, max=32, val='{{ filterSelection.memory }}', unit='Gb')
+  slider-filter(title='CPU cores', min=1, step=1, max=64, val='{{ filterSelection.memory }}', unit='')
+  slider-filter(title='Storage', min=0.25 ,step=0.25, max=640, val='{{ filterSelection.memory }}', unit = 'Gb')
+  slider-filter(title='Maximum simultaneous jobs', min=1, step=1, max=64, val='{{ filterSelection.memory }}', unit='')
   check-box-filter(title='DataBases')
   pull-down-filter(title='Location', options='{{ options }}')
   check-box-filter2(title='Support 24/7')
