@@ -17,6 +17,11 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
   $scope.filterSelection.storage = 300
   $scope.filterSelection.simultaneousjobs = 48
 
+  $scope.$watch 'filterSelection', ((val) ->
+    console.log $scope.allMarkers
+    $scope.filterMarkers()
+    ), true
+
   FILES_API = config.apiUrl + '/files'
   SERVERS_API = config.apiUrl + '/servers'
   $scope.legendWithUser =
@@ -38,6 +43,7 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
     inactive:
       iconUrl: 'images/marker-icon-inactive.png'
   $scope.url = 'http://www.leonidasoy.fi'
+  $scope.allMarkers = {}
   $scope.markers = {}
   $scope.paths = {}
   $scope.europeCenter =
@@ -50,7 +56,7 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
     indexBy(m, (val) -> val.title.replace(/[. ]/g, ''))
 
   transformUserPosition = ->
-    $scope.markers = _.assign($scope.markers,
+    $scope.allMarkers = _.assign($scope.allMarkers,
       userlocation:
         lat: $scope.userPosition.coords.latitude
         lng: $scope.userPosition.coords.longitude
@@ -66,13 +72,23 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
   $scope.queryServers = ->
     $http(method: 'GET', url: SERVERS_API)
       .success((data, status, headers, config) ->
-        $scope.markers = transformMarkers(_.map(data.servers, (s) ->
+        $scope.allMarkers = transformMarkers(_.map(data.servers, (s) ->
           title: s.title
+          memory: s.memory
+          cpucores: s.cpucores
+          storage: s.storage
           lat: s.coordinates.lat
           lng: s.coordinates.lng
           message: "<h3>" + s.title + "</h3>" + s.memory + 'Gb RAM<br/>' + s.cpucores + ' CPU cores<br/>' + s.storage + 'Gb storage<br/><button id=\'chooseButton\'>CHOOSE</button>'
           icon: icons.inactive)))
 
+  $scope.filterMarkers = ->
+    $scope.markers = {}
+    for key, value of $scope.allMarkers
+      if (value.memory <= $scope.filterSelection.memory) and (value.cpucores <= $scope.filterSelection.cpucores) and (value.storage <= $scope.filterSelection.storage)
+        $scope.markers[key] = value
+
   $scope.queryServers()
   $scope.getUserLocation()
+  $scope.filterMarkers()
 ]
