@@ -27,20 +27,42 @@ body, html
     width 100%
     margin 0 auto
     display block
+    -webkit-appearance none
+    background #f4f4f4
+    height 15px
+    border-radius 7px
+    border-top 2px solid #dce2f2
+    &::-webkit-slider-thumb
+      -webkit-appearance none
+      background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fbfbfb), color-stop(100%,#f1f1f1))
+      width 15px
+      height 25px
+      border 1px solid #fff
+      outline 1px solid #dbdbdb
+      content "&#9776;"
+
+  .minmax
+    line-height 1
+    margin 0 0 5px 
+    padding 0
 
   .min
     display inline
+    font-size 0.8em
+    color #99b3e9
+
   .max
     display inline
     float right
+    font-size 0.8em
+    color #99b3e9
 
   .title
     font-weight 900
     font-size 1.2em
     width 100%
     margin 5px auto
-    border-bottom-style solid
-    border-bottom-width 1px
+    border-bottom 1px solid #e9f1f8
     text-align left
 
 
@@ -99,20 +121,7 @@ body, html
 
 .slider-filter
   color: rgba(100,162,216,0.9);
-  input[type=range]
-    -webkit-appearance none
-    background #f4f4f4
-    height 15px
-    border-radius 7px
-    border-top 2px solid #dce2f2
-    &::-webkit-slider-thumb
-      -webkit-appearance none
-      background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fbfbfb), color-stop(100%,#f1f1f1))
-      width 15px
-      height 25px
-      border 1px solid #fff
-      outline 1px solid #dbdbdb
-      content "&#9776;"
+
 .check-box-filter
   color: rgba(100,162,216,0.9);
 
