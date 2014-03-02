@@ -3,10 +3,10 @@
 
 #filters
   #leologo
-  slider-filter(title='Memory', min=0.5, step=0.5, max=32, val='filterSelection.memory', unit='Gb')
-  slider-filter(title='CPU cores', min=1, step=1, max=64, val='filterSelection.cpucores', unit='')
-  slider-filter(title='Storage', min=0.25 ,step=0.25, max=640, val='filterSelection.storage', unit = 'Gb')
-  slider-filter(title='Maximum simultaneous jobs', min=1, step=1, max=64, val='filterSelection.simultaneousjobs', unit='')
+  slider-filter(title='Memory', min=0.5, step=0.5, max=32, val='filterSelection.memory', unit='Gb', class='memory')
+  slider-filter(title='CPU cores', min=1, step=1, max=64, val='filterSelection.cpucores', unit='', class='cpu-cores')
+  slider-filter(title='Storage', min=0.25 ,step=0.25, max=640, val='filterSelection.storage', unit = 'Gb', class='storage')
+  slider-filter(title='Maximum simultaneous jobs', min=1, step=1, max=64, val='filterSelection.simultaneousjobs', unit='', class='maximum-sim-jobs')
   check-box-filter(title='DataBases')
   pull-down-filter(title='Location', options='{{ options }}')
   check-box-filter2(title='Support 24/7')
