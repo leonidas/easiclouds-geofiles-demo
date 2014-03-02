@@ -51,6 +51,7 @@ body, html
   background url(/images/leonidas-logo.jpg)
   background-size 100% 100%
   margin 0 auto
+  opacity 0.2
 
 .legend
   padding: 6px 8px;
@@ -98,7 +99,20 @@ body, html
 
 .slider-filter
   color: rgba(100,162,216,0.9);
-
+  input[type=range]
+    -webkit-appearance none
+    background #f4f4f4
+    height 15px
+    border-radius 7px
+    border-top 2px solid #dce2f2
+    &::-webkit-slider-thumb
+      -webkit-appearance none
+      background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fbfbfb), color-stop(100%,#f1f1f1))
+      width 15px
+      height 25px
+      border 1px solid #fff
+      outline 1px solid #dbdbdb
+      content "&#9776;"
 .check-box-filter
   color: rgba(100,162,216,0.9);
 
