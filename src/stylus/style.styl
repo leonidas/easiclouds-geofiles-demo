@@ -1,10 +1,10 @@
 @import "mixins"
-@import url(https://fonts.googleapis.com/css?family=Ruda:400,700,900);
+@import url(https://fonts.googleapis.com/css?family=Ruda:400,700,900)
 
 body, html
   margin 0
   height 100%
-  background: rgba(254,254,254,0.9);
+  background: rgba(254,254,254,0.9)
   font-family: "Ruda", sans-serif
 
 #cloudmap
@@ -22,16 +22,26 @@ body, html
   overflow scroll
   padding 1%
   box-sizing border-box
-
+  
   input[type="range"]
     width 100%
     margin 0 auto
     display block
     -webkit-appearance none
-    background #f4f4f4
     height 15px
+    position relative
+    overflow hidden
     border-radius 7px
-    border-top 2px solid #dce2f2
+    &:before
+      content ""
+      display block
+      background #f4f4f4
+      height 15px
+      width 100%
+      position absolute
+      border-radius 7px
+      border-top 2px solid #dce2f2
+      top 0
     &::-webkit-slider-thumb
       -webkit-appearance none
       background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fbfbfb), color-stop(100%,#f1f1f1))
@@ -39,8 +49,19 @@ body, html
       height 25px
       border 1px solid #fff
       outline 1px solid #dbdbdb
-      content "&#9776;"
-
+      content "&#9776"
+      position relative
+      cursor pointer
+      &:after
+        content ""
+        width 265px
+        height 15px
+        position absolute
+        z-index 1
+        right 15px
+        top 5px
+        background url(../images/slider-background3.png) repeat-x
+        background -webkit-gradient(linear, #f088fc 1%, #ddd 70%)
   .minmax
     line-height 1
     margin 0 0 5px 
@@ -49,13 +70,13 @@ body, html
   .min
     display inline
     font-size 0.8em
-    color #99b3e9
+    color #99c4e9
 
   .max
     display inline
     float right
     font-size 0.8em
-    color #99b3e9
+    color #99c4e9
 
   .title
     font-weight 900
@@ -76,61 +97,117 @@ body, html
   opacity 0.2
 
 .legend
-  padding: 6px 8px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  background: rgba(255,255,255, 0.9);
-  line-height: 20px;
-  border-radius: 5px;
-  color: #555;
+  padding: 6px 8px
+  box-shadow: 0 0 15px rgba(0,0,0,0.2)
+  background: rgba(255,255,255, 0.9)
+  line-height: 20px
+  border-radius: 5px
+  color: #555
 
 .legend i
-  color: #777;
-  width: 18px;
-  height: 18px;
-  float: left;
-  margin-right: 8px;
-  opacity: 0.7;
+  color: #777
+  width: 18px
+  height: 18px
+  float: left
+  margin-right: 8px
+  opacity: 0.7
 
 .leaflet-popup-content-wrapper
-  padding: 1px;
-  text-align: center;
-  border-radius: 0px;
-  background: rgba(100,162,216,0.9);
-  height: 127px;
-  width: 120px;
+  padding: 1px
+  text-align: center
+  border-radius: 0px
+  background: rgba(100,162,216,0.9)
+  height: 127px
+  width: 120px
 
 .leaflet-popup-content
-  margin: 0px 0px;
-  line-height: 1.4;
-  color: rgba(246,253,254,0.9);
+  margin: 0px 0px
+  line-height: 1.4
+  color: rgba(246,253,254,0.9)
 
 .leaflet-popup-close-button
- visibility: hidden;
+ visibility: hidden
 
 .leaflet-popup-tip
-  width: 10px;
-  height: 10px;
-  padding: 1px;
-  margin: -10px auto 0;
-  background: rgba(100,162,216,0.9);
+  width: 10px
+  height: 10px
+  padding: 1px
+  margin: -10px auto 0
+  background: rgba(100,162,216,0.9)
 
 #chooseButton
-  background: rgba(76,141,200,0.9);
-  width: 100%;
-  color: rgba(246,253,254,0.9);
+  background: rgba(76,141,200,0.9)
+  width: 100%
+  color: rgba(246,253,254,0.9)
 
 .slider-filter
-  color: rgba(100,162,216,0.9);
+  color: rgba(100,162,216,0.9)
+  position relative
+  height 125px
 
 .check-box-filter
-  color: rgba(100,162,216,0.9);
+  color: rgba(100,162,216,0.9)
+
+  .confirm
+    display block
+    position relative
+
 
 .pull-down-filter
-  color: rgba(100,162,216,0.9);
+  color: rgba(100,162,216,0.9)
 
 .viiva
-    height: 1px;
-    color: rgba(249,249,249,0.9);
-    background: rgba(249,249,249,0.9);;
-    font-size: 0;
-    border: 0;
+    height: 1px
+    color: rgba(249,249,249,0.9)
+    background: rgba(249,249,249,0.9)
+    font-size: 0
+    border: 0
+
+output 
+  position absolute
+  background #fff
+  text-align center 
+  color #6ea5d2
+  display inline-block 
+  font-weight 900
+  font-size 0.9em
+  border 1px solid #e5ebf1
+  bottom 10px
+  padding 5px
+  left 0
+  &:after 
+    content ""
+    position absolute 
+    width 0
+    height 0
+    border-bottom 7px solid #fff
+    border-left 5px solid transparent
+    border-right 5px solid transparent
+    top 0
+    left 50%
+    margin-left -5px
+    margin-top -7px
+  &:before
+    content ""
+    position absolute 
+    width 0
+    height 0
+    top 0
+    left 50%
+    margin-left -5px
+    margin-top -8px
+    border-bottom 7px solid #e5ebf1
+    border-left 5px solid transparent
+    border-right 5px solid transparent
+.memory
+  output
+    width 45px
+.cpu-cores
+  output
+    width 20px
+.storage
+  output
+    width 60px
+.maximum-sim-jobs
+  output
+    width 20px
