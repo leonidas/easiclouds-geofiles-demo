@@ -3,5 +3,7 @@
   p.minmax
     span.min {{ min }}{{ unit }}
     span.max {{ max }}{{ unit }}
-  input.slider-slider(type="range" name="points" min="{{ min }}" step="{{ step }}" max="{{ max }}" ng-model="val")
-  output(for="points") {{ val }}{{ unit }}
+  form
+    span.slider-left
+    input.slider-slider(type="range" name="points" min="{{ min }}" step="{{ step }}" max="{{ max }}" ng-model="val")
+    output(for="points") {{ val }}{{ unit }}
