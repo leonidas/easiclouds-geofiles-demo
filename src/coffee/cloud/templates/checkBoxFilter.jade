@@ -3,4 +3,4 @@
   p.confirm
     label(ng-repeat="selection in selections")
       input(type="checkbox", name="selectedSelections[]", value="{{ selectionName }}", ng-model="selection.selected")
-      {{selection.name}}
+      label(for="selectedSelections[]") {{selection.name}}
