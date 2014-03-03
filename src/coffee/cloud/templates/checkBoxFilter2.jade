@@ -1,7 +1,6 @@
 .check-box-filter
   .title {{ title }}
   p.confirm
-    input(type="checkbox", name="Yes")
-    a Yes
-    input(type="checkbox", name="No")
-    a No
+    label(ng-repeat="selection in selections")
+      input(type="checkbox", name="selectedSelections[]", value="{{ selectionName }}", ng-model="selection.selected")
+      {{selection.name}}

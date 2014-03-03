@@ -1,12 +1,6 @@
 .check-box-filter
   .title {{ title }}
   p.confirm
-    input(type="checkbox", name="MySQL", value="MySQL")
-    label(for="MySQL") MySQL
-    input(type="checkbox", name="postgreSQL", value="postgreSQL")
-    label(for="postgreSQL") postgreSQL
-    br
-    input(type="checkbox", name="MongoDB", value="MongoDB")
-    label(for="MongoDB") MongoDB
-    input(type="checkbox", name="Cassandra", value="Cassandra")
-    label(for="Cassandra") Cassandra
+    label(ng-repeat="selection in selections")
+      input(type="checkbox", name="selectedSelections[]", value="{{ selectionName }}", ng-model="selection.selected")
+      {{selection.name}}

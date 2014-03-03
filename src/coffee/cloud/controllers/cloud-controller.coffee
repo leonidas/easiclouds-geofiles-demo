@@ -16,6 +16,22 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
   $scope.filterSelection.cpucores = 10
   $scope.filterSelection.storage = 300
   $scope.filterSelection.simultaneousjobs = 48
+  $scope.filterSelection.servicesSelections = [
+     {name: 'MySQL', selected: false},
+     {name: 'postgreSQL', selected: false},
+     {name: 'MongoDB', selected: false},
+     {name: 'Cassandra',  selected: false}
+  ]
+  $scope.filterSelection.supportSelections = [
+     {name: 'Yes', selected: false},
+     {name: 'No',  selected: false}
+  ]
+  $scope.filterSelection.securitySelections = [
+     {name: 'Yes', selected: false},
+     {name: 'No',  selected: false}
+  ]
+
+  $scope.filterSelection.security = "Yes"
 
   $scope.$watch 'filterSelection', ((val) ->
     console.log $scope.allMarkers

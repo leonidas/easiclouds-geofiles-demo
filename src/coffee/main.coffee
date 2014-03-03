@@ -2,7 +2,6 @@ angular = require 'angular'
 ngRoute = require 'angular-route'
 
 require 'angular-leaflet-directive'
-
 require './geofiles/module.coffee'
 require './cloud/module.coffee'
 
