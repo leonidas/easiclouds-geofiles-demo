@@ -42,7 +42,7 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
       iconUrl: 'images/marker-icon-active.png'
     inactive:
       iconUrl: 'images/marker-icon-inactive.png'
-  $scope.url = 'http://www.leonidasoy.fi'
+  $scope.url = 'https://www.leonidasoy.fi'
   $scope.allMarkers = {}
   $scope.markers = {}
   $scope.paths = {}
