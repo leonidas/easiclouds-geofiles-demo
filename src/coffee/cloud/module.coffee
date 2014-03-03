@@ -12,6 +12,4 @@ modul.config ['$routeProvider', ($routeProvider) ->
 modul.directive 'sliderFilter', require './directives/sliderFilter.coffee'
 modul.directive 'pullDownFilter', require './directives/pullDownFilter.coffee'
 modul.directive 'checkBoxFilter', require './directives/checkBoxFilter.coffee'
-modul.directive 'checkBoxFilter2', require './directives/checkBoxFilter2.coffee'
-modul.directive 'checkBoxFilter3', require './directives/checkBoxFilter3.coffee'
 
