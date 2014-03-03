@@ -23,7 +23,7 @@
       "storage":100,
       "simultaneousjobs":10,
       "databases":["MySQL","Cassandra"],
-      "location":"Suppor",
+      "location":"Germany",
       "support":"Yes",
       "security":"No",
       "hostname": "brussels.swift.example.com",

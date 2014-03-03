@@ -3,5 +3,5 @@ module.exports = ->
   replace: true
   scope:
     title: '@'
-    options: '@'
+    options: '='
   templateUrl: '/partials/cloud/templates/pullDownFilter.html'

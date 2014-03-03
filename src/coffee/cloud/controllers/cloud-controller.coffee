@@ -10,25 +10,32 @@ indexBy = (coll, keyFn) ->
   result
 
 module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $http) ->
-  $scope.options = ['suomi', 'ruotsi']
   $scope.filterSelection = {}
   $scope.filterSelection.memory = 12
   $scope.filterSelection.cpucores = 10
   $scope.filterSelection.storage = 300
   $scope.filterSelection.simultaneousjobs = 48
+  $scope.filterSelection.countrySelections = [
+    {name: 'Belgium', selected: true},
+    {name: 'England', selected: true},
+    {name: 'Finland', selected: true},
+    {name: 'France', selected: true},
+    {name: 'Germany', selected: true},
+    {name: 'Netherlands', selected: true}
+  ]
   $scope.filterSelection.servicesSelections = [
-     {name: 'MySQL', selected: false},
-     {name: 'postgreSQL', selected: false},
-     {name: 'MongoDB', selected: false},
-     {name: 'Cassandra',  selected: false}
+    {name: 'MySQL', selected: false},
+    {name: 'postgreSQL', selected: false},
+    {name: 'MongoDB', selected: false},
+    {name: 'Cassandra',  selected: false}
   ]
   $scope.filterSelection.supportSelections = [
-     {name: 'Yes', selected: false},
-     {name: 'No',  selected: false}
+    {name: 'Yes', selected: true},
+    {name: 'No',  selected: true}
   ]
   $scope.filterSelection.securitySelections = [
-     {name: 'Yes', selected: false},
-     {name: 'No',  selected: false}
+    {name: 'Yes', selected: true},
+    {name: 'No',  selected: true}
   ]
 
   $scope.filterSelection.security = "Yes"
@@ -71,6 +78,13 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
   transformMarkers = (m) ->
     indexBy(m, (val) -> val.title.replace(/[. ]/g, ''))
 
+  isSelectedCountry = (countryName) ->
+    value = false
+    for index of $scope.filterSelection.countrySelections
+      if ($scope.filterSelection.countrySelections[index].name == countryName) and ($scope.filterSelection.countrySelections[index].selected == true)
+        value = true
+    value
+
   transformUserPosition = ->
     $scope.allMarkers = _.assign($scope.allMarkers,
       userlocation:
@@ -95,18 +109,21 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
           storage: s.storage
           storage: s.storage
           simultaneousjobs: s.simultaneousjobs
+          country: s.location
           lat: s.coordinates.lat
           lng: s.coordinates.lng
           message: "<h3>" + s.title + "</h3>" + s.memory + 'Gb RAM<br/>' + s.cpucores + ' CPU cores<br/>' + s.storage + 'Gb storage<br/><button id=\'chooseButton\'>CHOOSE</button>'
           icon: icons.inactive))
-        $scope.markers = $scope.allMarkers)
+        )
 
   $scope.filterMarkers = ->
     $scope.markers = {}
     for key, value of $scope.allMarkers
-      if (value.memory >= $scope.filterSelection.memory) and (value.cpucores >= $scope.filterSelection.cpucores) and (value.storage >= $scope.filterSelection.storage)
-        $scope.markers[key] = value
+      #if isSelectedCountry(value.country)
+        if (value.memory >= $scope.filterSelection.memory) and (value.cpucores >= $scope.filterSelection.cpucores) and (value.storage >= $scope.filterSelection.storage)
+          $scope.markers[key] = value
 
   $scope.queryServers()
   $scope.getUserLocation()
+  $scope.filterMarkers()
 ]
