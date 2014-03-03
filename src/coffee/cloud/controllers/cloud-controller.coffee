@@ -11,10 +11,10 @@ indexBy = (coll, keyFn) ->
 
 module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $http) ->
   $scope.filterSelection = {}
-  $scope.filterSelection.memory = 12
-  $scope.filterSelection.cpucores = 10
-  $scope.filterSelection.storage = 300
-  $scope.filterSelection.simultaneousjobs = 48
+  $scope.filterSelection.memory = 0.5
+  $scope.filterSelection.cpucores = 1
+  $scope.filterSelection.storage = 0.25
+  $scope.filterSelection.simultaneousjobs = 1
   $scope.filterSelection.countrySelections = [
     {name: 'Belgium', selected: true},
     {name: 'England', selected: true},
@@ -114,6 +114,7 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
           lng: s.coordinates.lng
           message: "<h3>" + s.title + "</h3>" + s.memory + 'Gb RAM<br/>' + s.cpucores + ' CPU cores<br/>' + s.storage + 'Gb storage<br/><button id=\'chooseButton\'>CHOOSE</button>'
           icon: icons.inactive))
+        $scope.markers=$scope.allMarkers
         )
 
   $scope.filterMarkers = ->
@@ -125,5 +126,4 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
 
   $scope.queryServers()
   $scope.getUserLocation()
-  $scope.filterMarkers()
 ]
