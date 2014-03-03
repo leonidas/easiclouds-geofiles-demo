@@ -4,7 +4,7 @@ module.exports = ->
   scope:
     title: '@'
     selections: '='
-  templateUrl: '/partials/cloud/templates/checkBoxFilter2.html'
+  templateUrl: '/partials/cloud/templates/checkBoxFilter.html'
 
 link: (scope) ->
   scope.$watch 'selections', (val) ->
