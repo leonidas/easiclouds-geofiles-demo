@@ -82,7 +82,8 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
           lat: s.coordinates.lat
           lng: s.coordinates.lng
           message: "<h3>" + s.title + "</h3>" + s.memory + 'Gb RAM<br/>' + s.cpucores + ' CPU cores<br/>' + s.storage + 'Gb storage<br/><button id=\'chooseButton\'>CHOOSE</button>'
-          icon: icons.inactive)))
+          icon: icons.inactive))
+        $scope.markers = $scope.allMarkers)
 
   $scope.filterMarkers = ->
     $scope.markers = {}
@@ -92,5 +93,4 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
 
   $scope.queryServers()
   $scope.getUserLocation()
-  $scope.filterMarkers()
 ]
