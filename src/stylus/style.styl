@@ -30,53 +30,56 @@ body, html
     -webkit-appearance none
     height 15px
     position relative
-    overflow hidden
+    margin-bottom 55px
     border-radius 7px
-    &:before
-      content ""
-      display block
-      background #f4f4f4
-      height 15px
-      width 100%
-      position absolute
-      border-radius 7px
-      border-top 2px solid #dce2f2
-      top 0
+    background #f4f4f4
+    border-radius 20px
+    border-top 2px solid #dce2f2
+    border-bottom 1px solid #f0f0f0
+    overflow hidden
     &::-webkit-slider-thumb
       -webkit-appearance none
-      background -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fbfbfb), color-stop(100%,#f1f1f1))
+      background url(/images/slider-thumb-background.svg) no-repeat #fbfbfb center center
+      background-image url(/images/slider-thumb-background.svg) -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fbfbfb), color-stop(100%,#f1f1f1))
+      background-size 80%
       width 15px
       height 25px
       border 1px solid #fff
       outline 1px solid #dbdbdb
-      content "&#9776"
+      content ""
       position relative
       cursor pointer
+      z-index 100
       &:after
         content ""
-        width 265px
+        width 231px
         height 15px
         position absolute
         z-index 1
         right 15px
-        top 5px
+        top 4px
+        border-radius 7px 0 0 7px
         background url(../images/slider-background3.png) repeat-x
         background -webkit-gradient(linear, #f088fc 1%, #ddd 70%)
+        pointer-events none
+
   .minmax
     line-height 1
-    margin 0 0 5px
+    margin 0 0 5px 
     padding 0
 
   .min
     display inline
     font-size 0.8em
     color #99c4e9
+    font-weight 400
 
   .max
     display inline
     float right
     font-size 0.8em
     color #99c4e9
+    font-weight 400
 
   .title
     font-weight 900
@@ -143,7 +146,6 @@ body, html
 .slider-filter
   color: rgba(100,162,216,0.9)
   position relative
-  height 125px
 
 .check-box-filter
   color: rgba(100,162,216,0.9)
@@ -163,21 +165,21 @@ body, html
     font-size: 0
     border: 0
 
-output
+output 
   position absolute
   background #fff
-  text-align center
+  text-align center 
   color #6ea5d2
-  display inline-block
+  display inline-block 
   font-weight 900
   font-size 0.9em
   border 1px solid #e5ebf1
   bottom 10px
-  padding 5px
+  padding 2px 5px
   left 0
-  &:after
+  &:after 
     content ""
-    position absolute
+    position absolute 
     width 0
     height 0
     border-bottom 7px solid #fff
@@ -189,7 +191,7 @@ output
     margin-top -7px
   &:before
     content ""
-    position absolute
+    position absolute 
     width 0
     height 0
     top 0
@@ -201,13 +203,17 @@ output
     border-right 5px solid transparent
 .memory
   output
-    width 45px
+    width 60px
+    left 90px
 .cpu-cores
   output
     width 20px
+    left 110px
 .storage
   output
-    width 60px
+    width 70px
+    left 85px
 .maximum-sim-jobs
   output
     width 20px
+    left 110px
