@@ -22,9 +22,16 @@ body, html
   overflow scroll
   padding 1%
   box-sizing border-box
-
+  form
+    overflow-x hidden
+    overflow-y visible
+    clip rect(15px,0,0,125px)
+    display block
+    padding-right 2px
+    padding-top 4px
+    position relative
   input[type="range"]
-    width 100%
+    width 95%
     margin 0 auto
     display block
     -webkit-appearance none
@@ -36,7 +43,9 @@ body, html
     border-radius 20px
     border-top 2px solid #dce2f2
     border-bottom 1px solid #f0f0f0
-    overflow hidden
+    &:focus
+      box-shadow 0
+      outline none
     &::-webkit-slider-thumb
       -webkit-appearance none
       background url(/images/slider-thumb-background.svg) no-repeat #fbfbfb center center
@@ -49,19 +58,27 @@ body, html
       content ""
       position relative
       cursor pointer
-      z-index 100
       &:after
         content ""
-        width 231px
+        width 250px
         height 15px
         position absolute
         z-index 1
         right 15px
         top 4px
         border-radius 7px 0 0 7px
-        background url(../images/slider-background3.png) repeat-x
+        background url(/images/slider-background3.png) repeat-x
         background -webkit-gradient(linear, #f088fc 1%, #ddd 70%)
         pointer-events none
+        opacity 1
+  .slider-left
+    display block
+    position absolute
+    width 10px
+    height 17px
+    z-index 100
+    background url(/images/slider-sides-3.png) no-repeat -5px 1px 
+    left -4px
 
   .minmax
     line-height 1
