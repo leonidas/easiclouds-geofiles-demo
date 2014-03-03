@@ -77,6 +77,8 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
           memory: s.memory
           cpucores: s.cpucores
           storage: s.storage
+          storage: s.storage
+          simultaneousjobs: s.simultaneousjobs
           lat: s.coordinates.lat
           lng: s.coordinates.lng
           message: "<h3>" + s.title + "</h3>" + s.memory + 'Gb RAM<br/>' + s.cpucores + ' CPU cores<br/>' + s.storage + 'Gb storage<br/><button id=\'chooseButton\'>CHOOSE</button>'
@@ -85,7 +87,7 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
   $scope.filterMarkers = ->
     $scope.markers = {}
     for key, value of $scope.allMarkers
-      if (value.memory <= $scope.filterSelection.memory) and (value.cpucores <= $scope.filterSelection.cpucores) and (value.storage <= $scope.filterSelection.storage)
+      if (value.memory >= $scope.filterSelection.memory) and (value.cpucores >= $scope.filterSelection.cpucores) and (value.storage >= $scope.filterSelection.storage)
         $scope.markers[key] = value
 
   $scope.queryServers()
