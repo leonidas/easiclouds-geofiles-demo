@@ -1,6 +1,7 @@
 _ = require 'lodash'
 config = require '../../../../config.json'
 
+#gives indexes for the results
 indexBy = (coll, keyFn) ->
   result = {}
   i = 0
@@ -16,16 +17,15 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
   $scope.filterSelection.storage = 0.25
   $scope.filterSelection.simultaneousjobs = 1
 
-  $scope.checkBoxSelectionGroups = ["countrySelections", "servicesSelections", "supportSelections", "securitySelections"]
-
+  #names of the checkboxselectionGroups
+  $scope.checkBoxSelectionGroups = ["countrySelections", "serviceSelections", "supportSelections", "securitySelections"]
+  $scope.filterSelection["serviceSelections"]
+  #array for countrynames. Filled dynamically later
   $scope.filterSelection.countrySelections = []
 
-  $scope.filterSelection.servicesSelections = [
-    {name: 'MySQL', selected: false},
-    {name: 'postgreSQL', selected: false},
-    {name: 'MongoDB', selected: false},
-    {name: 'Cassandra',  selected: false}
-  ]
+  #array for servicenames. Filled dynamically later
+  $scope.filterSelection.serviceSelections = []
+
   $scope.filterSelection.supportSelections = [
     {name: 'Yes', selected: true},
     {name: 'No',  selected: true}
@@ -39,7 +39,7 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
 
   $scope.$watch 'filterSelection', ((val) ->
       #console.log $scope.allMarkers
-      $scope.filterMarkers()
+      filterMarkers()
     ), true
 
   FILES_API = config.apiUrl + '/files'
@@ -97,9 +97,11 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
           memory: s.memory
           cpucores: s.cpucores
           storage: s.storage
-          storage: s.storage
           simultaneousjobs: s.simultaneousjobs
           country: s.location
+          services: s.databases
+          security: s.security
+          support: s.support
           lat: s.coordinates.lat
           lng: s.coordinates.lng
           message: "<h3>" + s.title + "</h3>" + s.memory + 'Gb RAM<br/>' + s.cpucores + ' CPU cores<br/>' + s.storage + 'Gb storage<br/><button id=\'chooseButton\'>CHOOSE</button>'
@@ -108,13 +110,41 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
         )
         $scope.markers=$scope.allMarkers
         addCountries()
+        addServices()
       )
 
-  $scope.filterMarkers = ->
+  #first version for filtering markers
+  filterMarkers = ->
     $scope.markers = {}
     for key, value of $scope.allMarkers
-      if filterBySliders(value) and filterByType(value.country, "countrySelections")
+      if filterBySliders(value) and filterByCheckBoxes(value)
         $scope.markers[key] = value
+
+  #filters based on slidervalues
+  filterBySliders = (value) ->
+    return (value.memory >= $scope.filterSelection.memory) and (value.cpucores >= $scope.filterSelection.cpucores) and (value.storage >= $scope.filterSelection.storage)
+
+  #filters based on checkboxes
+  filterByCheckBoxes = (value) ->
+    return filterByType(value.country, "countrySelections") and filterByType(value.security, "securitySelections") and filterByType(value.support, "supportSelections") and filterByServices(value.services)
+
+  #filter one checkbox
+  filterByType = (value, type) ->
+    for index of $scope.filterSelection[type]
+      if ($scope.filterSelection[type][index]["name"] == value) and ($scope.filterSelection[type][index].selected == true)
+        return true
+    return false
+
+  #filter one checkbox (another case :()
+  filterByServices = (values) ->
+    #incoming values is an array
+    for value in values
+      #services that are selected from ui
+      selectedServices = $scope.filterSelection["serviceSelections"]
+      for service of selectedServices
+        if (service == value)
+          return true
+    return false
 
   addCountries = ->
     for key, value of $scope.allMarkers
@@ -122,14 +152,16 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
         newSelection = {name: value.country,  selected: true}
         $scope.filterSelection["countrySelections"].push(newSelection)
 
-  filterBySliders = (value) ->
-    return (value.memory >= $scope.filterSelection.memory) and (value.cpucores >= $scope.filterSelection.cpucores) and (value.storage >= $scope.filterSelection.storage)
-
-  filterByType = (value, type) ->
-    for index of $scope.filterSelection[type]
-      if ($scope.filterSelection[type][index].name == value) and ($scope.filterSelection[type][index].selected == true)
-        return true
-    return false
+  #adds all availlable services to servicelist
+  addServices = ->
+    for key, marker of $scope.allMarkers
+      newservices = marker.services
+      oldservices = _.flatten($scope.filterSelection.serviceSelections, "name")
+      addservices = _.difference(newservices,oldservices)
+      for key, service of addservices
+        console.log(addservices)
+        newServiceSelection = {name: service,  selected: false}
+        $scope.filterSelection.serviceSelections.push(newServiceSelection)
 
   $scope.queryServers()
   $scope.getUserLocation()
