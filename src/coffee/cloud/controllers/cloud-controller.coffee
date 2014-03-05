@@ -126,7 +126,7 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
 
   #filters based on checkboxes
   filterByCheckBoxes = (value) ->
-    return filterByType(value.country, "countrySelections") and filterByType(value.security, "securitySelections") and filterByType(value.support, "supportSelections") and filterByServices(value.services)
+    return filterByType(value.country, "countrySelections") #and filterByType(value.security, "securitySelections") and filterByType(value.support, "supportSelections") and filterByServices(value.services)
 
   #filter one checkbox
   filterByType = (value, type) ->
