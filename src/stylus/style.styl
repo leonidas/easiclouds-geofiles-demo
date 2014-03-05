@@ -162,7 +162,7 @@ body, html
   width: 20px
   height: 20px
   padding: 1px
-  margin: -15px auto 0
+  margin: -17px auto 0
   background #568fc4
   box-shadow 0px 0px 0px 2px #6da4d1
   border 1px solid #abd4f6
@@ -184,6 +184,16 @@ body, html
   height auto
   margin-top 10px
   cursor pointer
+  position relative
+  &:after
+    content ''
+    display block
+    left 47px
+    border-left 12px solid transparent
+    border-right 12px solid transparent
+    border-top 10px solid #568fc4
+    position absolute
+    bottom -10px
 
 .slider-filter
   color: rgba(100,162,216,0.9)
