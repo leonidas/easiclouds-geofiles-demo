@@ -1,55 +1,59 @@
 {
   "servers": [
     {
-      "title":"London",
+      "title":"THALES COMMUNICATIONS & SECURITY SAS",
+      "address":"4, avenue des Louvresses, 92 230 Gennevilliers, France",
       "memory":0.5,
       "cpucores":1,
       "storage":0.25,
       "simultaneousjobs":1,
       "databases":["postgreSQL","MongoDB","Cassandra"],
-      "location":"England",
+      "location":"France",
       "support":"Yes",
       "security":"No",
       "hostname": "london.swift.example.com",
       "coordinates": {
-        "lat": 51.507222,
-        "lng": -0.1275
+        "lat": 48.943538,
+        "lng": 2.305861
       }
     },
     {
-      "title":"Brussels",
+      "title":"THALES SERVICES SAS",
+      "address":"20 rue Grange Dame Rose, CS 90 519, 78141 Velizy Villacoublay, France",
       "memory":10,
       "cpucores":10,
       "storage":100,
       "simultaneousjobs":10,
       "databases":["MySQL","Cassandra"],
-      "location":"Germany",
+      "location":"France",
       "support":"Yes",
       "security":"No",
       "hostname": "brussels.swift.example.com",
       "coordinates": {
-        "lat": 50.85,
-        "lng": 4.35
+        "lat": 48.941727,
+        "lng": 2.190408
       }
     },
     {
-      "title":"Amsterdam",
+      "title":"BULL SAS",
+      "address":"Rue Jean Jaurès 78340 Les Clayes sous Bois, RCS Versailles 642 058 739, France",
       "memory":4,
       "cpucores":1,
       "storage":1,
       "simultaneousjobs":2,
       "databases":[],
-      "location":"Netherlands",
+      "location":"France",
       "support":"No",
       "security":"No",
       "hostname": "amsterdam.swift.example.com",
       "coordinates": {
-        "lat": 52.373056,
-        "lng": 4.892222
+        "lat": 48.825476,
+        "lng": 1.981562
       }
     },
     {
-      "title":"Thales Paris",
+      "title":"NSTITUT MINES TELECOM",
+      "address":"46 rue Barrault 75634 Paris Cedex 13, France",
       "memory":24,
       "cpucores":48,
       "storage":480,
@@ -60,28 +64,285 @@
       "security":"No",
       "hostname": "paris.swift.example.com",
       "coordinates": {
-        "lat": 48.8567,
-        "lng": 2.3508
+        "lat": 48.826294,
+        "lng": 2.346419
       }
     },
     {
-      "title":"TTY",
-      "memory":8,
-      "cpucores":4,
-      "storage":10,
-      "simultaneousjobs":12,
+      "title":"NEXEDI",
+      "address": "270 boulevard Clémenceau 59700 Marcq en Baroeul, France",
+      "memory":0.5,
+      "cpucores":1,
+      "storage":0.25,
+      "simultaneousjobs":1,
+      "databases":["postgreSQL","MongoDB","Cassandra"],
+      "location":"France",
+      "support":"Yes",
+      "security":"No",
+      "hostname": "london.swift.example.com",
+      "coordinates": {
+        "lat": 50.660260,
+        "lng": 3098588
+      }
+    },
+    {
+      "title":"KOLOR",
+      "address":"387, avenue de la Breisse, 73190 Challes les Eaux, France",
+      "memory":10,
+      "cpucores":10,
+      "storage":100,
+      "simultaneousjobs":10,
+      "databases":["MySQL","Cassandra"],
+      "location":"France",
+      "support":"Yes",
+      "security":"No",
+      "hostname": "brussels.swift.example.com",
+      "coordinates": {
+        "lat": 45.555255,
+        "lng": 5.974710
+      }
+    },
+    {
+      "title":"UNIVERSITE D’EVRY VAL D’ESSONNE",
+      "address":"bd François Miterrand 91025 Evry Cedex, France",
+      "memory": 4,
+      "cpucores": 1,
+      "storage": 1,
+      "simultaneousjobs":2,
       "databases":[],
-      "location":"Finland",
+      "location":"France",
       "support":"No",
       "security":"No",
-      "hostname": "tty.example.com",
+      "hostname": "amsterdam.swift.example.com",
       "coordinates": {
-        "lat": 61.45,
-        "lng": 23.856
+        "lat": 48.62488,
+        "lng": 2.426571
       }
     },
     {
-      "title":"Kumpulan kampus",
+      "title":"ATOS IT SOLUTIONS AND SERVICES GMBH",
+      "address":"Otto-Hahn-Ring 6, 81739 Munich, Germany",
+      "memory":4,
+      "cpucores":1,
+      "storage":1,
+      "simultaneousjobs":2,
+      "databases":["MySQL","postgreSQL","Cassandra"],
+      "location":"Germany",
+      "support":"No",
+      "security":"No",
+      "hostname": "amsterdam.swift.example.com",
+      "coordinates": {
+        "lat": 48.091525,
+        "lng": 11.649241
+      }
+    },
+    {
+      "title":"ORGA SYSTEMS GMBH",
+      "address":"Am Hoppenhof 33, 33104 Paderborn, Germany",
+      "memory":4,
+      "cpucores":1,
+      "storage":1,
+      "simultaneousjobs":2,
+      "databases":[],
+      "location":"Germany",
+      "support":"No",
+      "security":"No",
+      "hostname": "amsterdam.swift.example.com",
+      "coordinates": {
+        "lat": 51.732030,
+        "lng": 8.723570
+      }
+    },
+    {
+      "title":"MATERNA GMBH",
+      "address":"Vosskuhle 37, 44141 Dortmund, GERMANY",
+      "memory":4,
+      "cpucores":1,
+      "storage":1,
+      "simultaneousjobs":2,
+      "databases":[],
+      "location":"Germany",
+      "support":"No",
+      "security":"No",
+      "hostname": "amsterdam.swift.example.com",
+      "coordinates": {
+        "lat": 51.504342,
+        "lng": 7.493382
+      }
+    },
+    {
+      "title":"PROSYST SOFTWARE GMBH",
+      "address":"Aachener Str. 222, 50931 Cologne, Germany",
+      "memory":4,
+      "cpucores":1,
+      "storage":1,
+      "simultaneousjobs":2,
+      "databases":[],
+      "location":"Germany",
+      "support":"No",
+      "security":"No",
+      "hostname": "amsterdam.swift.example.com",
+      "coordinates": {
+        "lat": 50.937627,
+        "lng": 6.891210
+      }
+    },
+    {
+      "title":"CLEVERSCALE",
+      "address":"11 Rue Léon Jouhaux - 75010 PARIS - FRANCE",
+      "memory":4,
+      "cpucores":1,
+      "storage":1,
+      "simultaneousjobs":2,
+      "databases":[],
+      "location":"France",
+      "support":"No",
+      "security":"No",
+      "hostname": "amsterdam.swift.example.com",
+      "coordinates": {
+        "lat": 48.869160,
+        "lng": 2.3644
+      }
+    },
+    {
+      "title":"TECHNISCHE UNIVERSITAET BERLIN / DAI LABOR",
+      "address":"Strasse des 17. Juni 135, 10623 Berlin, Germany",
+      "memory":4,
+      "cpucores":1,
+      "storage":1,
+      "simultaneousjobs":2,
+      "databases":[],
+      "location":"Germany",
+      "support":"No",
+      "security":"No",
+      "hostname": "amsterdam.swift.example.com",
+      "coordinates": {
+        "lat": 52.512181,
+        "lng": 13.327091
+      }
+    },
+    {
+      "title":"JOHANNES GUTENBERG-UNIVERSITÄT MAINZ",
+      "address":"Saarstr. 21, 55099 Mainz, Germany",
+      "memory":4,
+      "cpucores":1,
+      "storage":1,
+      "simultaneousjobs":2,
+      "databases":[],
+      "location":"Germany",
+      "support":"No",
+      "security":"No",
+      "hostname": "amsterdam.swift.example.com",
+      "coordinates": {
+        "lat": 49.994940,
+        "lng": 8.2427
+      }
+    },
+    {
+      "title":"FRAUNHOFER",
+      "address":"Hansastraße 27 c 80686 Munich, Germany",
+      "memory":4,
+      "cpucores":1,
+      "storage":1,
+      "simultaneousjobs":2,
+      "databases":[],
+      "location":"Germany",
+      "support":"No",
+      "security":"No",
+      "hostname": "amsterdam.swift.example.com",
+      "coordinates": {
+        "lat": 48.132350,
+        "lng": 11.531430
+      }
+    },
+    {
+      "title":"CHARITE UNIVERSITY MEDICINE BERLIN",
+      "address":"Dr. med. Gerrit Fleige, KaufmännischeLeitung der Fakultät, Charite Campus Mitte, Chariteplatz, 10117 Berlin",
+      "memory":4,
+      "cpucores":1,
+      "storage":1,
+      "simultaneousjobs":2,
+      "databases":[],
+      "location":"Germany",
+      "support":"No",
+      "security":"No",
+      "hostname": "amsterdam.swift.example.com",
+      "coordinates": {
+        "lat": 52.51551,
+        "lng": 13.384753
+      }
+    },
+    {
+      "title":"ITWORX EGYPT S.A.E",
+      "address":"Nasr City Public Free Zone, Area 7B, Block J, Cairo, Egypt",
+      "memory":4,
+      "cpucores":1,
+      "storage":1,
+      "simultaneousjobs":2,
+      "databases":[],
+      "location":"Egypt",
+      "support":"No",
+      "security":"No",
+      "hostname": "amsterdam.swift.example.com",
+      "coordinates": {
+        "lat": 30.04442,
+        "lng": 31.235712
+      }
+    },
+    {
+      "title":"CAIRO UNIVERSITY",
+      "address":"Ahmed Zewell, Giza, Egypt",
+      "memory":4,
+      "cpucores":1,
+      "storage":1,
+      "simultaneousjobs":2,
+      "databases":[],
+      "location":"Egypt",
+      "support":"No",
+      "security":"No",
+      "hostname": "amsterdam.swift.example.com",
+      "coordinates": {
+        "lat": 30.020267,
+        "lng": 31.202712
+      }
+    },
+    {
+      "title":"NILE UNIVERSITY",
+      "address":"Smart Village - B2, Km 28, Cairo Alex Deser Road, 12677, Egypt",
+      "memory":4,
+      "cpucores":1,
+      "storage":1,
+      "simultaneousjobs":2,
+      "databases":[],
+      "location":"Egypt",
+      "support":"No",
+      "security":"No",
+      "hostname": "amsterdam.swift.example.com",
+      "coordinates": {
+        "lat": 30.077016,
+        "lng": 31.019175
+      }
+    },
+    {
+      "title":"HEXAGLOBE",
+      "address":"1 Rue Méhul, 75002, Paris",
+      "memory":4,
+      "cpucores":1,
+      "storage":1,
+      "simultaneousjobs":2,
+      "databases":[],
+      "location":"France",
+      "support":"No",
+      "security":"No",
+      "hostname": "amsterdam.swift.example.com",
+      "coordinates": {
+        "lat": 48.867540,
+        "lng": 2.334680
+      }
+    },
+    {
+      "title":"UNIVERSITY HELSINKI",
+      "address":"Hällströmin katu 2 b, P.O. Box 68, 00014 University of Helsinki, Finland",
       "memory":32,
       "cpucores":64,
       "storage":640,
@@ -92,12 +353,65 @@
       "security":"No",
       "hostname": "kumpula.example.com",
       "coordinates": {
-        "lat": 60.2,
-        "lng": 24.96
+        "lat": 60.172635,
+        "lng": 24.951042
       }
     },
     {
+      "title":"TAMPERE UNIVERSITY OF TECHNOLOGY",
+      "address":"korkeakoulunkatu 1, 33720, tampere",
+      "memory":8,
+      "cpucores":4,
+      "storage":10,
+      "simultaneousjobs":12,
+      "databases":[],
+      "location":"Finland",
+      "support":"No",
+      "security":"No",
+      "hostname": "tty.example.com",
+      "coordinates": {
+        "lat": 61.449137,
+        "lng": 23.861039
+      }
+    },
+    {
+      "title":"LEONIDAS OY",
+      "address":"Hämeenkatu 16 A 11, 33200 Tampere Finland",
+      "memory":32,
+      "cpucores":64,
+      "storage":640,
+      "simultaneousjobs":48,
+      "databases":["MySQL","postgreSQL","Cassandra","MongoDB"],
+      "location":"Finland",
+      "support":"Yes",
+      "security":"Yes",
+      "hostname": "amsterdam.swift.example.com",
+      "coordinates": {
+        "lat": 61.497709,
+        "lng": 23.758914
+      }
+    },
+    {
+      "title":"GEARSHIFTGROUP OY",
+      "address":"Kaisaniemenkatu 1 C 110, 00100 Helsinki, Finland",
+      "memory":4,
+      "cpucores":1,
+      "storage":1,
+      "simultaneousjobs":2,
+      "databases":[],
+      "location":"Finland",
+      "support":"No",
+      "security":"No",
+      "hostname": "amsterdam.swift.example.com",
+      "coordinates": {
+        "lat": 60.172667,
+        "lng": 24.932009
+      }
+    },
+
+    {
       "title":"F-Secure",
+      "address": "Tammasaarenkatu 7, PL 24, 00181 Helsinki",
       "memory":16,
       "cpucores":8,
       "storage":40,
@@ -108,8 +422,93 @@
       "security":"Yes",
       "hostname": "fsecure.example.com",
       "coordinates": {
-        "lat": 60.162,
-        "lng": 24.9
+        "lat": 60.161575,
+        "lng": 24.906734
+      }
+    },
+    {
+      "title":"INNOFACTOR",
+      "address":"Keilaranta 19, 500, Espoo, Finland",
+      "memory":4,
+      "cpucores":1,
+      "storage":1,
+      "simultaneousjobs":2,
+      "databases":[],
+      "location":"Finland",
+      "support":"No",
+      "security":"No",
+      "hostname": "amsterdam.swift.example.com",
+      "coordinates": {
+        "lat": 60.179187,
+        "lng": 24.836254
+      }
+    },
+    {
+      "title":"ETRI",
+      "address":"218 Gajeong-ro, Yuseong-gu, Daejeon, 305-700, Korea",
+      "memory":4,
+      "cpucores":1,
+      "storage":1,
+      "simultaneousjobs":2,
+      "databases":[],
+      "location":"South Korea",
+      "support":"No",
+      "security":"No",
+      "hostname": "amsterdam.swift.example.com",
+      "coordinates": {
+        "lat": 36.381771,
+        "lng": 127.365998
+      }
+    },
+    {
+      "title":"SEOUL NATIONAL UNIVERSITY",
+      "address":"599 Gwanak-Ro, Gwanak-Gu, Seoul, South Korea",
+      "memory":4,
+      "cpucores":1,
+      "storage":1,
+      "simultaneousjobs":2,
+      "databases":[],
+      "location":"South Korea",
+      "support":"No",
+      "security":"No",
+      "hostname": "amsterdam.swift.example.com",
+      "coordinates": {
+        "lat": 37.481435,
+        "lng": 126.954904
+      }
+    },
+    {
+      "title":"INNOGRID",
+      "address":"11F 144-25, Samsung-Dong, Gangnam-gu, Seoul, 135-877, R.O.K, South Korea",
+      "memory":4,
+      "cpucores":1,
+      "storage":1,
+      "simultaneousjobs":2,
+      "databases":[],
+      "location":"South Korea",
+      "support":"No",
+      "security":"No",
+      "hostname": "amsterdam.swift.example.com",
+      "coordinates": {
+        "lat": 37.488472,
+        "lng": 127.054028
+      }
+    },
+    {
+      "title":"IT UNIVERSITY OF COPENHAGEN",
+      "address":"Rued Langgaards, Vej 7, Dk-2300, Copenhagen, Denmark",
+      "memory":4,
+      "cpucores":1,
+      "storage":1,
+      "simultaneousjobs":2,
+      "databases":[],
+      "location":"Denmark",
+      "support":"No",
+      "security":"No",
+      "hostname": "amsterdam.swift.example.com",
+      "coordinates": {
+        "lat": 55.659890,
+        "lng": 12.591188
       }
     }
   ]

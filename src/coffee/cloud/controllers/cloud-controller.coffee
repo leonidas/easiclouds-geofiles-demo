@@ -15,14 +15,11 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
   $scope.filterSelection.cpucores = 1
   $scope.filterSelection.storage = 0.25
   $scope.filterSelection.simultaneousjobs = 1
-  $scope.filterSelection.countrySelections = [
-    {name: 'Belgium', selected: true},
-    {name: 'England', selected: true},
-    {name: 'Finland', selected: true},
-    {name: 'France', selected: true},
-    {name: 'Germany', selected: true},
-    {name: 'Netherlands', selected: true}
-  ]
+
+  $scope.checkBoxSelectionGroups = ["countrySelections", "servicesSelections", "supportSelections", "securitySelections"]
+
+  $scope.filterSelection.countrySelections = []
+
   $scope.filterSelection.servicesSelections = [
     {name: 'MySQL', selected: false},
     {name: 'postgreSQL', selected: false},
@@ -41,8 +38,8 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
   $scope.filterSelection.security = "Yes"
 
   $scope.$watch 'filterSelection', ((val) ->
-    console.log $scope.allMarkers
-    $scope.filterMarkers()
+      #console.log $scope.allMarkers
+      $scope.filterMarkers()
     ), true
 
   FILES_API = config.apiUrl + '/files'
@@ -78,13 +75,6 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
   transformMarkers = (m) ->
     indexBy(m, (val) -> val.title.replace(/[. ]/g, ''))
 
-  isSelectedCountry = (countryName) ->
-    value = false
-    for index of $scope.filterSelection.countrySelections
-      if ($scope.filterSelection.countrySelections[index].name == countryName) and ($scope.filterSelection.countrySelections[index].selected == true)
-        value = true
-    value
-
   transformUserPosition = ->
     $scope.allMarkers = _.assign($scope.allMarkers,
       userlocation:
@@ -113,16 +103,33 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
           lat: s.coordinates.lat
           lng: s.coordinates.lng
           message: "<h3>" + s.title + "</h3>" + s.memory + 'Gb RAM<br/>' + s.cpucores + ' CPU cores<br/>' + s.storage + 'Gb storage<br/><button id=\'chooseButton\'>CHOOSE</button>'
-          icon: icons.inactive))
-        $scope.markers=$scope.allMarkers
+          icon: icons.inactive
+          )
         )
+        $scope.markers=$scope.allMarkers
+        addCountries()
+      )
 
   $scope.filterMarkers = ->
     $scope.markers = {}
     for key, value of $scope.allMarkers
-      #if isSelectedCountry(value.country)
-        if (value.memory >= $scope.filterSelection.memory) and (value.cpucores >= $scope.filterSelection.cpucores) and (value.storage >= $scope.filterSelection.storage)
-          $scope.markers[key] = value
+      if filterBySliders(value) and filterByType(value.country, "countrySelections")
+        $scope.markers[key] = value
+
+  addCountries = ->
+    for key, value of $scope.allMarkers
+      if not filterByType(value.country,"countrySelections")
+        newSelection = {name: value.country,  selected: true}
+        $scope.filterSelection["countrySelections"].push(newSelection)
+
+  filterBySliders = (value) ->
+    return (value.memory >= $scope.filterSelection.memory) and (value.cpucores >= $scope.filterSelection.cpucores) and (value.storage >= $scope.filterSelection.storage)
+
+  filterByType = (value, type) ->
+    for index of $scope.filterSelection[type]
+      if ($scope.filterSelection[type][index].name == value) and ($scope.filterSelection[type][index].selected == true)
+        return true
+    return false
 
   $scope.queryServers()
   $scope.getUserLocation()
