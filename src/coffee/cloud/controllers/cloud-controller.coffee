@@ -11,6 +11,9 @@ indexBy = (coll, keyFn) ->
   result
 
 module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $http) ->
+  #parameters can easily be printed by:
+  #?field1=value1&field2=value2&field3=value3
+  #console.log($routeParams)
   $scope.filterSelection = {}
   $scope.filterSelection.memory = 0.5
   $scope.filterSelection.cpucores = 1
@@ -107,8 +110,10 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
           support: s.support
           lat: s.coordinates.lat
           lng: s.coordinates.lng
-          message: "<h3>" + s.title + "</h3>" + s.memory + 'Gb RAM<br/>' + s.cpucores + ' CPU cores<br/>' + s.storage + 'Gb storage<br/><button id=\'chooseButton\'>CHOOSE</button>'
+          message: "<h3>" + s.title + "</h3>" + s.memory + 'Gb RAM<br/>' + s.cpucores + ' CPU cores<br/>' +
+            s.storage + 'Gb storage<br/><a href = \'' + s.hostname + '\'><button id=\'chooseButton\'>CHOOSE</button></a>'
           icon: icons.inactive
+          hostname: s.hostname
           )
         )
         $scope.markers=$scope.allMarkers

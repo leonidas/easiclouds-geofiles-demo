@@ -11,7 +11,7 @@
       "location":"France",
       "support":"Yes",
       "security":"No",
-      "hostname": "london.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 48.943538,
         "lng": 2.305861
@@ -28,7 +28,7 @@
       "location":"France",
       "support":"Yes",
       "security":"No",
-      "hostname": "brussels.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 48.941727,
         "lng": 2.190408
@@ -45,7 +45,7 @@
       "location":"France",
       "support":"No",
       "security":"No",
-      "hostname": "amsterdam.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 48.825476,
         "lng": 1.981562
@@ -62,7 +62,7 @@
       "location":"France",
       "support":"Yes",
       "security":"No",
-      "hostname": "paris.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 48.826294,
         "lng": 2.346419
@@ -79,7 +79,7 @@
       "location":"France",
       "support":"Yes",
       "security":"No",
-      "hostname": "london.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 50.660260,
         "lng": 3.098588
@@ -96,7 +96,7 @@
       "location":"France",
       "support":"Yes",
       "security":"No",
-      "hostname": "brussels.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 45.555255,
         "lng": 5.974710
@@ -113,7 +113,7 @@
       "location":"France",
       "support":"No",
       "security":"No",
-      "hostname": "amsterdam.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 48.62488,
         "lng": 2.426571
@@ -130,7 +130,7 @@
       "location":"Germany",
       "support":"No",
       "security":"No",
-      "hostname": "amsterdam.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 48.091525,
         "lng": 11.649241
@@ -147,7 +147,7 @@
       "location":"Germany",
       "support":"Yes",
       "security":"No",
-      "hostname": "amsterdam.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 51.732030,
         "lng": 8.723570
@@ -164,7 +164,7 @@
       "location":"Germany",
       "support":"No",
       "security":"Yes",
-      "hostname": "amsterdam.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 51.504342,
         "lng": 7.493382
@@ -181,7 +181,7 @@
       "location":"Germany",
       "support":"No",
       "security":"No",
-      "hostname": "amsterdam.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 50.937627,
         "lng": 6.891210
@@ -198,7 +198,7 @@
       "location":"France",
       "support":"No",
       "security":"No",
-      "hostname": "amsterdam.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 48.869160,
         "lng": 2.3644
@@ -215,7 +215,7 @@
       "location":"Germany",
       "support":"No",
       "security":"No",
-      "hostname": "amsterdam.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 52.512181,
         "lng": 13.327091
@@ -232,7 +232,7 @@
       "location":"Germany",
       "support":"No",
       "security":"No",
-      "hostname": "amsterdam.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 49.994940,
         "lng": 8.2427
@@ -249,7 +249,7 @@
       "location":"Germany",
       "support":"No",
       "security":"No",
-      "hostname": "amsterdam.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 48.132350,
         "lng": 11.531430
@@ -266,7 +266,7 @@
       "location":"Germany",
       "support":"No",
       "security":"No",
-      "hostname": "amsterdam.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 52.51551,
         "lng": 13.384753
@@ -283,7 +283,7 @@
       "location":"Egypt",
       "support":"No",
       "security":"No",
-      "hostname": "amsterdam.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 30.04442,
         "lng": 31.235712
@@ -300,7 +300,7 @@
       "location":"Egypt",
       "support":"No",
       "security":"No",
-      "hostname": "amsterdam.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 30.020267,
         "lng": 31.202712
@@ -317,7 +317,7 @@
       "location":"Egypt",
       "support":"No",
       "security":"No",
-      "hostname": "amsterdam.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 30.077016,
         "lng": 31.019175
@@ -334,7 +334,7 @@
       "location":"France",
       "support":"No",
       "security":"No",
-      "hostname": "amsterdam.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 48.867540,
         "lng": 2.334680
@@ -351,7 +351,7 @@
       "location":"Finland",
       "support":"No",
       "security":"No",
-      "hostname": "kumpula.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 60.172635,
         "lng": 24.951042
@@ -368,7 +368,7 @@
       "location":"Finland",
       "support":"No",
       "security":"No",
-      "hostname": "tty.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 61.449137,
         "lng": 23.861039
@@ -385,7 +385,7 @@
       "location":"Finland",
       "support":"Yes",
       "security":"Yes",
-      "hostname": "amsterdam.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 61.497709,
         "lng": 23.758914
@@ -402,7 +402,7 @@
       "location":"Finland",
       "support":"No",
       "security":"No",
-      "hostname": "amsterdam.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 60.172667,
         "lng": 24.932009
@@ -420,7 +420,7 @@
       "location":"Finland",
       "support":"No",
       "security":"Yes",
-      "hostname": "fsecure.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 60.161575,
         "lng": 24.906734
@@ -437,7 +437,7 @@
       "location":"Finland",
       "support":"No",
       "security":"No",
-      "hostname": "amsterdam.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 60.179187,
         "lng": 24.836254
@@ -454,7 +454,7 @@
       "location":"South Korea",
       "support":"No",
       "security":"No",
-      "hostname": "amsterdam.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 36.381771,
         "lng": 127.365998
@@ -471,7 +471,7 @@
       "location":"South Korea",
       "support":"No",
       "security":"No",
-      "hostname": "amsterdam.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 37.481435,
         "lng": 126.954904
@@ -488,7 +488,7 @@
       "location":"South Korea",
       "support":"yes",
       "security":"No",
-      "hostname": "amsterdam.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 37.488472,
         "lng": 127.054028
@@ -505,7 +505,7 @@
       "location":"Denmark",
       "support":"No",
       "security":"yes",
-      "hostname": "amsterdam.swift.example.com",
+      "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 55.659890,
         "lng": 12.591188
