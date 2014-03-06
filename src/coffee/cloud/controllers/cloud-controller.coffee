@@ -18,7 +18,9 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
   $scope.filterSelection.simultaneousjobs = 1
 
   #names of the checkboxselectionGroups
-  $scope.checkBoxSelectionGroups = ["countrySelections", "serviceSelections", "supportSelections", "securitySelections"]
+  $scope.checkBoxNames = ["country", "support", "security"]
+  $scope.sliderNames = ["memory", "cpucores", "storage", "simultaneousjobs"]
+
   $scope.filterSelection["serviceSelections"]
   #array for countrynames. Filled dynamically later
   $scope.filterSelection.countrySelections = []
@@ -30,6 +32,7 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
     {name: 'Yes', selected: true},
     {name: 'No',  selected: true}
   ]
+
   $scope.filterSelection.securitySelections = [
     {name: 'Yes', selected: true},
     {name: 'No',  selected: true}
@@ -109,59 +112,51 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
           )
         )
         $scope.markers=$scope.allMarkers
-        addCountries()
-        addServices()
+        $scope.filterSelection.countrySelections = collectCountries()
+        $scope.filterSelection.serviceSelections = collectServices()
       )
 
-  #first version for filtering markers
+  collectCountries = ->
+    countries = []
+    for key, marker of $scope.allMarkers
+      countries.push({name: marker.country,  selected: true})
+    return _.uniq(countries, "name")
+
+  collectServices = ->
+    services = []
+    for key, marker of $scope.allMarkers
+      for key, service of marker.services
+        services.push({name: service,  selected: false})
+    return _.uniq(services, "name")
+
+  findSelections = (selections) -> _.map(_.where(selections, {selected: true}), "name")
+
+  #filtering markers
   filterMarkers = ->
     $scope.markers = {}
-    for key, value of $scope.allMarkers
-      if filterBySliders(value) and filterByCheckBoxes(value)
-        $scope.markers[key] = value
+    selectedServices = findSelections($scope.filterSelection.serviceSelections)
+    for key, marker of $scope.allMarkers
+      if filterBySliders(marker) and filterByCheckBoxes(marker,selectedServices)
+        $scope.markers[key] = marker
 
   #filters based on slidervalues
-  filterBySliders = (value) ->
-    return (value.memory >= $scope.filterSelection.memory) and (value.cpucores >= $scope.filterSelection.cpucores) and (value.storage >= $scope.filterSelection.storage)
+  filterBySliders = (marker) ->
+    _.every($scope.sliderNames, (value, index) ->
+      marker[value]>=$scope.filterSelection[value])
 
   #filters based on checkboxes
-  filterByCheckBoxes = (value) ->
-    return filterByType(value.country, "countrySelections") #and filterByType(value.security, "securitySelections") and filterByType(value.support, "supportSelections") and filterByServices(value.services)
-
-  #filter one checkbox
-  filterByType = (value, type) ->
-    for index of $scope.filterSelection[type]
-      if ($scope.filterSelection[type][index]["name"] == value) and ($scope.filterSelection[type][index].selected == true)
-        return true
-    return false
+  filterByCheckBoxes = (marker,selectedServices) ->
+    filterServices(marker.services, selectedServices) and _.every($scope.checkBoxNames, (value, index) ->
+      filterOthers(marker[value], value+"Selections"))
 
   #filter one checkbox (another case :()
-  filterByServices = (values) ->
-    #incoming values is an array
-    for value in values
-      #services that are selected from ui
-      selectedServices = $scope.filterSelection["serviceSelections"]
-      for service of selectedServices
-        if (service == value)
-          return true
-    return false
+  filterServices = (values, selected) ->
+    _.difference(selected, values).length==0
 
-  addCountries = ->
-    for key, value of $scope.allMarkers
-      if not filterByType(value.country,"countrySelections")
-        newSelection = {name: value.country,  selected: true}
-        $scope.filterSelection["countrySelections"].push(newSelection)
-
-  #adds all availlable services to servicelist
-  addServices = ->
-    for key, marker of $scope.allMarkers
-      newservices = marker.services
-      oldservices = _.flatten($scope.filterSelection.serviceSelections, "name")
-      addservices = _.difference(newservices,oldservices)
-      for key, service of addservices
-        console.log(addservices)
-        newServiceSelection = {name: service,  selected: false}
-        $scope.filterSelection.serviceSelections.push(newServiceSelection)
+  #filter one checkbox
+  filterOthers = (value, type) ->
+    selecteds = findSelections($scope.filterSelection[type])
+    _.contains(selecteds, value)
 
   $scope.queryServers()
   $scope.getUserLocation()

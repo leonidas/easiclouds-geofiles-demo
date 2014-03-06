@@ -1,9 +1,9 @@
 {
   "servers": [
     {
-      "title":"THALES COMMUNICATIONS & SECURITY SAS",
+      "title":"THALES COMMUNI-<br>CATIONS & SECURITY SAS",
       "address":"4, avenue des Louvresses, 92 230 Gennevilliers, France",
-      "memory":0.5,
+      "memory":32,
       "cpucores":1,
       "storage":0.25,
       "simultaneousjobs":1,
@@ -21,7 +21,7 @@
       "title":"THALES SERVICES SAS",
       "address":"20 rue Grange Dame Rose, CS 90 519, 78141 Velizy Villacoublay, France",
       "memory":10,
-      "cpucores":10,
+      "cpucores":64,
       "storage":100,
       "simultaneousjobs":10,
       "databases":["MySQL","Cassandra"],
@@ -39,7 +39,7 @@
       "address":"Rue Jean Jaurès 78340 Les Clayes sous Bois, RCS Versailles 642 058 739, France",
       "memory":4,
       "cpucores":1,
-      "storage":1,
+      "storage":640,
       "simultaneousjobs":2,
       "databases":[],
       "location":"France",
@@ -52,12 +52,12 @@
       }
     },
     {
-      "title":"NSTITUT MINES TELECOM",
+      "title":"INSTITUT MINES TELECOM",
       "address":"46 rue Barrault 75634 Paris Cedex 13, France",
       "memory":24,
       "cpucores":48,
       "storage":480,
-      "simultaneousjobs":32,
+      "simultaneousjobs":64,
       "databases":["MySQL","postgreSQL","MongoDB","Cassandra"],
       "location":"France",
       "support":"Yes",
@@ -75,14 +75,14 @@
       "cpucores":1,
       "storage":0.25,
       "simultaneousjobs":1,
-      "databases":["postgreSQL","MongoDB","Cassandra"],
+      "databases":["MySQL","postgreSQL","Cassandra","MongoDB"],
       "location":"France",
       "support":"Yes",
       "security":"No",
       "hostname": "london.swift.example.com",
       "coordinates": {
         "lat": 50.660260,
-        "lng": 3098588
+        "lng": 3.098588
       }
     },
     {
@@ -92,7 +92,7 @@
       "cpucores":10,
       "storage":100,
       "simultaneousjobs":10,
-      "databases":["MySQL","Cassandra"],
+      "databases":["MySQL","postgreSQL","Cassandra"],
       "location":"France",
       "support":"Yes",
       "security":"No",
@@ -109,7 +109,7 @@
       "cpucores": 1,
       "storage": 1,
       "simultaneousjobs":2,
-      "databases":[],
+      "databases":["MySQL","postgreSQL"],
       "location":"France",
       "support":"No",
       "security":"No",
@@ -126,7 +126,7 @@
       "cpucores":1,
       "storage":1,
       "simultaneousjobs":2,
-      "databases":["MySQL","postgreSQL","Cassandra"],
+      "databases":["MySQL"],
       "location":"Germany",
       "support":"No",
       "security":"No",
@@ -145,7 +145,7 @@
       "simultaneousjobs":2,
       "databases":[],
       "location":"Germany",
-      "support":"No",
+      "support":"Yes",
       "security":"No",
       "hostname": "amsterdam.swift.example.com",
       "coordinates": {
@@ -163,7 +163,7 @@
       "databases":[],
       "location":"Germany",
       "support":"No",
-      "security":"No",
+      "security":"Yes",
       "hostname": "amsterdam.swift.example.com",
       "coordinates": {
         "lat": 51.504342,
@@ -486,7 +486,7 @@
       "simultaneousjobs":2,
       "databases":[],
       "location":"South Korea",
-      "support":"No",
+      "support":"yes",
       "security":"No",
       "hostname": "amsterdam.swift.example.com",
       "coordinates": {
@@ -504,7 +504,7 @@
       "databases":[],
       "location":"Denmark",
       "support":"No",
-      "security":"No",
+      "security":"yes",
       "hostname": "amsterdam.swift.example.com",
       "coordinates": {
         "lat": 55.659890,
