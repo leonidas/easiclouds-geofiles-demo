@@ -1,0 +1,28 @@
+div.location-info
+  h3 s.title
+  table.main-filters
+    tr.dark
+      td RAM
+      td.align-right s.memory
+    tr
+      td CPU cores
+      td.align-right s.cpucores
+    tr.dark
+      td Storage
+      td.align-right s.storage
+    tr
+      table.secondary-filters
+        tr
+          td Max. simultaneous jobs
+            br
+            |s.simultaneousjobs
+        tr.dark
+          td Databases 
+            br
+            |s.databases
+        tr
+          td.support-security s.support
+            br
+            |s.security
+a(href=s.hostname)
+  button(id='chooseButton') CHOOSE
