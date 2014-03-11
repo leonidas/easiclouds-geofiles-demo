@@ -1,28 +1,28 @@
 div.location-info
-  h3 s.title
+  h3 <%= title %>
   table.main-filters
     tr.dark
       td RAM
-      td.align-right s.memory
+      td.align-right <%= memory %>
     tr
       td CPU cores
-      td.align-right s.cpucores
+      td.align-right <%= cpucores %>
     tr.dark
       td Storage
-      td.align-right s.storage
+      td.align-right <%= storage %>
     tr
       table.secondary-filters
         tr
           td Max. simultaneous jobs
             br
-            |s.simultaneousjobs
+            |<%= simultaneousjobs %>
         tr.dark
-          td Databases 
+          td Databases
             br
-            |s.databases
+            |<%= databases %>
         tr
-          td.support-security s.support
+          td.support-security <%= support %>
             br
-            |s.security
-a(href=s.hostname)
+            |<%= security %>
+  a(href='<%= hostname %>')
   button(id='chooseButton') CHOOSE

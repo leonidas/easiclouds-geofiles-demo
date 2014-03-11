@@ -12,4 +12,5 @@ modul.config ['$routeProvider', ($routeProvider) ->
 modul.directive 'sliderFilter', require './directives/sliderFilter.coffee'
 modul.directive 'pullDownFilter', require './directives/pullDownFilter.coffee'
 modul.directive 'checkBoxFilter', require './directives/checkBoxFilter.coffee'
+modul.directive 'markerTemplate', require './directives/markerTemplate.coffee'
 

@@ -10,10 +10,10 @@ indexBy = (coll, keyFn) ->
     i++
   result
 
-module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $http) ->
+module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compile, $routeParams, $http) ->
   #parameters can easily be printed by:
   #?field1=value1&field2=value2&field3=value3
-  #console.log($routeParams)
+  console.log($routeParams)
   $scope.filterSelection = {}
   $scope.filterSelection.memory = 0.5
   $scope.filterSelection.cpucores = 1
@@ -25,11 +25,6 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
   $scope.sliderNames = ["memory", "cpucores", "storage", "simultaneousjobs"]
 
   $scope.filterSelection["serviceSelections"]
-  #array for countrynames. Filled dynamically later
-  $scope.filterSelection.countrySelections = []
-
-  #array for servicenames. Filled dynamically later
-  $scope.filterSelection.serviceSelections = []
 
   $scope.filterSelection.supportSelections = [
     {name: 'Yes', selected: true},
@@ -50,6 +45,8 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
 
   FILES_API = config.apiUrl + '/files'
   SERVERS_API = config.apiUrl + '/servers'
+  MESSAGE_TEMPLATE_API = config.apiUrl + '/partials/cloud/templates/markerTemplate.html'
+
   $scope.legendWithUser =
     position: 'bottomleft'
     colors: ['#2981ca', '#00cb73', '#646464']
@@ -95,31 +92,87 @@ module.exports = ['$scope', '$routeParams', '$http', ($scope, $routeParams, $htt
       $scope.legend = $scope.legendWithUser
       transformUserPosition()) if navigator.geolocation
 
+          #slider-filter(title='Maximum simultaneous jobs', min=1, step=1, max=64, val='filterSelection.simultaneousjobs', unit='', class='maximum-sim-jobs')
+
   $scope.queryServers = ->
-    $http(method: 'GET', url: SERVERS_API)
+    $http(method: 'GET', url: '/partials/cloud/templates/markerTemplate.html')
       .success((data, status, headers, config) ->
-        $scope.allMarkers = transformMarkers(_.map(data.servers, (s) ->
-          title: s.title
-          memory: s.memory
-          cpucores: s.cpucores
-          storage: s.storage
-          simultaneousjobs: s.simultaneousjobs
-          country: s.location
-          services: s.databases
-          security: s.security
-          support: s.support
-          lat: s.coordinates.lat
-          lng: s.coordinates.lng
-          message: "<h3>" + s.title + "</h3>" + s.memory + 'Gb RAM<br/>' + s.cpucores + ' CPU cores<br/>' +
-            s.storage + 'Gb storage<br/><a href = \'' + s.hostname + '\'><button id=\'chooseButton\'>CHOOSE</button></a>'
-          icon: icons.inactive
-          hostname: s.hostname
+        $scope.markerHtml = data
+        $http(method: 'GET', url: SERVERS_API)
+          .success((data, status, headers, config) ->
+            $scope.allMarkers = transformMarkers(_.map(data.servers, (s) ->
+              title: s.title
+              memory: s.memory
+              cpucores: s.cpucores
+              storage: s.storage
+              simultaneousjobs: s.simultaneousjobs
+              country: s.location
+              services: s.databases
+              security: s.security
+              support: s.support
+              lat: s.coordinates.lat
+              lng: s.coordinates.lng
+              message: createMessage(s)
+              icon: icons.inactive
+              hostname: s.hostname
+              )
+            )
+            $scope.markers=$scope.allMarkers
+            $scope.filterSelection.countrySelections = collectCountries()
+            $scope.filterSelection.serviceSelections = collectServices()
           )
         )
-        $scope.markers=$scope.allMarkers
-        $scope.filterSelection.countrySelections = collectCountries()
-        $scope.filterSelection.serviceSelections = collectServices()
-      )
+
+  pattern = (text) -> "Text: #{text}"
+
+  createMessage = (s) ->
+    compiled = _.template $scope.markerHtml
+#    for key, value of s
+#      template({value:key})
+
+    tmp = compiled(s)
+    console.log tmp
+
+    return tmp
+
+#    popupTpl = document.createElement("div");
+#    popupTpl.setAttribute("ng-include", "/partials/cloud/templates/filter.html");
+#    tmp = $compile(popupTpl)(s)
+#    $compile(htmlcontent.contents())($scope)
+#    return "<div class='location-info'>
+#  <h3>"+scope.title+"</h3>
+#  <table class='main-filters'>
+#    <tr class='dark'>
+#      <td>RAM</td>
+#      <td class='align-right'>"+scope.memory+"</td>
+#    </tr>
+#    <tr>
+#      <td>CPU cores</td>
+#      <td class='align-right'>"+scope.cpucores+"</td>
+#    </tr>
+#    <tr class='dark'>
+#      <td>Storage</td>
+#      <td class='align-right'>"+scope.storage+"</td>
+#    </tr>
+#    <tr>
+#      <table class='secondary-filters'>
+#        <tr>
+#          <td>Max. simultaneous jobs<br/>"+scope.simultaneousjobs+"</td>
+#        </tr>
+#        <tr class='dark'>
+#          <td>Databases<br/>"+scope.databases+"</td>
+#        </tr>
+#        <tr>
+#          <td class='support-security'>"+scope.support+"<br/>"+scope.security+"</td>
+#        </tr>
+#      </table>
+#    </tr>
+#  </table><a href='"+scope.hostname+"'></a>
+#  <button id='chooseButton'>CHOOSE</button>
+#</div>
+#    "
+
+#    return ("<h3>" + s.title + "</h3>" + s.memory + 'Gb RAM<br/>' + s.cpucores + ' CPU cores<br/>' + s.storage + 'Gb storage<br/><a href = \'' + s.hostname + '\'><button id=\'chooseButton\'>CHOOSE</button></a>')
 
   collectCountries = ->
     countries = []
