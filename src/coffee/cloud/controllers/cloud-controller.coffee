@@ -127,13 +127,7 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
 
   createMessage = (s) ->
     compiled = _.template $scope.markerHtml
-#    for key, value of s
-#      template({value:key})
-
-    tmp = compiled(s)
-    console.log tmp
-
-    return tmp
+    compiled(s)
 
 #    popupTpl = document.createElement("div");
 #    popupTpl.setAttribute("ng-include", "/partials/cloud/templates/filter.html");
