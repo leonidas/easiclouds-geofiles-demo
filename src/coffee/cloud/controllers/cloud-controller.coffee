@@ -21,25 +21,16 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
   $scope.filterSelection.simultaneousjobs = 1
 
   #names of the checkboxselectionGroups
-  $scope.checkBoxNames = ["country", "support", "security"]
+  $scope.checkBoxNamesShowSelecteds = ["country"]
+  $scope.checkBoxNamesFilterSelecteds = ["services", "support", "security"]
+
   $scope.sliderNames = ["memory", "cpucores", "storage", "simultaneousjobs"]
 
-  $scope.filterSelection["serviceSelections"]
-
-  $scope.filterSelection.supportSelections = [
-    {name: 'Yes', selected: true},
-    {name: 'No',  selected: true}
-  ]
-
-  $scope.filterSelection.securitySelections = [
-    {name: 'Yes', selected: true},
-    {name: 'No',  selected: true}
-  ]
+  $scope.filterSelection["servicesSelections"]
 
   $scope.filterSelection.security = "Yes"
 
   $scope.$watch 'filterSelection', ((val) ->
-      #console.log $scope.allMarkers
       filterMarkers()
     ), true
 
@@ -118,8 +109,10 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
               )
             )
             $scope.markers=$scope.allMarkers
-            $scope.filterSelection.countrySelections = collectCountries()
-            $scope.filterSelection.serviceSelections = collectServices()
+            $scope.filterSelection.servicesSelections = collectArrays("services",false)
+            $scope.filterSelection.countrySelections = collectValues("country",true)
+            $scope.filterSelection.securitySelections = collectArrays("security",false)
+            $scope.filterSelection.supportSelections = collectArrays("support",false)
           )
         )
 
@@ -129,64 +122,24 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
     compiled = _.template $scope.markerHtml
     compiled(s)
 
-#    popupTpl = document.createElement("div");
-#    popupTpl.setAttribute("ng-include", "/partials/cloud/templates/filter.html");
-#    tmp = $compile(popupTpl)(s)
-#    $compile(htmlcontent.contents())($scope)
-#    return "<div class='location-info'>
-#  <h3>"+scope.title+"</h3>
-#  <table class='main-filters'>
-#    <tr class='dark'>
-#      <td>RAM</td>
-#      <td class='align-right'>"+scope.memory+"</td>
-#    </tr>
-#    <tr>
-#      <td>CPU cores</td>
-#      <td class='align-right'>"+scope.cpucores+"</td>
-#    </tr>
-#    <tr class='dark'>
-#      <td>Storage</td>
-#      <td class='align-right'>"+scope.storage+"</td>
-#    </tr>
-#    <tr>
-#      <table class='secondary-filters'>
-#        <tr>
-#          <td>Max. simultaneous jobs<br/>"+scope.simultaneousjobs+"</td>
-#        </tr>
-#        <tr class='dark'>
-#          <td>Databases<br/>"+scope.databases+"</td>
-#        </tr>
-#        <tr>
-#          <td class='support-security'>"+scope.support+"<br/>"+scope.security+"</td>
-#        </tr>
-#      </table>
-#    </tr>
-#  </table><a href='"+scope.hostname+"'></a>
-#  <button id='chooseButton'>CHOOSE</button>
-#</div>
-#    "
+  collectValues = (filter,makeSelected) ->
+    values = []
+    for index, marker of $scope.allMarkers
+      if marker[filter].length>0
+        values.push({name: marker[filter],  selected: makeSelected})
+    return _.uniq(values, "name")
 
-#    return ("<h3>" + s.title + "</h3>" + s.memory + 'Gb RAM<br/>' + s.cpucores + ' CPU cores<br/>' + s.storage + 'Gb storage<br/><a href = \'' + s.hostname + '\'><button id=\'chooseButton\'>CHOOSE</button></a>')
-
-  collectCountries = ->
-    countries = []
+  collectArrays = (filter,makeSelected) ->
+    values = []
     for key, marker of $scope.allMarkers
-      countries.push({name: marker.country,  selected: true})
-    return _.uniq(countries, "name")
-
-  collectServices = ->
-    services = []
-    for key, marker of $scope.allMarkers
-      for key, service of marker.services
-        services.push({name: service,  selected: false})
-    return _.uniq(services, "name")
-
-  findSelections = (selections) -> _.map(_.where(selections, {selected: true}), "name")
+      for key, name of marker[filter]
+        values.push({name: name,  selected: makeSelected})
+    return _.uniq(values, "name")
 
   #filtering markers
   filterMarkers = ->
     $scope.markers = {}
-    selectedServices = findSelections($scope.filterSelection.serviceSelections)
+    selectedServices = findSelections($scope.filterSelection.servicesSelections)
     for key, marker of $scope.allMarkers
       if filterBySliders(marker) and filterByCheckBoxes(marker,selectedServices)
         $scope.markers[key] = marker
@@ -198,17 +151,26 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
 
   #filters based on checkboxes
   filterByCheckBoxes = (marker,selectedServices) ->
-    filterServices(marker.services, selectedServices) and _.every($scope.checkBoxNames, (value, index) ->
-      filterOthers(marker[value], value+"Selections"))
+    checkBoxFilterSelecteds(marker) and checkBoxShowSelecteds(marker)
 
-  #filter one checkbox (another case :()
-  filterServices = (values, selected) ->
-    _.difference(selected, values).length==0
+  #filters markers pased on selections (like if service is selected, it has to be found from marker)
+  checkBoxFilterSelecteds= (marker) ->
+    _.every($scope.checkBoxNamesFilterSelecteds, (value) ->
+      selectedServices = findSelections($scope.filterSelection[value+"Selections"])
+      console.log("")
+      console.log(value)
+      console.log(marker[value])
+      console.log(selectedServices)
+      _.difference(selectedServices,marker[value]).length==0
+    )
+  #shows markers based on selections (like if country is selected, then it is shown)
+  checkBoxShowSelecteds= (marker) ->
+    _.every($scope.checkBoxNamesShowSelecteds, (value, index) ->
+      selecteds = findSelections($scope.filterSelection[value+"Selections"])
+      _.contains(selecteds, marker[value]))
 
-  #filter one checkbox
-  filterOthers = (value, type) ->
-    selecteds = findSelections($scope.filterSelection[type])
-    _.contains(selecteds, value)
+  #returns selections that are set as true
+  findSelections = (selections) -> _.map(_.where(selections, {selected: true}), "name")
 
   $scope.queryServers()
   $scope.getUserLocation()
