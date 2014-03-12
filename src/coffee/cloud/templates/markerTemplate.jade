@@ -1,22 +1,22 @@
 div.location-info
-  h3 <%= title %>
+  //h3 <%= title %>
   img(id='logoImage' src!='<%= logourl %>')
   table.main-filters(cellspacing='0' cellpadding='0')
+    tr
+      td Number of Instances
+      td.align-right <%= cpucores %>
     tr.dark
       td RAM
       td.align-right <%= memory %>Gb
     tr
-      td CPU cores
-      td.align-right <%= cpucores %>
-    tr.dark
       td Storage
       td.align-right <%= storage %>Gb
     tr
       table.secondary-filters
-        tr
-          td Max. simultaneous jobs
-            br
-            |<%= simultaneousjobs %>
+        //tr
+          //td Max. simultaneous jobs
+            //br
+            //|<%= simultaneousjobs %>
         tr.dark
           td Databases
             br

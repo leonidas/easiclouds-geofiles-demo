@@ -29,12 +29,18 @@ compileCoffee = (debug = true) ->
       'leaflet':
         path: './vendor/leaflet-dist/leaflet.js'
         exports: 'L'
+#      'leaflet-google':
+#        path: 'http://matchingnotes.com/javascripts/leaflet-google.js'
+#        exports: 'G'
+#          'leaflet': 'L'
       'angular-leaflet-directive':
         path: './vendor/angular-leaflet-directive/dist/angular-leaflet-directive.js'
         exports: 'angular'
         depends:
           'angular': 'angular'
           'leaflet': 'L'
+#          'leaflet-google': 'G'
+
 
   bundle = gulp
     .src('./src/coffee/main.coffee', read: false)

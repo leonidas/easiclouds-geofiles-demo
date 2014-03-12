@@ -138,7 +138,7 @@
     },
     {
       "title":"ORGA SYSTEMS GMBH",
-      "logourl":"http://upload.wikimedia.org/wikipedia/commons/0/09/Logo_with_claim.gif",
+      "logourl":"http://www.newsmax.de/bilder/130516_28878.jpg",
       "address":"Am Hoppenhof 33, 33104 Paderborn, Germany",
       "memory":4,
       "cpucores":1,
@@ -223,7 +223,7 @@
     },
     {
       "title":"JOHANNES GUTENBERG-UNIVERSITÄT MAINZ",
-      "logourl":"",
+      "logourl":"http://upload.wikimedia.org/wikipedia/commons/8/8a/Johannes_Gutenberg-Universität_Mainz_logo.svg",
       "address":"Saarstr. 21, 55099 Mainz, Germany",
       "memory":4,
       "cpucores":1,
@@ -240,7 +240,7 @@
     },
     {
       "title":"FRAUNHOFER",
-      "logourl":"",
+      "logourl":"http://upload.wikimedia.org/wikipedia/de/6/6a/Fraunhofer-IESE_logo.svg",
       "address":"Hansastraße 27 c 80686 Munich, Germany",
       "memory":4,
       "cpucores":1,
@@ -308,7 +308,7 @@
     },
     {
       "title":"NILE UNIVERSITY",
-      "logourl":"",
+      "logourl":"http://upload.wikimedia.org/wikipedia/commons/7/78/Nile_University_Logo.png",
       "address":"Smart Village - B2, Km 28, Cairo Alex Deser Road, 12677, Egypt",
       "memory":4,
       "cpucores":1,
@@ -325,7 +325,7 @@
     },
     {
       "title":"HEXAGLOBE",
-      "logourl":"",
+      "logourl":"http://www.hexaglobe.com/templates/ja_antares/images/logo.gif",
       "address":"1 Rue Méhul, 75002, Paris",
       "memory":4,
       "cpucores":1,
@@ -342,7 +342,7 @@
     },
     {
       "title":"UNIVERSITY HELSINKI",
-      "logourl":"",
+      "logourl":"http://upload.wikimedia.org/wikipedia/en/8/84/University_of_Helsinki.svg",
       "address":"Hällströmin katu 2 b, P.O. Box 68, 00014 University of Helsinki, Finland",
       "memory":32,
       "cpucores":64,
@@ -359,7 +359,7 @@
     },
     {
       "title":"TAMPERE UNIVERSITY OF TECHNOLOGY",
-      "logourl":"",
+      "logourl":"http://upload.wikimedia.org/wikipedia/en/d/df/Tampere_University_of_Technology_logo.png",
       "address":"korkeakoulunkatu 1, 33720, tampere",
       "memory":8,
       "cpucores":4,
@@ -376,7 +376,7 @@
     },
     {
       "title":"LEONIDAS OY",
-      "logourl":"",
+      "logourl":"/images/leonidas-logo.jpg",
       "address":"Hämeenkatu 16 A 11, 33200 Tampere Finland",
       "memory":32,
       "cpucores":64,
@@ -393,7 +393,7 @@
     },
     {
       "title":"GEARSHIFTGROUP OY",
-      "logourl":"",
+      "logourl":"http://www.gearshiftgroup.com/wp-content/uploads/2013/06/cropped-GSG_logo_transparent1.png",
       "address":"Kaisaniemenkatu 1 C 110, 00100 Helsinki, Finland",
       "memory":4,
       "cpucores":1,
@@ -411,7 +411,7 @@
 
     {
       "title":"F-Secure",
-      "logourl":"",
+      "logourl":"http://upload.wikimedia.org/wikipedia/en/1/1e/F-Secure-logo.PNG",
       "address": "Tammasaarenkatu 7, PL 24, 00181 Helsinki",
       "memory":16,
       "cpucores":8,
@@ -428,7 +428,7 @@
     },
     {
       "title":"INNOFACTOR",
-      "logourl":"",
+      "logourl":"http://upload.wikimedia.org/wikipedia/commons/6/69/Innofactor_Logo.jpg",
       "address":"Keilaranta 19, 500, Espoo, Finland",
       "memory":4,
       "cpucores":1,
@@ -445,7 +445,7 @@
     },
     {
       "title":"ETRI",
-      "logourl":"",
+      "logourl":"http://www.serverside.co.kr/images/logo/etri_logo1.gif",
       "address":"218 Gajeong-ro, Yuseong-gu, Daejeon, 305-700, Korea",
       "memory":4,
       "cpucores":1,
@@ -462,7 +462,7 @@
     },
     {
       "title":"SEOUL NATIONAL UNIVERSITY",
-      "logourl":"",
+      "logourl":"http://upload.wikimedia.org/wikipedia/en/6/6a/Seoul_national_university_emblem.png",
       "address":"599 Gwanak-Ro, Gwanak-Gu, Seoul, South Korea",
       "memory":4,
       "cpucores":1,
@@ -479,7 +479,7 @@
     },
     {
       "title":"INNOGRID",
-      "logourl":"",
+      "logourl":"http://www.innogrid.com/images/header/logo.png",
       "address":"11F 144-25, Samsung-Dong, Gangnam-gu, Seoul, 135-877, R.O.K, South Korea",
       "memory":4,
       "cpucores":1,
@@ -496,7 +496,7 @@
     },
     {
       "title":"IT UNIVERSITY OF COPENHAGEN",
-      "logourl":"",
+      "logourl":"http://upload.wikimedia.org/wikipedia/en/d/d4/IT_University_of_Copenhagen.jpg",
       "address":"Rued Langgaards, Vej 7, Dk-2300, Copenhagen, Denmark",
       "memory":4,
       "cpucores":1,
