@@ -53,7 +53,7 @@
     },
     {
       "title":"INSTITUT MINES TELECOM",
-      "logourl":"http://upload.wikimedia.org/wikipedia/en/f/f7/Institut_Mines-T%C3%A9l%C3%A9com.svg",
+      "logourl":"/images/INSTITUT-MINES-TELECOM_Logo_RVB.png",
       "address":"46 rue Barrault 75634 Paris Cedex 13, France",
       "memory":24,
       "cpucores":48,
@@ -70,7 +70,7 @@
     },
     {
       "title":"NEXEDI",
-      "logourl":"http://www.fil.univ-lille1.fr/~decomite/ue/ResumesStages/2012/resumes/cavelier/images/nexedi_logo.png",
+      "logourl":"http://www.payzen.eu/wp-content/uploads/2013/05/NXD-Official.Logo_.ps_.png",
       "address": "270 boulevard Clémenceau 59700 Marcq en Baroeul, France",
       "memory":0.5,
       "cpucores":1,
@@ -87,7 +87,7 @@
     },
     {
       "title":"KOLOR",
-      "logourl":"https://pbs.twimg.com/profile_images/1341500962/logo-kolor-500.png",
+      "logourl":"http://thecareyadventures.com/blog/wp-content/uploads/2010/07/logo-kolor-transparency-281x300.png",
       "address":"387, avenue de la Breisse, 73190 Challes les Eaux, France",
       "memory":10,
       "cpucores":10,
@@ -104,7 +104,7 @@
     },
     {
       "title":"UNIVERSITE D’EVRY VAL D’ESSONNE",
-      "logourl":"http://upload.wikimedia.org/wikipedia/en/5/55/University_of_%C3%89vry_Val_d'Essonne_(logo).png",
+      "logourl":"http://lap.maths.univ-evry.fr/logo_univ.png",
       "address":"bd François Miterrand 91025 Evry Cedex, France",
       "memory": 4,
       "cpucores": 1,
@@ -138,7 +138,7 @@
     },
     {
       "title":"ORGA SYSTEMS GMBH",
-      "logourl":"http://www.newsmax.de/bilder/130516_28878.jpg",
+      "logourl":"http://www.utilitybusiness-platform.com/wp-content/uploads/2013/07/Orga.png",
       "address":"Am Hoppenhof 33, 33104 Paderborn, Germany",
       "memory":4,
       "cpucores":1,
@@ -189,7 +189,7 @@
     },
     {
       "title":"CLEVERSCALE",
-      "logourl":"http://d8u1nmttd4enu.cloudfront.net/designs/cloud-computing-logo-logo-design-99designs_4981692~0ccf45d7c3be0dfb273ec07c731e63e998a8c44b_largecrop",
+      "logourl":"http://www.soilly.com/files/gimgs/41_logocleverscale02.gif",
       "address":"11 Rue Léon Jouhaux - 75010 PARIS - FRANCE",
       "memory":4,
       "cpucores":1,
@@ -223,7 +223,7 @@
     },
     {
       "title":"JOHANNES GUTENBERG-UNIVERSITÄT MAINZ",
-      "logourl":"http://upload.wikimedia.org/wikipedia/commons/8/8a/Johannes_Gutenberg-Universität_Mainz_logo.svg",
+      "logourl":"http://upload.wikimedia.org/wikipedia/commons/8/8a/Johannes_Gutenberg-Universit%C3%A4t_Mainz_logo.svg",
       "address":"Saarstr. 21, 55099 Mainz, Germany",
       "memory":4,
       "cpucores":1,
@@ -291,7 +291,7 @@
     },
     {
       "title":"CAIRO UNIVERSITY",
-      "logourl":"https://phononics2011.org/conf/public/conferences/1/CU.jpg",
+      "logourl":"http://innovate.cu.edu.eg:8080/Images/logos/CU_logo.png",
       "address":"Ahmed Zewell, Giza, Egypt",
       "memory":4,
       "cpucores":1,
@@ -308,7 +308,7 @@
     },
     {
       "title":"NILE UNIVERSITY",
-      "logourl":"http://upload.wikimedia.org/wikipedia/commons/7/78/Nile_University_Logo.png",
+      "logourl":"http://brandurself.org/home/wp-content/uploads/2013/04/NileUniversityLogo.png",
       "address":"Smart Village - B2, Km 28, Cairo Alex Deser Road, 12677, Egypt",
       "memory":4,
       "cpucores":1,
@@ -325,7 +325,7 @@
     },
     {
       "title":"HEXAGLOBE",
-      "logourl":"http://www.hexaglobe.com/templates/ja_antares/images/logo.gif",
+      "logourl":"/images/hexaglobe.png",
       "address":"1 Rue Méhul, 75002, Paris",
       "memory":4,
       "cpucores":1,
@@ -376,7 +376,7 @@
     },
     {
       "title":"LEONIDAS OY",
-      "logourl":"/images/leonidas-logo.jpg",
+      "logourl":"/images/Leonidas_logo-transparent.png",
       "address":"Hämeenkatu 16 A 11, 33200 Tampere Finland",
       "memory":32,
       "cpucores":64,
@@ -411,7 +411,7 @@
 
     {
       "title":"F-Secure",
-      "logourl":"http://upload.wikimedia.org/wikipedia/en/1/1e/F-Secure-logo.PNG",
+      "logourl":"http://upload.wikimedia.org/wikipedia/fi/7/74/F-Securen_logo.svg",
       "address": "Tammasaarenkatu 7, PL 24, 00181 Helsinki",
       "memory":16,
       "cpucores":8,
@@ -428,7 +428,7 @@
     },
     {
       "title":"INNOFACTOR",
-      "logourl":"http://upload.wikimedia.org/wikipedia/commons/6/69/Innofactor_Logo.jpg",
+      "logourl":"/images/43454_Innofactor_logo_RGB_transparent.png",
       "address":"Keilaranta 19, 500, Espoo, Finland",
       "memory":4,
       "cpucores":1,
@@ -445,7 +445,7 @@
     },
     {
       "title":"ETRI",
-      "logourl":"http://www.serverside.co.kr/images/logo/etri_logo1.gif",
+      "logourl":"http://kowon.dongseo.ac.kr/~lbg/seminar/etri.png",
       "address":"218 Gajeong-ro, Yuseong-gu, Daejeon, 305-700, Korea",
       "memory":4,
       "cpucores":1,
@@ -496,7 +496,7 @@
     },
     {
       "title":"IT UNIVERSITY OF COPENHAGEN",
-      "logourl":"http://upload.wikimedia.org/wikipedia/en/d/d4/IT_University_of_Copenhagen.jpg",
+      "logourl":"http://academicpositions.eu/content/uploads/2010/05/ku_co_logo_cmyk-copy.png",
       "address":"Rued Langgaards, Vej 7, Dk-2300, Copenhagen, Denmark",
       "memory":4,
       "cpucores":1,
