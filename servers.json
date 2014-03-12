@@ -2,6 +2,7 @@
   "servers": [
     {
       "title":"THALES COMMUNI-<br>CATIONS & SECURITY SAS",
+      "logourl":"http://upload.wikimedia.org/wikipedia/commons/4/43/Thales.svg",
       "address":"4, avenue des Louvresses, 92 230 Gennevilliers, France",
       "memory":32,
       "cpucores":1,
@@ -9,8 +10,7 @@
       "simultaneousjobs":1,
       "databases":["postgreSQL","MongoDB","Cassandra"],
       "location":"France",
-      "support":["24/7 support"],
-      "security":[],
+      "services":["24/7 support"],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 48.943538,
@@ -19,6 +19,7 @@
     },
     {
       "title":"THALES SERVICES SAS",
+      "logourl":"http://upload.wikimedia.org/wikipedia/commons/4/43/Thales.svg",
       "address":"20 rue Grange Dame Rose, CS 90 519, 78141 Velizy Villacoublay, France",
       "memory":10,
       "cpucores":64,
@@ -26,8 +27,7 @@
       "simultaneousjobs":10,
       "databases":["MySQL","Cassandra"],
       "location":"France",
-      "support":["24/7 support"],
-      "security":[],
+      "services":["24/7 support"],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 48.941727,
@@ -36,6 +36,7 @@
     },
     {
       "title":"BULL SAS",
+      "logourl":"http://upload.wikimedia.org/wikipedia/de/a/a6/Bull_Computer_logo.svg",
       "address":"Rue Jean Jaurès 78340 Les Clayes sous Bois, RCS Versailles 642 058 739, France",
       "memory":4,
       "cpucores":1,
@@ -43,8 +44,7 @@
       "simultaneousjobs":2,
       "databases":[],
       "location":"France",
-      "support":[],
-      "security":[],
+      "services":[],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 48.825476,
@@ -53,6 +53,7 @@
     },
     {
       "title":"INSTITUT MINES TELECOM",
+      "logourl":"http://upload.wikimedia.org/wikipedia/en/f/f7/Institut_Mines-T%C3%A9l%C3%A9com.svg",
       "address":"46 rue Barrault 75634 Paris Cedex 13, France",
       "memory":24,
       "cpucores":48,
@@ -60,8 +61,7 @@
       "simultaneousjobs":64,
       "databases":["MySQL","postgreSQL","MongoDB","Cassandra"],
       "location":"France",
-      "support":["24/7 support"],
-      "security":[],
+      "services":["24/7 support"],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 48.826294,
@@ -70,6 +70,7 @@
     },
     {
       "title":"NEXEDI",
+      "logourl":"http://www.fil.univ-lille1.fr/~decomite/ue/ResumesStages/2012/resumes/cavelier/images/nexedi_logo.png",
       "address": "270 boulevard Clémenceau 59700 Marcq en Baroeul, France",
       "memory":0.5,
       "cpucores":1,
@@ -77,8 +78,7 @@
       "simultaneousjobs":1,
       "databases":["MySQL","postgreSQL","Cassandra","MongoDB"],
       "location":"France",
-      "support":["24/7 support"],
-      "security":[],
+      "services":["24/7 support"],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 50.660260,
@@ -87,6 +87,7 @@
     },
     {
       "title":"KOLOR",
+      "logourl":"https://pbs.twimg.com/profile_images/1341500962/logo-kolor-500.png",
       "address":"387, avenue de la Breisse, 73190 Challes les Eaux, France",
       "memory":10,
       "cpucores":10,
@@ -94,8 +95,7 @@
       "simultaneousjobs":10,
       "databases":["MySQL","postgreSQL","Cassandra"],
       "location":"France",
-      "support":["24/7 support"],
-      "security":[],
+      "services":["24/7 support"],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 45.555255,
@@ -104,6 +104,7 @@
     },
     {
       "title":"UNIVERSITE D’EVRY VAL D’ESSONNE",
+      "logourl":"http://upload.wikimedia.org/wikipedia/en/5/55/University_of_%C3%89vry_Val_d'Essonne_(logo).png",
       "address":"bd François Miterrand 91025 Evry Cedex, France",
       "memory": 4,
       "cpucores": 1,
@@ -111,8 +112,7 @@
       "simultaneousjobs":2,
       "databases":["MySQL","postgreSQL"],
       "location":"France",
-      "support":[],
-      "security":[],
+      "services":[],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 48.62488,
@@ -121,6 +121,7 @@
     },
     {
       "title":"ATOS IT SOLUTIONS AND SERVICES GMBH",
+      "logourl":"http://upload.wikimedia.org/wikipedia/en/thumb/0/01/Atos.svg/200px-Atos.svg.png",
       "address":"Otto-Hahn-Ring 6, 81739 Munich, Germany",
       "memory":4,
       "cpucores":1,
@@ -128,8 +129,7 @@
       "simultaneousjobs":2,
       "databases":["MySQL"],
       "location":"Germany",
-      "support":[],
-      "security":[],
+      "services":[],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 48.091525,
@@ -138,6 +138,7 @@
     },
     {
       "title":"ORGA SYSTEMS GMBH",
+      "logourl":"http://upload.wikimedia.org/wikipedia/commons/0/09/Logo_with_claim.gif",
       "address":"Am Hoppenhof 33, 33104 Paderborn, Germany",
       "memory":4,
       "cpucores":1,
@@ -145,8 +146,7 @@
       "simultaneousjobs":2,
       "databases":[],
       "location":"Germany",
-      "support":["24/7 support"],
-      "security":[],
+      "services":["24/7 support"],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 51.732030,
@@ -155,6 +155,7 @@
     },
     {
       "title":"MATERNA GMBH",
+      "logourl":"http://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Materna_Logo.svg/567px-Materna_Logo.svg.png",
       "address":"Vosskuhle 37, 44141 Dortmund, GERMANY",
       "memory":4,
       "cpucores":1,
@@ -162,8 +163,7 @@
       "simultaneousjobs":2,
       "databases":[],
       "location":"Germany",
-      "support":[],
-      "security":["Security scanning"],
+      "services":["Security scanning"],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 51.504342,
@@ -172,6 +172,7 @@
     },
     {
       "title":"PROSYST SOFTWARE GMBH",
+      "logourl":"http://upload.wikimedia.org/wikipedia/en/4/47/Prosyst_logo.png",
       "address":"Aachener Str. 222, 50931 Cologne, Germany",
       "memory":4,
       "cpucores":1,
@@ -179,8 +180,7 @@
       "simultaneousjobs":2,
       "databases":[],
       "location":"Germany",
-      "support":[],
-      "security":[],
+      "services":[],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 50.937627,
@@ -189,6 +189,7 @@
     },
     {
       "title":"CLEVERSCALE",
+      "logourl":"http://d8u1nmttd4enu.cloudfront.net/designs/cloud-computing-logo-logo-design-99designs_4981692~0ccf45d7c3be0dfb273ec07c731e63e998a8c44b_largecrop",
       "address":"11 Rue Léon Jouhaux - 75010 PARIS - FRANCE",
       "memory":4,
       "cpucores":1,
@@ -196,8 +197,7 @@
       "simultaneousjobs":2,
       "databases":[],
       "location":"France",
-      "support":[],
-      "security":[],
+      "services":[],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 48.869160,
@@ -206,6 +206,7 @@
     },
     {
       "title":"TECHNISCHE UNIVERSITAET BERLIN / DAI LABOR",
+      "logourl":"http://www.fidis.net/uploads/pics/logo_berlin_dai.jpg",
       "address":"Strasse des 17. Juni 135, 10623 Berlin, Germany",
       "memory":4,
       "cpucores":1,
@@ -213,8 +214,7 @@
       "simultaneousjobs":2,
       "databases":[],
       "location":"Germany",
-      "support":[],
-      "security":[],
+      "services":[],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 52.512181,
@@ -223,6 +223,7 @@
     },
     {
       "title":"JOHANNES GUTENBERG-UNIVERSITÄT MAINZ",
+      "logourl":"",
       "address":"Saarstr. 21, 55099 Mainz, Germany",
       "memory":4,
       "cpucores":1,
@@ -230,8 +231,7 @@
       "simultaneousjobs":2,
       "databases":[],
       "location":"Germany",
-      "support":[],
-      "security":[],
+      "services":[],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 49.994940,
@@ -240,6 +240,7 @@
     },
     {
       "title":"FRAUNHOFER",
+      "logourl":"",
       "address":"Hansastraße 27 c 80686 Munich, Germany",
       "memory":4,
       "cpucores":1,
@@ -247,8 +248,7 @@
       "simultaneousjobs":2,
       "databases":[],
       "location":"Germany",
-      "support":[],
-      "security":[],
+      "services":[],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 48.132350,
@@ -257,6 +257,7 @@
     },
     {
       "title":"CHARITE UNIVERSITY MEDICINE BERLIN",
+      "logourl":"http://www.teleread.com/wp-content/uploads/2013/02/logo-johannes-gutenberg-universitaet-mainz.jpg",
       "address":"Dr. med. Gerrit Fleige, KaufmännischeLeitung der Fakultät, Charite Campus Mitte, Chariteplatz, 10117 Berlin",
       "memory":4,
       "cpucores":1,
@@ -264,8 +265,7 @@
       "simultaneousjobs":2,
       "databases":[],
       "location":"Germany",
-      "support":[],
-      "security":[],
+      "services":[],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 52.51551,
@@ -274,6 +274,7 @@
     },
     {
       "title":"ITWORX EGYPT S.A.E",
+      "logourl":"http://www.itworx.com/NR/images/ITWorx_logo.png",
       "address":"Nasr City Public Free Zone, Area 7B, Block J, Cairo, Egypt",
       "memory":4,
       "cpucores":1,
@@ -281,8 +282,7 @@
       "simultaneousjobs":2,
       "databases":[],
       "location":"Egypt",
-      "support":[],
-      "security":[],
+      "services":[],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 30.04442,
@@ -291,6 +291,7 @@
     },
     {
       "title":"CAIRO UNIVERSITY",
+      "logourl":"https://phononics2011.org/conf/public/conferences/1/CU.jpg",
       "address":"Ahmed Zewell, Giza, Egypt",
       "memory":4,
       "cpucores":1,
@@ -298,8 +299,7 @@
       "simultaneousjobs":2,
       "databases":[],
       "location":"Egypt",
-      "support":[],
-      "security":[],
+      "services":[],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 30.020267,
@@ -308,6 +308,7 @@
     },
     {
       "title":"NILE UNIVERSITY",
+      "logourl":"",
       "address":"Smart Village - B2, Km 28, Cairo Alex Deser Road, 12677, Egypt",
       "memory":4,
       "cpucores":1,
@@ -315,8 +316,7 @@
       "simultaneousjobs":2,
       "databases":[],
       "location":"Egypt",
-      "support":[],
-      "security":[],
+      "services":[],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 30.077016,
@@ -325,6 +325,7 @@
     },
     {
       "title":"HEXAGLOBE",
+      "logourl":"",
       "address":"1 Rue Méhul, 75002, Paris",
       "memory":4,
       "cpucores":1,
@@ -332,8 +333,7 @@
       "simultaneousjobs":2,
       "databases":[],
       "location":"France",
-      "support":[],
-      "security":[],
+      "services":[],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 48.867540,
@@ -342,6 +342,7 @@
     },
     {
       "title":"UNIVERSITY HELSINKI",
+      "logourl":"",
       "address":"Hällströmin katu 2 b, P.O. Box 68, 00014 University of Helsinki, Finland",
       "memory":32,
       "cpucores":64,
@@ -349,8 +350,7 @@
       "simultaneousjobs":48,
       "databases":["MongoDB","Cassandra"],
       "location":"Finland",
-      "support":[],
-      "security":[],
+      "services":[],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 60.172635,
@@ -359,6 +359,7 @@
     },
     {
       "title":"TAMPERE UNIVERSITY OF TECHNOLOGY",
+      "logourl":"",
       "address":"korkeakoulunkatu 1, 33720, tampere",
       "memory":8,
       "cpucores":4,
@@ -366,8 +367,7 @@
       "simultaneousjobs":12,
       "databases":[],
       "location":"Finland",
-      "support":[],
-      "security":[],
+      "services":[],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 61.449137,
@@ -376,6 +376,7 @@
     },
     {
       "title":"LEONIDAS OY",
+      "logourl":"",
       "address":"Hämeenkatu 16 A 11, 33200 Tampere Finland",
       "memory":32,
       "cpucores":64,
@@ -383,8 +384,7 @@
       "simultaneousjobs":48,
       "databases":["MySQL","postgreSQL","Cassandra","MongoDB"],
       "location":"Finland",
-      "support":["24/7 support"],
-      "security":["Security scanning"],
+      "services":["24/7 support","Security scanning"],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 61.497709,
@@ -393,6 +393,7 @@
     },
     {
       "title":"GEARSHIFTGROUP OY",
+      "logourl":"",
       "address":"Kaisaniemenkatu 1 C 110, 00100 Helsinki, Finland",
       "memory":4,
       "cpucores":1,
@@ -400,8 +401,7 @@
       "simultaneousjobs":2,
       "databases":[],
       "location":"Finland",
-      "support":[],
-      "security":[],
+      "services":[],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 60.172667,
@@ -411,6 +411,7 @@
 
     {
       "title":"F-Secure",
+      "logourl":"",
       "address": "Tammasaarenkatu 7, PL 24, 00181 Helsinki",
       "memory":16,
       "cpucores":8,
@@ -418,8 +419,7 @@
       "simultaneousjobs":"32",
       "databases":["MySQL","postgreSQL"],
       "location":"Finland",
-      "support":[],
-      "security":["Security scanning"],
+      "services":["Security scanning"],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 60.161575,
@@ -428,6 +428,7 @@
     },
     {
       "title":"INNOFACTOR",
+      "logourl":"",
       "address":"Keilaranta 19, 500, Espoo, Finland",
       "memory":4,
       "cpucores":1,
@@ -435,8 +436,7 @@
       "simultaneousjobs":2,
       "databases":[],
       "location":"Finland",
-      "support":[],
-      "security":[],
+      "services":[],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 60.179187,
@@ -445,6 +445,7 @@
     },
     {
       "title":"ETRI",
+      "logourl":"",
       "address":"218 Gajeong-ro, Yuseong-gu, Daejeon, 305-700, Korea",
       "memory":4,
       "cpucores":1,
@@ -452,8 +453,7 @@
       "simultaneousjobs":2,
       "databases":[],
       "location":"South Korea",
-      "support":[],
-      "security":[],
+      "services":[],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 36.381771,
@@ -462,6 +462,7 @@
     },
     {
       "title":"SEOUL NATIONAL UNIVERSITY",
+      "logourl":"",
       "address":"599 Gwanak-Ro, Gwanak-Gu, Seoul, South Korea",
       "memory":4,
       "cpucores":1,
@@ -469,8 +470,7 @@
       "simultaneousjobs":2,
       "databases":[],
       "location":"South Korea",
-      "support":[],
-      "security":[],
+      "services":[],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 37.481435,
@@ -479,6 +479,7 @@
     },
     {
       "title":"INNOGRID",
+      "logourl":"",
       "address":"11F 144-25, Samsung-Dong, Gangnam-gu, Seoul, 135-877, R.O.K, South Korea",
       "memory":4,
       "cpucores":1,
@@ -486,8 +487,7 @@
       "simultaneousjobs":2,
       "databases":[],
       "location":"South Korea",
-      "support":["24/7 support"],
-      "security":[],
+      "services":["24/7 support"],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 37.488472,
@@ -496,6 +496,7 @@
     },
     {
       "title":"IT UNIVERSITY OF COPENHAGEN",
+      "logourl":"",
       "address":"Rued Langgaards, Vej 7, Dk-2300, Copenhagen, Denmark",
       "memory":4,
       "cpucores":1,
@@ -503,8 +504,7 @@
       "simultaneousjobs":2,
       "databases":[],
       "location":"Denmark",
-      "support":[],
-      "security":["Security scanning"],
+      "services":["Security scanning"],
       "hostname": "http://www.google.com",
       "coordinates": {
         "lat": 55.659890,

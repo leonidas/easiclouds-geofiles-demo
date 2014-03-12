@@ -22,13 +22,9 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
 
   #names of the checkboxselectionGroups
   $scope.checkBoxNamesShowSelecteds = ["country"]
-  $scope.checkBoxNamesFilterSelecteds = ["services", "support", "security"]
+  $scope.checkBoxNamesFilterSelecteds = ["databases", "services"]
 
   $scope.sliderNames = ["memory", "cpucores", "storage", "simultaneousjobs"]
-
-  $scope.filterSelection["servicesSelections"]
-
-  $scope.filterSelection.security = "Yes"
 
   $scope.$watch 'filterSelection', ((val) ->
       filterMarkers()
@@ -93,14 +89,14 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
           .success((data, status, headers, config) ->
             $scope.allMarkers = transformMarkers(_.map(data.servers, (s) ->
               title: s.title
+              logourl: s.logourl
               memory: s.memory
               cpucores: s.cpucores
               storage: s.storage
               simultaneousjobs: s.simultaneousjobs
               country: s.location
-              services: s.databases
-              security: s.security
-              support: s.support
+              databases: s.databases
+              services: s.services
               lat: s.coordinates.lat
               lng: s.coordinates.lng
               message: createMessage(s)
@@ -109,14 +105,11 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
               )
             )
             $scope.markers=$scope.allMarkers
-            $scope.filterSelection.servicesSelections = collectArrays("services",false)
             $scope.filterSelection.countrySelections = collectValues("country",true)
-            $scope.filterSelection.securitySelections = collectArrays("security",false)
-            $scope.filterSelection.supportSelections = collectArrays("support",false)
+            $scope.filterSelection.databasesSelections = collectArrays("databases",false)
+            $scope.filterSelection.servicesSelections = collectArrays("services",false)
           )
         )
-
-  pattern = (text) -> "Text: #{text}"
 
   createMessage = (s) ->
     compiled = _.template $scope.markerHtml
@@ -127,6 +120,7 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
     for index, marker of $scope.allMarkers
       if marker[filter].length>0
         values.push({name: marker[filter],  selected: makeSelected})
+    console.log values
     return _.uniq(values, "name")
 
   collectArrays = (filter,makeSelected) ->
@@ -139,9 +133,8 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
   #filtering markers
   filterMarkers = ->
     $scope.markers = {}
-    selectedServices = findSelections($scope.filterSelection.servicesSelections)
     for key, marker of $scope.allMarkers
-      if filterBySliders(marker) and filterByCheckBoxes(marker,selectedServices)
+      if filterBySliders(marker) and filterByCheckBoxes(marker)
         $scope.markers[key] = marker
 
   #filters based on slidervalues
@@ -150,18 +143,14 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
       marker[value]>=$scope.filterSelection[value])
 
   #filters based on checkboxes
-  filterByCheckBoxes = (marker,selectedServices) ->
+  filterByCheckBoxes = (marker) ->
     checkBoxFilterSelecteds(marker) and checkBoxShowSelecteds(marker)
 
   #filters markers pased on selections (like if service is selected, it has to be found from marker)
   checkBoxFilterSelecteds= (marker) ->
     _.every($scope.checkBoxNamesFilterSelecteds, (value) ->
-      selectedServices = findSelections($scope.filterSelection[value+"Selections"])
-      console.log("")
-      console.log(value)
-      console.log(marker[value])
-      console.log(selectedServices)
-      _.difference(selectedServices,marker[value]).length==0
+      selected = findSelections($scope.filterSelection[value+"Selections"])
+      _.difference(selected,marker[value]).length==0
     )
   #shows markers based on selections (like if country is selected, then it is shown)
   checkBoxShowSelecteds= (marker) ->

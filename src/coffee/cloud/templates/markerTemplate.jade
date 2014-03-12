@@ -1,5 +1,6 @@
 div.location-info
   h3 <%= title %>
+  img(id='logoImage' src!='<%= logourl %>')
   table.main-filters(cellspacing='0' cellpadding='0')
     tr.dark
       td RAM
@@ -21,8 +22,8 @@ div.location-info
             br
             |<%= databases %>
         tr
-          td.support-security <%= support %>
+          td.services Services
             br
-            |<%= security %>
-  a(href='<%= hostname %>')
-  button(id='chooseButton') CHOOSE
+            |<%= services %>
+  a(href!='<%= hostname %>')
+    button(id='chooseButton') CHOOSE
