@@ -13,7 +13,7 @@ indexBy = (coll, keyFn) ->
 module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compile, $routeParams, $http) ->
   #parameters can easily be printed by:
   #?field1=value1&field2=value2&field3=value3
-  console.log($routeParams)
+  $scope.callbackUri = $routeParams["callbackUri"] or "/"
   $scope.filterSelection = {}
   $scope.filterSelection.memory = 0.5
   $scope.filterSelection.cpucores = 1
@@ -99,7 +99,7 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
               services: s.services
               lat: s.coordinates.lat
               lng: s.coordinates.lng
-              message: createMessage(s)
+              message: $scope.createMessage(s)
               icon: icons.inactive
               hostname: s.hostname
               )
@@ -111,7 +111,9 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
           )
         )
 
-  createMessage = (s) ->
+  $scope.createMessage = (s) ->
+    s.hostname = $scope.callbackUri + "?selectedPaas=" + s.hostname
+    console.log s
     compiled = _.template $scope.markerHtml
     compiled(s)
 
@@ -120,7 +122,6 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
     for index, marker of $scope.allMarkers
       if marker[filter].length>0
         values.push({name: marker[filter],  selected: makeSelected})
-    console.log values
     return _.uniq(values, "name")
 
   collectArrays = (filter,makeSelected) ->
