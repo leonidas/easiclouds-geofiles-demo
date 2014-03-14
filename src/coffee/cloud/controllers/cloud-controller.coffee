@@ -112,7 +112,7 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
         )
 
   $scope.createMessage = (s) ->
-    s.hostname = $scope.callbackUri + "?selectedPaas=" + s.hostname
+    s.hostname = $scope.callbackUri + "?selectedPaas=" + s.hostname + "&PaasName=" + s.title
     console.log s
     compiled = _.template $scope.markerHtml
     compiled(s)
