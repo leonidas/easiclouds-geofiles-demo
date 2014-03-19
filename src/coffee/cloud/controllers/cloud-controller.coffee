@@ -59,7 +59,7 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
   $scope.europeCenter =
     lat: 55.0
     lng: 8.0
-    zoom: 5
+    zoom: 3
   $scope.userPosition = {}
 
   transformMarkers = (m) ->

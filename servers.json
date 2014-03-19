@@ -351,7 +351,7 @@
       "databases":["MongoDB","Cassandra"],
       "location":"Finland",
       "services":[],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "easi1.bit.net.co",
       "coordinates": {
         "lat": 60.172635,
         "lng": 24.951042
