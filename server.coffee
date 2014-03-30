@@ -5,8 +5,6 @@ seed = require 'seed-random'
 express = require 'express'
 module.exports = app = express()
 
-app.use express.favicon("public/images/favicon.ico")
-
 mkpath = -> path.resolve path.join __dirname, arguments...
 INDEX_HTML = mkpath 'public', 'index.html'
 PUBLIC_DIR = mkpath 'public'
