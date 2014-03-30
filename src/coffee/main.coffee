@@ -10,6 +10,6 @@ L.Icon.Default.imagePath = '/vendor/leaflet/images'
 modul = angular.module 'app', ['ngRoute', 'geofiles', 'cloud', 'leaflet-directive']
 modul.config ['$locationProvider', '$routeProvider', ($locationProvider, $routeProvider) ->
   $locationProvider.html5Mode true
-  $routeProvider.otherwise
-    redirectTo: '/cloud'
+  #$routeProvider.otherwise
+  #  redirectTo: '/cloud'
 ]
