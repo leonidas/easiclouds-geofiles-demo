@@ -16,6 +16,8 @@ respondJSON = (res, code, data) ->
 
 randInt = (rng, supr) -> Math.floor(rng() * supr)
 
+app.use(express.favicon("public/images/favicon.ico"))
+
 app.get /^\/api\/v1\/servers$/, (req, res) -> respondJSON res, 200, SERVERS
 
 app.get /^\/api\/v1\/files$/, (req, res) ->
