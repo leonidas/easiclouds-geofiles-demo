@@ -36,7 +36,7 @@ app.get /^\/api\/v1\/files$/, (req, res) ->
 
 app.use app.router
 app.use express.static PUBLIC_DIR
-app.use express.favicon("public/images/favicon.ico")
+app.use express.favicon("images/favicon.ico")
 
 app.use (req, res, next) -> res.sendfile INDEX_HTML
 
