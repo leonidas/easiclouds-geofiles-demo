@@ -16,8 +16,6 @@ respondJSON = (res, code, data) ->
 
 randInt = (rng, supr) -> Math.floor(rng() * supr)
 
-app.use(express.favicon("public/images/favicon.ico"))
-
 app.get /^\/api\/v1\/servers$/, (req, res) -> respondJSON res, 200, SERVERS
 
 app.get /^\/api\/v1\/files$/, (req, res) ->
@@ -38,6 +36,8 @@ app.get /^\/api\/v1\/files$/, (req, res) ->
 
 app.use app.router
 app.use express.static PUBLIC_DIR
+app.use express.favicon("public/images/favicon.ico")
+
 app.use (req, res, next) -> res.sendfile INDEX_HTML
 
 app.listen 9000 if require.main == module
