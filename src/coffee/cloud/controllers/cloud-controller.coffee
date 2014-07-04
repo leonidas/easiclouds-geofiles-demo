@@ -43,6 +43,15 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
     colors: ['#00cb73', '#2981ca', '#646464']
     labels: ['The server serving you the file', 'Servers with the file', 'Servers without the file']
 
+  $scope.dragOptions =
+    start: (e) ->
+      console.log "STARTING"
+    drag: (e) ->
+      console.log "DRAGGING"
+    stop: (e) ->
+      console.log "STOPPING"
+    container: 'container'
+
   # TODO: legend is wrong if user denies geolocation, it doesn't update
   # after the map has been loaded
   $scope.legend = if navigator.geolocation then $scope.legendWithUser else $scope.legendWithoutUser
@@ -78,8 +87,6 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
       $scope.userPosition = pos
       $scope.legend = $scope.legendWithUser
       transformUserPosition()) if navigator.geolocation
-
-          #slider-filter(title='Maximum simultaneous jobs', min=1, step=1, max=64, val='filterSelection.simultaneousjobs', unit='', class='maximum-sim-jobs')
 
   $scope.queryServers = ->
     $http(method: 'GET', url: '/partials/cloud/templates/markerTemplate.html')

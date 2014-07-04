@@ -13,4 +13,4 @@ modul.directive 'sliderFilter', require './directives/sliderFilter.coffee'
 modul.directive 'pullDownFilter', require './directives/pullDownFilter.coffee'
 modul.directive 'checkBoxFilter', require './directives/checkBoxFilter.coffee'
 modul.directive 'markerTemplate', require './directives/markerTemplate.coffee'
-
+modul.directive 'draggable', require './directives/draggable.coffee'
