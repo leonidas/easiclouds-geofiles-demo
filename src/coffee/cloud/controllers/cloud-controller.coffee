@@ -99,6 +99,7 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
         $scope.markerHtml = data
         $http(method: 'GET', url: SERVERS_API)
           .success((data, status, headers, config) ->
+            data.servers = _.sortBy data.servers, (o) -> o.title
             $scope.allMarkers = transformMarkers(_.map(data.servers, (s) ->
               title: s.title
               logourl: s.logourl
@@ -125,7 +126,6 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
 
   $scope.createMessage = (s) ->
     s.hostname = $scope.callbackUri + "?selectedPaas=" + s.hostname + "&PaasName=" + s.title
-    console.log s
     compiled = _.template $scope.markerHtml
     compiled(s)
 
@@ -145,10 +145,10 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
 
   #filtering markers
   filterMarkers = ->
-    $scope.markers = {}
+    $scope.markers = []
     for key, marker of $scope.allMarkers
       if filterBySliders(marker) and filterByCheckBoxes(marker)
-        $scope.markers[key] = marker
+        $scope.markers.push marker
 
   #filters based on slidervalues
   filterBySliders = (marker) ->

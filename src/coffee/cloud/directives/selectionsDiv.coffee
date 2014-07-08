@@ -1,6 +1,6 @@
 module.exports = ->
   restrict:  'E'
-  replace: false
+  replace: true
   scope:
     selections: '='
   templateUrl: '/partials/cloud/templates/selectionsDiv.html'

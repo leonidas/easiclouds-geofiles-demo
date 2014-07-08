@@ -57,14 +57,6 @@ compileCoffee = (debug = true) ->
           'jquery-ui-core': '$'
           'jquery-ui-widget': '$'
           'jquery-ui-mouse': '$'
-      'jquery-ui-sortable':
-        path: './vendor/jquery-ui/ui/jquery.ui.sortable.js'
-        exports: '$'
-        depends:
-          'jquery': '$'
-          'jquery-ui-core': '$'
-          'jquery-ui-widget': '$'
-          'jquery-ui-mouse': '$'
       'angular':
         path: './vendor/angular/angular.js'
         exports: 'angular'
