@@ -1,4 +1,9 @@
 _ = require 'lodash'
+$     = require 'jquery'
+
+require 'jquery-ui-draggable'
+require 'jquery-ui-droppable'
+
 config = require '../../../../config.json'
 
 #gives indexes for the results
@@ -171,4 +176,5 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
 
   $scope.queryServers()
   $scope.getUserLocation()
+  $( "#draggable" ).draggable()
 ]

@@ -13,10 +13,6 @@ div.location-info
       td.align-right <%= storage %>Gb
     tr
       table.secondary-filters
-        //tr
-          //td Max. simultaneous jobs
-            //br
-            //|<%= simultaneousjobs %>
         tr.dark
           td Databases
             br
@@ -25,5 +21,3 @@ div.location-info
           td.services Services
             br
             |<%= services %>
-  a(href!='<%= hostname %>')
-    button(id='chooseButton') CHOOSE

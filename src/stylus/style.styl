@@ -7,6 +7,45 @@ body, html
   background: rgba(254,254,254,0.9)
   font-family: "Ruda", sans-serif
 
+#draggable
+  z-index 100
+  top -100%
+  left 0%
+  width 200px
+  background #6ea5d2
+  color #fff
+  box-shadow 0px 0px 0px 2px #6da4d1
+  border 1px solid #abd4f6
+  max-height 100%
+  overflow auto
+  table
+    border-collapse collapse
+    border-spacing 0
+    width 200px
+    td
+      padding 5px 20px
+      background url(/images/table-background.png) repeat-x top center
+    tr
+      text-align center
+      font-weight 900
+      font-size 0.9em
+    tr:nth-child(even) {background: #5d93be}
+    tr:nth-child(odd) {background: #6ea5d2}
+
+#checkoutbutton
+  width: 95%
+  height: 40px
+  color #fff
+  background-color: #5d93be
+  moz-border-radius: 15px
+  -webkit-border-radius: 15px
+  border: 5px solid #6ea5d2
+  padding: 5px
+  text-align center
+
+#checkoutbutton:active
+  opacity: 0.6
+
 #cloudmap
   height 100%
   width 100%
@@ -191,24 +230,6 @@ body, html
     width 100%
   .services
     color #b0ff51
-
-#logoImage
-  width 100%
-
-#chooseButton
-  background #568fc4
-  border-top 2px solid #000
-  border 0
-  padding 5px
-  margin 0
-  text-shadow 0px 2px #4574a0
-  font-weight 900
-  width 100%
-  color: rgba(246,253,254,0.9)
-  height auto
-  margin-top 10px
-  cursor pointer
-  position relative
   &:after
     content ''
     display block
@@ -219,6 +240,9 @@ body, html
     position absolute
     bottom -10px
     margin-left:-12px
+
+#logoImage
+  width 100%
 
 .slider-filter
   color: rgba(100,162,216,0.9)

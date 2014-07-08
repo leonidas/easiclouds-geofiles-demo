@@ -20,6 +20,51 @@ compileCoffee = (debug = true) ->
     debug: debug
     transform: ['coffeeify']
     shim:
+      'jquery':
+        path:    './vendor/jquery/dist/jquery.js'
+        exports: '$'
+      'jquery-ui-core':
+        path:    './vendor/jquery-ui/ui/jquery.ui.core.js'
+        exports: '$'
+        depends:
+          'jquery': '$'
+      'jquery-ui-widget':
+        path: './vendor/jquery-ui/ui/jquery.ui.widget.js'
+        exports: '$'
+        depends:
+          'jquery': '$'
+          'jquery-ui-core': '$'
+      'jquery-ui-mouse':
+        path: './vendor/jquery-ui/ui/jquery.ui.mouse.js'
+        exports: '$'
+        depends:
+          'jquery': '$'
+          'jquery-ui-core': '$'
+          'jquery-ui-widget': '$'
+      'jquery-ui-draggable':
+        path: './vendor/jquery-ui/ui/jquery.ui.draggable.js'
+        exports: '$'
+        depends:
+          'jquery': '$'
+          'jquery-ui-core': '$'
+          'jquery-ui-widget': '$'
+          'jquery-ui-mouse': '$'
+      'jquery-ui-droppable':
+        path: './vendor/jquery-ui/ui/jquery.ui.droppable.js'
+        exports: '$'
+        depends:
+          'jquery': '$'
+          'jquery-ui-core': '$'
+          'jquery-ui-widget': '$'
+          'jquery-ui-mouse': '$'
+      'jquery-ui-sortable':
+        path: './vendor/jquery-ui/ui/jquery.ui.sortable.js'
+        exports: '$'
+        depends:
+          'jquery': '$'
+          'jquery-ui-core': '$'
+          'jquery-ui-widget': '$'
+          'jquery-ui-mouse': '$'
       'angular':
         path: './vendor/angular/angular.js'
         exports: 'angular'
@@ -29,19 +74,12 @@ compileCoffee = (debug = true) ->
       'leaflet':
         path: './vendor/leaflet-dist/leaflet.js'
         exports: 'L'
-#      'leaflet-google':
-#        path: 'http://matchingnotes.com/javascripts/leaflet-google.js'
-#        exports: 'G'
-#          'leaflet': 'L'
       'angular-leaflet-directive':
         path: './vendor/angular-leaflet-directive/dist/angular-leaflet-directive.js'
         exports: 'angular'
         depends:
           'angular': 'angular'
           'leaflet': 'L'
-#          'leaflet-google': 'G'
-
-
   bundle = gulp
     .src('./src/coffee/main.coffee', read: false)
     .pipe(browserify(config))
