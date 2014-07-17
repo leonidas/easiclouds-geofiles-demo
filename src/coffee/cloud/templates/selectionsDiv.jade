@@ -1,7 +1,8 @@
-table
-  thead
-    tr
-      td Matches:
-  tbody
-    tr(ng-repeat="value in selections" ng-switch="$even")
-      td {{value.title}}
+div
+  table
+    thead
+      tr
+        td Matches:
+    tbody
+      tr(ng-repeat="value in selections" ng-switch="$even")
+        td {{value.title}}

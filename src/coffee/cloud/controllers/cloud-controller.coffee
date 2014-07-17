@@ -3,6 +3,7 @@ $     = require 'jquery'
 
 require 'jquery-ui-draggable'
 require 'jquery-ui-droppable'
+require 'jquery-ui-resizable'
 
 config = require '../../../../config.json'
 
@@ -177,4 +178,5 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
   $scope.queryServers()
   $scope.getUserLocation()
   $( "#draggable" ).draggable()
+  $( "#draggable" ).resizable()
 ]

@@ -2,6 +2,8 @@ _ = require 'lodash'
 $ = require 'jquery'
 require 'jquery-ui-draggable'
 require 'jquery-ui-droppable'
+require 'jquery-ui-resizable'
+
 angular = require 'angular'
 ngRoute = require 'angular-route'
 require 'angular-leaflet-directive'
