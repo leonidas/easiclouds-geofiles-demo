@@ -134,6 +134,13 @@ gulp.task 'copy-files', ->
   gulp.src('vendor/leaflet-dist/images/*')
     .pipe(gulp.dest('public/vendor/leaflet/images'))
 
+  gulp.src('vendor/jquery-ui/themes/smoothness/jquery-ui.min.css')
+    .pipe(gulp.dest('public/css'))
+
+  gulp.src('vendor/jquery-ui/themes/smoothness/images/*')
+    .pipe(gulp.dest('public/css/images'))
+
+
 gulp.task "server", ->
   require('./server').listen 9001
 
