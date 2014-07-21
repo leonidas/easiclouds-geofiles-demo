@@ -49,15 +49,6 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
     colors: ['#00cb73', '#2981ca', '#646464']
     labels: ['The server serving you the file', 'Servers with the file', 'Servers without the file']
 
-  $scope.dragOptions =
-    start: (e) ->
-      console.log "STARTING"
-    drag: (e) ->
-      console.log "DRAGGING"
-    stop: (e) ->
-      console.log "STOPPING"
-    container: 'container'
-
   # TODO: legend is wrong if user denies geolocation, it doesn't update
   # after the map has been loaded
   $scope.legend = if navigator.geolocation then $scope.legendWithUser else $scope.legendWithoutUser
@@ -144,12 +135,28 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
         values.push({name: name,  selected: makeSelected})
     return _.uniq(values, "name")
 
+  timer = null
+
+  fixHeight = () ->
+    console.log "tuli"
+    max_height =  $( "#map" ).height() * 0.9
+    console.log max_height
+    current_height = $( "#draggable" ).height()
+    console.log current_height
+    if current_height>max_height then $( "#draggable" ).css({"height":"61%"}) else $( "#draggable" ).css({"height":""})
+    timer = null
+
   #filtering markers
   filterMarkers = ->
     $scope.markers = []
     for key, marker of $scope.allMarkers
       if filterBySliders(marker) and filterByCheckBoxes(marker)
         $scope.markers.push marker
+    #after things are rendered, the height of component is fixed :)
+    if timer == null
+      timer = setTimeout ( ->
+        fixHeight()
+      ), 100
 
   #filters based on slidervalues
   filterBySliders = (marker) ->
@@ -176,7 +183,7 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
   findSelections = (selections) -> _.map(_.where(selections, {selected: true}), "name")
 
   $scope.queryServers()
-  $scope.getUserLocation()
+  #$scope.getUserLocation()
   $( "#draggable" ).draggable()
   $( "#draggable" ).resizable()
 ]
