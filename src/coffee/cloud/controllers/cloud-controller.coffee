@@ -68,6 +68,8 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
     zoom: 3
   $scope.userPosition = {}
 
+  $scope.test = (msg) -> console.log msg
+
   transformMarkers = (m) ->
     indexBy(m, (val) -> val.title.replace(/[. ]/g, ''))
 
@@ -135,28 +137,12 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
         values.push({name: name,  selected: makeSelected})
     return _.uniq(values, "name")
 
-  timer = null
-
-  fixHeight = () ->
-    console.log "tuli"
-    max_height =  $( "#map" ).height() * 0.9
-    console.log max_height
-    current_height = $( "#draggable" ).height()
-    console.log current_height
-    if current_height>max_height then $( "#draggable" ).css({"height":"61%"}) else $( "#draggable" ).css({"height":""})
-    timer = null
-
   #filtering markers
   filterMarkers = ->
     $scope.markers = []
     for key, marker of $scope.allMarkers
       if filterBySliders(marker) and filterByCheckBoxes(marker)
         $scope.markers.push marker
-    #after things are rendered, the height of component is fixed :)
-    if timer == null
-      timer = setTimeout ( ->
-        fixHeight()
-      ), 100
 
   #filters based on slidervalues
   filterBySliders = (marker) ->
