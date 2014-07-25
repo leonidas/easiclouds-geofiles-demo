@@ -1,6 +1,7 @@
 {
   "servers": [
     {
+      "id":0,
       "title":"THALES COMMUNI-<br>CATIONS & SECURITY SAS",
       "logourl":"http://upload.wikimedia.org/wikipedia/commons/4/43/Thales.svg",
       "address":"4, avenue des Louvresses, 92 230 Gennevilliers, France",
@@ -18,6 +19,7 @@
       }
     },
     {
+      "id":1,
       "title":"THALES SERVICES SAS",
       "logourl":"http://upload.wikimedia.org/wikipedia/commons/4/43/Thales.svg",
       "address":"20 rue Grange Dame Rose, CS 90 519, 78141 Velizy Villacoublay, France",
@@ -35,6 +37,7 @@
       }
     },
     {
+      "id":2,
       "title":"BULL SAS",
       "logourl":"http://upload.wikimedia.org/wikipedia/de/a/a6/Bull_Computer_logo.svg",
       "address":"Rue Jean Jaurès 78340 Les Clayes sous Bois, RCS Versailles 642 058 739, France",
@@ -52,6 +55,7 @@
       }
     },
     {
+      "id":3,
       "title":"INSTITUT MINES TELECOM",
       "logourl":"/images/INSTITUT-MINES-TELECOM_Logo_RVB.png",
       "address":"46 rue Barrault 75634 Paris Cedex 13, France",
@@ -69,6 +73,7 @@
       }
     },
     {
+      "id":4,
       "title":"NEXEDI",
       "logourl":"http://www.payzen.eu/wp-content/uploads/2013/05/NXD-Official.Logo_.ps_.png",
       "address": "270 boulevard Clémenceau 59700 Marcq en Baroeul, France",
@@ -86,6 +91,7 @@
       }
     },
     {
+      "id":5,
       "title":"KOLOR",
       "logourl":"http://thecareyadventures.com/blog/wp-content/uploads/2010/07/logo-kolor-transparency-281x300.png",
       "address":"387, avenue de la Breisse, 73190 Challes les Eaux, France",
@@ -103,6 +109,7 @@
       }
     },
     {
+      "id":6,
       "title":"UNIVERSITE D’EVRY VAL D’ESSONNE",
       "logourl":"http://lap.maths.univ-evry.fr/logo_univ.png",
       "address":"bd François Miterrand 91025 Evry Cedex, France",
@@ -120,6 +127,7 @@
       }
     },
     {
+      "id":7,
       "title":"ATOS IT SOLUTIONS AND SERVICES GMBH",
       "logourl":"http://upload.wikimedia.org/wikipedia/en/thumb/0/01/Atos.svg/200px-Atos.svg.png",
       "address":"Otto-Hahn-Ring 6, 81739 Munich, Germany",
@@ -137,6 +145,7 @@
       }
     },
     {
+      "id":8,
       "title":"ORGA SYSTEMS GMBH",
       "logourl":"http://www.utilitybusiness-platform.com/wp-content/uploads/2013/07/Orga.png",
       "address":"Am Hoppenhof 33, 33104 Paderborn, Germany",
@@ -154,6 +163,7 @@
       }
     },
     {
+      "id":9,
       "title":"MATERNA GMBH",
       "logourl":"http://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Materna_Logo.svg/567px-Materna_Logo.svg.png",
       "address":"Vosskuhle 37, 44141 Dortmund, GERMANY",
@@ -171,6 +181,7 @@
       }
     },
     {
+      "id":10,
       "title":"PROSYST SOFTWARE GMBH",
       "logourl":"http://www.careers.bestsofia.org/images/prosyst.png",
       "address":"Aachener Str. 222, 50931 Cologne, Germany",
@@ -188,6 +199,7 @@
       }
     },
     {
+      "id":11,
       "title":"CLEVERSCALE",
       "logourl":"http://www.itiforums.com/images/cleverscale.gif",
       "address":"11 Rue Léon Jouhaux - 75010 PARIS - FRANCE",
@@ -205,6 +217,7 @@
       }
     },
     {
+      "id":12,
       "title":"TECHNISCHE UNIVERSITAET BERLIN / DAI LABOR",
       "logourl":"http://www.zertifizierungsprogramm-smarthome.de/smarthome/partner/publishingimages/dai-labor_logo-tuzusatz_transparent.png",
       "address":"Strasse des 17. Juni 135, 10623 Berlin, Germany",
@@ -222,6 +235,7 @@
       }
     },
     {
+      "id":13,
       "title":"JOHANNES GUTENBERG-UNIVERSITÄT MAINZ",
       "logourl":"http://www.sprach.ru/media/2197/uni-Mainz.png",
       "address":"Saarstr. 21, 55099 Mainz, Germany",
@@ -239,6 +253,7 @@
       }
     },
     {
+      "id":14,
       "title":"FRAUNHOFER",
       "logourl":"http://upload.wikimedia.org/wikipedia/de/6/6a/Fraunhofer-IESE_logo.svg",
       "address":"Hansastraße 27 c 80686 Munich, Germany",
@@ -256,6 +271,7 @@
       }
     },
     {
+      "id":15,
       "title":"CHARITE UNIVERSITY MEDICINE BERLIN",
       "logourl":"http://upload.wikimedia.org/wikipedia/en/thumb/5/51/Logo_Charite.svg/220px-Logo_Charite.svg.png",
       "address":"Dr. med. Gerrit Fleige, KaufmännischeLeitung der Fakultät, Charite Campus Mitte, Chariteplatz, 10117 Berlin",
@@ -273,6 +289,7 @@
       }
     },
     {
+      "id":16,
       "title":"ITWORX EGYPT S.A.E",
       "logourl":"http://www.itworx.com/NR/images/ITWorx_logo.png",
       "address":"Nasr City Public Free Zone, Area 7B, Block J, Cairo, Egypt",
@@ -290,6 +307,7 @@
       }
     },
     {
+      "id":17,
       "title":"CAIRO UNIVERSITY",
       "logourl":"http://cu.edu.eg/ar/news/images/9433e1O6cf.gif",
       "address":"Ahmed Zewell, Giza, Egypt",
@@ -307,6 +325,7 @@
       }
     },
     {
+      "id":18,
       "title":"NILE UNIVERSITY",
       "logourl":"http://brandurself.org/home/wp-content/uploads/2013/04/NileUniversityLogo.png",
       "address":"Smart Village - B2, Km 28, Cairo Alex Deser Road, 12677, Egypt",
@@ -324,6 +343,7 @@
       }
     },
     {
+      "id":19,
       "title":"HEXAGLOBE",
       "logourl":"/images/hexaglobe.png",
       "address":"1 Rue Méhul, 75002, Paris",
@@ -341,6 +361,7 @@
       }
     },
     {
+      "id":20,
       "title":"UNIVERSITY HELSINKI",
       "logourl":"http://upload.wikimedia.org/wikipedia/en/8/84/University_of_Helsinki.svg",
       "address":"Hällströmin katu 2 b, P.O. Box 68, 00014 University of Helsinki, Finland",
@@ -358,6 +379,7 @@
       }
     },
     {
+      "id":21,
       "title":"TAMPERE UNIVERSITY OF TECHNOLOGY",
       "logourl":"http://upload.wikimedia.org/wikipedia/en/d/df/Tampere_University_of_Technology_logo.png",
       "address":"korkeakoulunkatu 1, 33720, tampere",
@@ -375,6 +397,7 @@
       }
     },
     {
+      "id":22,
       "title":"LEONIDAS OY",
       "logourl":"/images/Leonidas_logo-transparent.png",
       "address":"Hämeenkatu 16 A 11, 33200 Tampere Finland",
@@ -392,6 +415,7 @@
       }
     },
     {
+      "id":23,
       "title":"GEARSHIFTGROUP OY",
       "logourl":"http://www.gearshiftgroup.com/wp-content/uploads/2013/06/cropped-GSG_logo_transparent1.png",
       "address":"Kaisaniemenkatu 1 C 110, 00100 Helsinki, Finland",
@@ -410,6 +434,7 @@
     },
 
     {
+      "id":24,
       "title":"F-Secure",
       "logourl":"http://upload.wikimedia.org/wikipedia/fi/7/74/F-Securen_logo.svg",
       "address": "Tammasaarenkatu 7, PL 24, 00181 Helsinki",
@@ -427,6 +452,7 @@
       }
     },
     {
+      "id":25,
       "title":"INNOFACTOR",
       "logourl":"/images/43454_Innofactor_logo_RGB_transparent.png",
       "address":"Keilaranta 19, 500, Espoo, Finland",
@@ -444,6 +470,7 @@
       }
     },
     {
+      "id":26,
       "title":"ETRI",
       "logourl":"http://kowon.dongseo.ac.kr/~lbg/seminar/etri.png",
       "address":"218 Gajeong-ro, Yuseong-gu, Daejeon, 305-700, Korea",
@@ -461,6 +488,7 @@
       }
     },
     {
+      "id":27,
       "title":"SEOUL NATIONAL UNIVERSITY",
       "logourl":"http://upload.wikimedia.org/wikipedia/en/6/6a/Seoul_national_university_emblem.png",
       "address":"599 Gwanak-Ro, Gwanak-Gu, Seoul, South Korea",
@@ -478,6 +506,7 @@
       }
     },
     {
+      "id":28,
       "title":"INNOGRID",
       "logourl":"http://www.innogrid.com/images/header/logo.png",
       "address":"11F 144-25, Samsung-Dong, Gangnam-gu, Seoul, 135-877, R.O.K, South Korea",
@@ -495,6 +524,7 @@
       }
     },
     {
+      "id":29,
       "title":"IT UNIVERSITY OF COPENHAGEN",
       "logourl":"http://academicpositions.eu/content/uploads/2010/05/ku_co_logo_cmyk-copy.png",
       "address":"Rued Langgaards, Vej 7, Dk-2300, Copenhagen, Denmark",

@@ -1,5 +1,5 @@
 _ = require 'lodash'
-$     = require 'jquery'
+$ = require 'jquery'
 
 require 'jquery-ui-draggable'
 require 'jquery-ui-droppable'
@@ -61,6 +61,7 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
   $scope.url = 'https://www.leonidasoy.fi'
   $scope.allMarkers = {}
   $scope.markers = {}
+  $scope.tableItems = {}
   $scope.paths = {}
   $scope.europeCenter =
     lat: 55.0
@@ -94,7 +95,9 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
         $http(method: 'GET', url: SERVERS_API)
           .success((data, status, headers, config) ->
             data.servers = _.sortBy data.servers, (o) -> o.title
+            console.log data.servers
             $scope.allMarkers = transformMarkers(_.map(data.servers, (s) ->
+              id: s.id
               title: s.title
               logourl: s.logourl
               memory: s.memory
@@ -112,6 +115,7 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
               )
             )
             $scope.markers=$scope.allMarkers
+            $scope.tableItems=$scope.allMarkers
             $scope.filterSelection.countrySelections = collectValues("country",true)
             $scope.filterSelection.databasesSelections = collectArrays("databases",false)
             $scope.filterSelection.servicesSelections = collectArrays("services",false)
@@ -140,9 +144,12 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
   #filtering markers
   filterMarkers = ->
     $scope.markers = []
+    $scope.tableItems = []
     for key, marker of $scope.allMarkers
       if filterBySliders(marker) and filterByCheckBoxes(marker)
         $scope.markers.push marker
+        #OPTIONAL: if we want to show all filtered items in list
+        $scope.tableItems.push marker
 
   #filters based on slidervalues
   filterBySliders = (marker) ->
