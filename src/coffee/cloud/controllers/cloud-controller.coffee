@@ -4,6 +4,7 @@ $ = require 'jquery'
 require 'jquery-ui-draggable'
 require 'jquery-ui-droppable'
 require 'jquery-ui-resizable'
+assert = require 'assert'
 
 config = require '../../../../config.json'
 
@@ -16,7 +17,7 @@ indexBy = (coll, keyFn) ->
     i++
   result
 
-module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compile, $routeParams, $http) ->
+module.exports = ['$scope','$compile','$routeParams', '$http', ($scope, $compile, $routeParams, $http) ->
   #parameters can easily be printed by:
   #?field1=value1&field2=value2&field3=value3
   $scope.callbackUri = $routeParams["callbackUri"] or "/"
@@ -25,6 +26,9 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
   $scope.filterSelection.cpucores = 1
   $scope.filterSelection.storage = 0.25
   $scope.filterSelection.simultaneousjobs = 1
+  #two alternatives if true then all the filtered items are shown in table. 
+  #Otherwise table is empty at the beginning and items are added there by clicking markers
+  $scope.showFilteredInTable = false
 
   #names of the checkboxselectionGroups
   $scope.checkBoxNamesShowSelecteds = ["country"]
@@ -61,15 +65,13 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
   $scope.url = 'https://www.leonidasoy.fi'
   $scope.allMarkers = {}
   $scope.markers = {}
-  $scope.tableItems = {}
+  $scope.tableItems = []
   $scope.paths = {}
   $scope.europeCenter =
     lat: 55.0
     lng: 8.0
     zoom: 3
   $scope.userPosition = {}
-
-  $scope.test = (msg) -> console.log msg
 
   transformMarkers = (m) ->
     indexBy(m, (val) -> val.title.replace(/[. ]/g, ''))
@@ -88,6 +90,7 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
       $scope.legend = $scope.legendWithUser
       transformUserPosition()) if navigator.geolocation
 
+  #collects all servers from servers.json file
   $scope.queryServers = ->
     $http(method: 'GET', url: '/partials/cloud/templates/markerTemplate.html')
       .success((data, status, headers, config) ->
@@ -95,7 +98,6 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
         $http(method: 'GET', url: SERVERS_API)
           .success((data, status, headers, config) ->
             data.servers = _.sortBy data.servers, (o) -> o.title
-            console.log data.servers
             $scope.allMarkers = transformMarkers(_.map(data.servers, (s) ->
               id: s.id
               title: s.title
@@ -115,17 +117,40 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
               )
             )
             $scope.markers=$scope.allMarkers
-            $scope.tableItems=$scope.allMarkers
+            if $scope.showFilteredInTable
+              $scope.tableItems=$scope.allMarkers
             $scope.filterSelection.countrySelections = collectValues("country",true)
             $scope.filterSelection.databasesSelections = collectArrays("databases",false)
             $scope.filterSelection.servicesSelections = collectArrays("services",false)
           )
         )
 
+  #when any of the markers is clicked
+  $scope.$on 'leafletDirectiveMarker.click', (e, args) ->
+    index = args.markerName
+    $scope.$evalAsync () ->
+      $scope.addButtonHandlers(index)
+
+  #adds buttonhandlers for map markers
+  $scope.addButtonHandlers = (index) ->
+    console.log index
+    console.log $scope.markers[index].id
+    indexToNested = index
+    $( "#button" + $scope.markers[index].id ).on "click", ->
+      #buttons should be hidden if showFilteredInTable = true and this code shoud not be accessed
+      #console.log assert
+      #test = not $scope.showFilteredInTable
+      #console.log test
+      #assert.ok test, "should be false in here" 
+      marker = $scope.markers[indexToNested]
+      if ($.inArray(marker, $scope.tableItems) < 0)
+        $scope.tableItems.push marker
+
   $scope.createMessage = (s) ->
     s.hostname = $scope.callbackUri + "?selectedPaas=" + s.hostname + "&PaasName=" + s.title
     compiled = _.template $scope.markerHtml
-    compiled(s)
+    tmp = compiled(s)
+    return tmp
 
   collectValues = (filter,makeSelected) ->
     values = []
@@ -144,12 +169,13 @@ module.exports = ['$scope', '$compile','$routeParams', '$http', ($scope, $compil
   #filtering markers
   filterMarkers = ->
     $scope.markers = []
-    $scope.tableItems = []
+    if $scope.showFilteredInTable
+      $scope.tableItems = []
     for key, marker of $scope.allMarkers
       if filterBySliders(marker) and filterByCheckBoxes(marker)
         $scope.markers.push marker
-        #OPTIONAL: if we want to show all filtered items in list
-        $scope.tableItems.push marker
+        if $scope.showFilteredInTable
+          $scope.tableItems.push marker
 
   #filters based on slidervalues
   filterBySliders = (marker) ->
