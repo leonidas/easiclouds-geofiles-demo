@@ -1,7 +1,7 @@
 .check-box-filter
   .title {{ title }}
   p.confirm
-    label(ng-repeat="selection in selections" ng-switch="$even")
+    label.checkbox(ng-repeat="selection in selections" ng-switch="$even")
       input(type="checkbox", name="selectedSelections[]", value="{{ selectionName }}", ng-model="selection.selected")
       label(for="selectedSelections[]") {{selection.name}}
       br(ng-switch-when="false")

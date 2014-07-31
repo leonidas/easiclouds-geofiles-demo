@@ -29,34 +29,53 @@ body, html
       border-radius 8px
       border 0px solid white
       background-color rgba(0, 0, 0, .5)
-    table
-      width 100%
-      td
-        padding 5px 20px
-        background url(/images/table-background.png) repeat-x top center
-      tr
-        text-align center
-        font-weight 900
-        font-size 0.9em
-      thead
-        tr:nth-child(odd) {background: #6ea5d2}
-      tbody
-        border-spacing 0
-        border-collapse separate
-        white-space nowrap
-        tr:nth-child(even) {background: #6ea5d2}
-        tr:nth-child(odd) {background: #5d93be}
+
+#draggablechildtable
+  width 100%
+  border-collapse separate
+  border-spacing 0
+  overflow-x hidden
+
+  thead
+    td
+      font-size 1em
+      padding 10px 20px
+      font-weight 700
+      text-shadow 0 -1px 0 #183744
+      
+  tbody
+    white-space nowrap
+    td
+      padding 7px 20px 4px 20px
+      background url('/images/table-background.png') repeat-x top center
+      text-align center
+      border-left 1px solid #8dbae6
+      border-right 1px solid #4c7fac
+      font-size 0.825em
+      font-weight 400
+      &:first-child
+        text-align left
+        border-left none
+      &:last-child
+        border-right none
+    tr:nth-child(even)
+      background: #6ea5d2
+    tr:nth-child(odd)
+      background: #5d93be
         
 #checkoutbutton
-  width: 95%
   height: 40px
   color #fff
   background-color: #5d93be
-  moz-border-radius: 15px
-  -webkit-border-radius: 15px
-  border: 5px solid #6ea5d2
-  padding: 5px
+  border-radius 10px
+  border 3px solid #6ea5d2
   text-align center
+  cursor pointer
+  margin-top 40px
+  text-shadow 0 -1px 0 #183744
+
+  span
+    line-height 40px
 
 #checkoutbutton:active
   opacity: 0.6
@@ -82,11 +101,10 @@ body, html
     overflow-y visible
     clip rect(15px,0,0,125px)
     display block
-    padding-right 2px
-    padding-top 4px
+    padding 4px 2px 0 2px
     position relative
   input[type="range"]
-    width 95%
+    width 99.5%
     margin 0 auto
     display block
     -webkit-appearance none
@@ -136,40 +154,41 @@ body, html
     left -4px
 
   .minmax
-    line-height 1
-    margin 0 0 5px
+    line-height 1em
+    margin 10px 0 0 0
     padding 0
 
   .min
     display inline
     font-size 0.8em
-    color #99c4e9
+    color #888b8e
     font-weight 400
 
   .max
     display inline
     float right
     font-size 0.8em
-    color #99c4e9
+    color #888b8e
     font-weight 400
 
   .title
     font-weight 900
-    font-size 1.2em
+    font-size 1em
     width 100%
     margin 5px auto
+    padding-bottom 3px
     border-bottom 1px solid #e9f1f8
     text-align left
+    color #183744
 
 
 #leologo
   display block
-  width 192px
-  height 50px
+  width 160px
+  height 42px
   background url(/images/leonidas-logo.jpg)
   background-size 100% 100%
-  margin 0 auto
-  opacity 0.2
+  margin 0 auto 20px auto
 
 .legend
   padding: 6px 8px
@@ -188,36 +207,33 @@ body, html
   opacity: 0.7
 
 .leaflet-popup
+  min-width 180px
   bottom 38px !important
 
 .leaflet-popup-content-wrapper
-  text-align: center
-  border-radius: 0px
-  background: #6ea5d2
-  box-shadow 0px 4px 0px 0px #5186b3
-  border-radius 2px
+  text-align center
+  border-radius 0px
+  background #6ea5d2
+  box-shadow none
 
 .leaflet-popup-content
-  margin 0px 0px
-  line-height: 1.4
-  color: rgba(246,253,254,0.9)
-  text-shadow 0px 2px #5d7ea0
+  margin 0
+  text-shadow 0 -1px 0 #183744
   box-shadow 0px 0px 0px 2px #6da4d1
   border 1px solid #abd4f6
   width 100% !important
-  border-radius 1px
+  border-radius 0
 
 .leaflet-popup-close-button
- visibility: hidden
+  visibility hidden
 
 .leaflet-popup-tip
-  width: 20px
-  height: 20px
-  padding: 1px
-  margin: -17px auto 0
-  background #568fc4
-  box-shadow 0px 0px 0px 2px #6da4d1
-  border 1px solid #abd4f6
+  width 20px
+  height 20px
+  border-radius 0
+  background #6ea5d2
+  box-shadow none
+  border none
 
 .leaflet-marker-icon
   width 29px !important
@@ -231,7 +247,8 @@ body, html
     border-collapse collapse
     border-spacing 0
     td
-      padding 5px 20px
+      padding 5px 10px
+      overflow hidden
       background url(/images/table-background.png) repeat-x top center
   .dark
     background #5d93be
@@ -272,18 +289,24 @@ body, html
     margin-left:-12px
 
 #logoImage
-  width 100%
+  width 90%
+  margin 5%
 
 .slider-filter
-  color: rgba(100,162,216,0.9)
   position relative
 
 .check-box-filter
-  color: rgba(100,162,216,0.9)
+  color #6ea5d2
 
   .confirm
     display block
     position relative
+    overflow hidden
+
+    label.checkbox
+      display block
+      float left
+      min-width 50%
 
 
 .pull-down-filter
@@ -302,11 +325,11 @@ output
   text-align center
   color #6ea5d2
   display inline-block
-  font-weight 900
-  font-size 0.9em
-  border 1px solid #e5ebf1
-  bottom 10px
-  padding 2px 5px
+  font-weight 400
+  font-size 0.825em
+  border 1px solid #dde4ea
+  bottom 18px
+  padding 3px 5px 2px 5px
   left 0
   &:after
     content ""
@@ -329,7 +352,7 @@ output
     left 50%
     margin-left -5px
     margin-top -8px
-    border-bottom 7px solid #e5ebf1
+    border-bottom 7px solid #dde4ea
     border-left 5px solid transparent
     border-right 5px solid transparent
 .memory
@@ -360,20 +383,17 @@ input[type="checkbox"]
   cursor pointer
 
   & + label
-    padding-left 15px
+    padding-left 18px
     margin-right 5px
     position relative
     -webkit-touch-callout none
-    -webkit-user-select none
-    -khtml-user-select none
-    -moz-user-select none
-    -ms-user-select none
     user-select none
+    font-size 0.825em
     &:before
       content ""
       position absolute
-      left 0
-      top 4px
+      left 1px
+      top 2px
       width 10px
       height 10px
       box-shadow  0 0 0px 1px #d6e4eb
@@ -382,9 +402,8 @@ input[type="checkbox"]
 input[type="checkbox"]:not(:checked) + label:after,
 input[type="checkbox"]:checked + label:after
   position absolute
-  top 0px
-  left 2px
-  font-size 14px
+  top -1px
+  left 3px
   transition all .2s
   color black
   width 6px
