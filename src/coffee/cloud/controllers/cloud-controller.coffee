@@ -26,9 +26,12 @@ module.exports = ['$scope','$compile','$routeParams', '$http', ($scope, $compile
   $scope.filterSelection.cpucores = 1
   $scope.filterSelection.storage = 0.25
   $scope.filterSelection.simultaneousjobs = 1
+
   #two alternatives if true then all the filtered items are shown in table. 
   #Otherwise table is empty at the beginning and items are added there by clicking markers
-  $scope.showFilteredInTable = false
+  #if true then it is a version that Otto Hylli wanted
+  #if false then it is a version for Mario
+  $scope.showFilteredInTable = true
 
   #names of the checkboxselectionGroups
   $scope.checkBoxNamesShowSelecteds = ["country"]
@@ -125,26 +128,30 @@ module.exports = ['$scope','$compile','$routeParams', '$http', ($scope, $compile
           )
         )
 
-  #when any of the markers is clicked
+  #when any of the markers is clicked then we may want to add clickhandler to it
   $scope.$on 'leafletDirectiveMarker.click', (e, args) ->
     index = args.markerName
-    $scope.$evalAsync () ->
-      $scope.addButtonHandlers(index)
+    $scope.addButtonHandlers(index)
 
   #adds buttonhandlers for map markers
   $scope.addButtonHandlers = (index) ->
     console.log index
     console.log $scope.markers[index].id
     indexToNested = index
-    $( "#button" + $scope.markers[index].id ).on "click", ->
-      #buttons should be hidden if showFilteredInTable = true and this code shoud not be accessed
-      #console.log assert
-      #test = not $scope.showFilteredInTable
-      #console.log test
-      #assert.ok test, "should be false in here" 
-      marker = $scope.markers[indexToNested]
-      if ($.inArray(marker, $scope.tableItems) < 0)
-        $scope.tableItems.push marker
+    button = $( "#button" + $scope.markers[index].id )
+    if $scope.showFilteredInTable
+      button.hide()
+    else
+      button.on "click", ->
+        #buttons should be hidden if showFilteredInTable = true and this code shoud not be accessed
+        #console.log assert
+        #test = not $scope.showFilteredInTable
+        #console.log test
+        #assert.ok test, "should be false in here" 
+        marker = $scope.markers[indexToNested]
+        if ($.inArray(marker, $scope.tableItems) < 0)
+          $scope.tableItems.push marker
+          $scope.$apply()
 
   $scope.createMessage = (s) ->
     s.hostname = $scope.callbackUri + "?selectedPaas=" + s.hostname + "&PaasName=" + s.title
