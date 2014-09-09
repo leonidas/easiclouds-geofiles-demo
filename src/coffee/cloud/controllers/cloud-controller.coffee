@@ -214,8 +214,9 @@ module.exports = ['$scope','$compile','$routeParams', '$http', '$window', ($scop
   $( "#draggable" ).resizable()
 
   $("#checkoutbutton").on 'click', (event) -> 
-    hostname = "123.123.123.123"
-    title = "TTY"    
+    
+    hostname = $scope.tableItems[0].hostname
+    title = $scope.tableItems[0].title
     callback = $scope.callbackUri + "?selectedPaas=" + hostname + "&PaasName=" + title
     console.log callback
     $window.location.href = callback
