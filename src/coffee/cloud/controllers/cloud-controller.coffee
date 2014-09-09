@@ -17,7 +17,7 @@ indexBy = (coll, keyFn) ->
     i++
   result
 
-module.exports = ['$scope','$compile','$routeParams', '$http', ($scope, $compile, $routeParams, $http) ->
+module.exports = ['$scope','$compile','$routeParams', '$http', '$window', ($scope, $compile, $routeParams, $http, $window) ->
   #parameters can easily be printed by:
   #?field1=value1&field2=value2&field3=value3
   $scope.callbackUri = $routeParams["callbackUri"] or "/"
@@ -212,4 +212,11 @@ module.exports = ['$scope','$compile','$routeParams', '$http', ($scope, $compile
   #$scope.getUserLocation()
   $( "#draggable" ).draggable()
   $( "#draggable" ).resizable()
+
+  $("#checkoutbutton").on 'click', (event) -> 
+    hostname = "123.123.123.123"
+    title = "TTY"    
+    callback = $scope.callbackUri + "?selectedPaas=" + hostname + "&PaasName=" + title
+    console.log callback
+    $window.location.href = callback
 ]
