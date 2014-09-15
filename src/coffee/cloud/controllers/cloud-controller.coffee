@@ -215,6 +215,5 @@ module.exports = ['$scope','$compile','$routeParams', '$http', '$window', ($scop
 
   $("#checkoutbutton").on 'click', (event) ->
     callback = $scope.callbackUri + $scope.tableItems[0].callbackParams
-    console.log callback
-    #$window.location.href = callback
+    $window.location.href = callback
 ]
