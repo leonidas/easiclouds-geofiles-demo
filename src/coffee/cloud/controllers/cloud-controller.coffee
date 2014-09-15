@@ -27,7 +27,7 @@ module.exports = ['$scope','$compile','$routeParams', '$http', '$window', ($scop
   $scope.filterSelection.storage = 0.25
   $scope.filterSelection.simultaneousjobs = 1
 
-  #two alternatives if true then all the filtered items are shown in table. 
+  #two alternatives if true then all the filtered items are shown in table.
   #Otherwise table is empty at the beginning and items are added there by clicking markers
   #if true then it is a version that Otto Hylli wanted
   #if false then it is a version for Mario
@@ -117,6 +117,7 @@ module.exports = ['$scope','$compile','$routeParams', '$http', '$window', ($scop
               message: $scope.createMessage(s)
               icon: icons.inactive
               hostname: s.hostname
+              callbackParams: s.callbackParams
               )
             )
             $scope.markers=$scope.allMarkers
@@ -147,17 +148,16 @@ module.exports = ['$scope','$compile','$routeParams', '$http', '$window', ($scop
         #console.log assert
         #test = not $scope.showFilteredInTable
         #console.log test
-        #assert.ok test, "should be false in here" 
+        #assert.ok test, "should be false in here"
         marker = $scope.markers[indexToNested]
         if ($.inArray(marker, $scope.tableItems) < 0)
           $scope.tableItems.push marker
           $scope.$apply()
 
   $scope.createMessage = (s) ->
-    s.hostname = $scope.callbackUri + "?selectedPaas=" + s.hostname + "&PaasName=" + s.title
+    s.callbackParams = $scope.callbackUri + "?selectedPaas=" + s.hostname + "&PaasName=" + s.title
     compiled = _.template $scope.markerHtml
-    tmp = compiled(s)
-    return tmp
+    return compiled(s)
 
   collectValues = (filter,makeSelected) ->
     values = []
@@ -213,11 +213,8 @@ module.exports = ['$scope','$compile','$routeParams', '$http', '$window', ($scop
   $( "#draggable" ).draggable()
   $( "#draggable" ).resizable()
 
-  $("#checkoutbutton").on 'click', (event) -> 
-    
-    hostname = $scope.tableItems[0].hostname
-    title = $scope.tableItems[0].title
-    callback = $scope.callbackUri + "?selectedPaas=" + hostname + "&PaasName=" + title
+  $("#checkoutbutton").on 'click', (event) ->
+    callback = $scope.callbackUri + $scope.tableItems[0].callbackParams
     console.log callback
-    $window.location.href = callback
+    #$window.location.href = callback
 ]
