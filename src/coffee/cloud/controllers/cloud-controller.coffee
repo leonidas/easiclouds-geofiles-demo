@@ -21,7 +21,6 @@ module.exports = ['$scope','$compile','$routeParams', '$http', '$window', ($scop
   #parameters can easily be printed by:
   #?field1=value1&field2=value2&field3=value3
   $scope.callbackUri = $routeParams["callbackUri"] or "/"
-  alert $scope.callbackUri
   $scope.filterSelection = {}
   $scope.filterSelection.memory = 0.5
   $scope.filterSelection.cpucores = 1
