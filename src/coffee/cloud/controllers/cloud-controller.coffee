@@ -214,7 +214,5 @@ module.exports = ['$scope','$compile','$routeParams', '$http', '$window', ($scop
   $( "#draggable" ).resizable()
 
   $("#checkoutbutton").on 'click', (event) ->
-    alert $scope.callbackUri
-    alert $scope.tableItems[0].callbackParams
     $window.location.href = $scope.tableItems[0].callbackParams
 ]
