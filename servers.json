@@ -12,7 +12,7 @@
       "databases":["postgreSQL","MongoDB","Cassandra"],
       "location":"France",
       "services":["24/7 support"],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 48.943538,
         "lng": 2.305861
@@ -30,7 +30,7 @@
       "databases":["MySQL","Cassandra"],
       "location":"France",
       "services":["24/7 support"],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 48.941727,
         "lng": 2.190408
@@ -48,7 +48,7 @@
       "databases":[],
       "location":"France",
       "services":[],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 48.825476,
         "lng": 1.981562
@@ -66,7 +66,7 @@
       "databases":["MySQL","postgreSQL","MongoDB","Cassandra"],
       "location":"France",
       "services":["24/7 support"],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 48.826294,
         "lng": 2.346419
@@ -84,7 +84,7 @@
       "databases":["MySQL","postgreSQL","Cassandra","MongoDB"],
       "location":"France",
       "services":["24/7 support"],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 50.660260,
         "lng": 3.098588
@@ -102,7 +102,7 @@
       "databases":["MySQL","postgreSQL","Cassandra"],
       "location":"France",
       "services":["24/7 support"],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 45.555255,
         "lng": 5.974710
@@ -120,7 +120,7 @@
       "databases":["MySQL","postgreSQL"],
       "location":"France",
       "services":[],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 48.62488,
         "lng": 2.426571
@@ -138,7 +138,7 @@
       "databases":["MySQL"],
       "location":"Germany",
       "services":[],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 48.091525,
         "lng": 11.649241
@@ -156,7 +156,7 @@
       "databases":[],
       "location":"Germany",
       "services":["24/7 support"],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 51.732030,
         "lng": 8.723570
@@ -174,7 +174,7 @@
       "databases":[],
       "location":"Germany",
       "services":["Security scanning"],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 51.504342,
         "lng": 7.493382
@@ -192,7 +192,7 @@
       "databases":[],
       "location":"Germany",
       "services":[],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 50.937627,
         "lng": 6.891210
@@ -210,7 +210,7 @@
       "databases":[],
       "location":"France",
       "services":[],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 48.869160,
         "lng": 2.3644
@@ -228,7 +228,7 @@
       "databases":[],
       "location":"Germany",
       "services":[],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 52.512181,
         "lng": 13.327091
@@ -246,7 +246,7 @@
       "databases":[],
       "location":"Germany",
       "services":[],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 49.994940,
         "lng": 8.2427
@@ -264,7 +264,7 @@
       "databases":[],
       "location":"Germany",
       "services":[],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 48.132350,
         "lng": 11.531430
@@ -282,7 +282,7 @@
       "databases":[],
       "location":"Germany",
       "services":[],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 52.51551,
         "lng": 13.384753
@@ -300,7 +300,7 @@
       "databases":[],
       "location":"Egypt",
       "services":[],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 30.04442,
         "lng": 31.235712
@@ -318,7 +318,7 @@
       "databases":[],
       "location":"Egypt",
       "services":[],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 30.020267,
         "lng": 31.202712
@@ -336,7 +336,7 @@
       "databases":[],
       "location":"Egypt",
       "services":[],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 30.077016,
         "lng": 31.019175
@@ -354,7 +354,7 @@
       "databases":[],
       "location":"France",
       "services":[],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 48.867540,
         "lng": 2.334680
@@ -390,7 +390,7 @@
       "databases":[],
       "location":"Finland",
       "services":[],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 61.449137,
         "lng": 23.861039
@@ -408,7 +408,7 @@
       "databases":["MySQL","postgreSQL","Cassandra","MongoDB"],
       "location":"Finland",
       "services":["24/7 support","Security scanning"],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 61.497709,
         "lng": 23.758914
@@ -426,7 +426,7 @@
       "databases":[],
       "location":"Finland",
       "services":[],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 60.172667,
         "lng": 24.932009
@@ -445,7 +445,7 @@
       "databases":["MySQL","postgreSQL"],
       "location":"Finland",
       "services":["Security scanning"],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 60.161575,
         "lng": 24.906734
@@ -463,7 +463,7 @@
       "databases":[],
       "location":"Finland",
       "services":[],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 60.179187,
         "lng": 24.836254
@@ -481,7 +481,7 @@
       "databases":[],
       "location":"South Korea",
       "services":[],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 36.381771,
         "lng": 127.365998
@@ -499,7 +499,7 @@
       "databases":[],
       "location":"South Korea",
       "services":[],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 37.481435,
         "lng": 126.954904
@@ -517,7 +517,7 @@
       "databases":[],
       "location":"South Korea",
       "services":["24/7 support"],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 37.488472,
         "lng": 127.054028
@@ -535,7 +535,7 @@
       "databases":[],
       "location":"Denmark",
       "services":["Security scanning"],
-      "hostname": "http://130.230.142.89:8080/CF-api/",
+      "hostname": "http://130.230.142.99:8080/CF-api/",
       "coordinates": {
         "lat": 55.659890,
         "lng": 12.591188
