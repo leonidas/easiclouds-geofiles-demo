@@ -72,7 +72,7 @@ compileCoffee = (debug = true) ->
         path: './vendor/angular-route/angular-route.js'
         exports: 'ngRoute'
       'leaflet':
-        path: './vendor/leaflet-dist/leaflet.js'
+        path: './vendor/leaflet/dist/leaflet.js'
         exports: 'L'
       'angular-leaflet-directive':
         path: './vendor/angular-leaflet-directive/dist/angular-leaflet-directive.js'
@@ -128,10 +128,10 @@ gulp.task 'copy-files', ->
   gulp.src('src/images/*')
     .pipe(gulp.dest('public/images'))
 
-  gulp.src('vendor/leaflet-dist/leaflet.css')
+  gulp.src('vendor/leaflet/dist/leaflet.css')
     .pipe(gulp.dest('public/vendor/leaflet'))
 
-  gulp.src('vendor/leaflet-dist/images/*')
+  gulp.src('vendor/leaflet/dist/images/*')
     .pipe(gulp.dest('public/vendor/leaflet/images'))
 
   gulp.src('vendor/jquery-ui/themes/smoothness/jquery-ui.min.css')
