@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF8"?>
+<paas_application_manifest name="ExamplePaasificationManifest" xmlns="http://www.compatibleone.fr/schemes/paasmanifest.xsd">
+  <paas_application name="ottotest" environment="JavaWebEnv">
+    <description>ottotest description.</description>
+    <paas_application_version name="version1.0" label="1.0">
+      <paas_application_deployable name="ottotest.war" content_type="artifact" location="/home/ubuntu/accords/paas-test/" multitenancy_level="SharedInstance"/>
+      <paas_application_version_instance name="Instance1" initial_state="1" default_instance="true"/>
+    </paas_application_version>
+  </paas_application>
+  <paas_environment name="JavaWebEnv" template="TomcatEnvTemp">
+    <paas_environment_template name="TomcatEnvTemp" memory="512">
+      <paas_environment_node content_type="container" name="tomcat" version="7" provider="CF"/>
+    </paas_environment_template>
+  </paas_environment>
+</paas_application_manifest>

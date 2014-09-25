@@ -208,11 +208,26 @@ module.exports = ['$scope','$compile','$routeParams', '$http', '$window', ($scop
   #returns selections that are set as true
   findSelections = (selections) -> _.map(_.where(selections, {selected: true}), "name")
 
+  createRequest = () =>
+    data =
+      testdata: "heimoi"
+
+    $.ajax
+      url: '/test'
+      type: 'POST'
+      dataType: 'text'
+      data: data
+
   $scope.queryServers()
   #$scope.getUserLocation()
   $( "#draggable" ).draggable()
   $( "#draggable" ).resizable()
 
   $("#checkoutbutton").on 'click', (event) ->
-    $window.location.href = $scope.tableItems[0].callbackParams
+    console.log "testi"
+    createRequest()
+      .done(=> console.log "done:")
+      .fail(=> console.log "fail")
+      .complete(=> console.log "complete")
+    #$window.location.href = $scope.tableItems[0].callbackParams
 ]

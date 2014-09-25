@@ -1,0 +1,38 @@
+﻿<agreement xmlns="http://www.compatibleone.fr/schemes/slam.xsd"
+    name="accords-example-paas-deployment"
+ 	initiator="accords"
+ 	responder="accords"
+ 	description="example-paas-deployment"
+ 	initiation="now"
+ 	expiration="never">
+
+	<terms name="accords-example-paas-deployment:s" type="services">
+		<term name="accords-example-paas-deployment:s">
+			<manifest name="paasuser"/>
+		</term>
+	</terms>
+
+	<terms name="accords-example-paas-deployment:c" type="conditions">
+		<term name="accords-example-paas-deployment:ca">
+			<variable 
+				name="accords-example-paas-deployment:va" 
+				property="occi.placement.algorithm" 
+				condition="eq" value="quota:default"/>
+		</term>
+		<term name="accords-example-paas-deployment:cp">
+			<variable 
+				name="accords-example-paas-deployment:vp" 
+				property="occi.placement.provider"
+				condition="eq" value="paas"/>
+		</term>
+		<term name="accords-example-paas-deployment:cz">
+			<variable 
+				name="accords-example-paas-deployment:vz" 
+				property="occi.placement.zone" 
+				condition="eq" value="europe"/>
+		</term>
+	</terms>
+
+	<terms name="accords-example-paas-deployment:g" type="guarantees"/>
+
+</agreement>

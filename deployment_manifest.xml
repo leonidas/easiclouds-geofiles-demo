@@ -1,0 +1,14 @@
+﻿<manifest
+xmlns="http://www.compatibleone.fr/schemes/manifest.xsd"
+name="paasuser">
+<node
+name="paasuser"
+type="ExamplePaasificationManifest"
+category="paas_application_manifest"
+provider="paas"/>
+<configuration/>
+<release/>
+<interface/>
+<account name="accords"/>
+<security/>
+</manifest>

@@ -1,4 +1,5 @@
 path = require 'path'
+request = require 'request'
 
 _ = require 'lodash'
 seed = require 'seed-random'
@@ -15,6 +16,19 @@ respondJSON = (res, code, data) ->
   res.send code, JSON.stringify data
 
 randInt = (rng, supr) -> Math.floor(rng() * supr)
+
+app.post '/test', ({body}, res) ->
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"
+  options =
+    uri: 'https://130.230.142.107:8116/'
+    rejectUnhauthorized : false
+
+  request options, (error, response, body) ->
+    console.log "testi"
+    console.log error
+    console.log response
+    if !error && response.statusCode == 200
+      console.log body
 
 app.get /^\/api\/v1\/servers$/, (req, res) -> respondJSON res, 200, SERVERS
 
