@@ -18,7 +18,6 @@
     "assert": "^1.1.1",
     "coffee-script": "~1.6.3",
     "express": "~3.4.8",
-    "form-data": "^0.1.4",
     "lodash": "^2.4.1",
     "request": "^2.44.0",
     "seed-random": "~2.2.0",

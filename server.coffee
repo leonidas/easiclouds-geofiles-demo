@@ -1,6 +1,4 @@
 path = require 'path'
-#request = require 'request'
-FormData = require 'form-data'
 fs = require 'fs'
 request = require 'superagent'
 EventEmitter = require('events').EventEmitter
