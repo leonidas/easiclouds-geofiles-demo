@@ -227,5 +227,5 @@ module.exports = ['$scope','$compile','$routeParams', '$http', '$window', ($scop
         .fail(=> console.log "fail")
         .complete(=> console.log "complete")
     #forwards the UI
-    #$window.location.href = $scope.tableItems[0].callbackParams
+    $window.location.href = $scope.tableItems[0].callbackParams
 ]
