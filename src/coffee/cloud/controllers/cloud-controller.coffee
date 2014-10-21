@@ -22,6 +22,7 @@ module.exports = ['$scope','$compile','$routeParams', '$http', '$window', ($scop
   #?field1=value1&field2=value2&field3=value3
   $scope.callbackUri = $routeParams["callbackUri"] or "/"
   $scope.useAccords = $routeParams["useAccords"] or false
+  $scope.doNotForward = $routeParams["doNotForward"] or false
 
   $scope.filterSelection = {}
   $scope.filterSelection.memory = 0.5
@@ -226,6 +227,9 @@ module.exports = ['$scope','$compile','$routeParams', '$http', '$window', ($scop
         .done(=> console.log "done:")
         .fail(=> console.log "fail")
         .complete(=> console.log "complete")
+
     #forwards the UI
-    $window.location.href = $scope.tableItems[0].callbackParams
+    console.log $scope.tableItems[0].callbackParams
+    if !$scope.doNotForward
+      $window.location.href = $scope.tableItems[0].callbackParams
 ]

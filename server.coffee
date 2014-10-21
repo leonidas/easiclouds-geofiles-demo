@@ -49,9 +49,9 @@ app.post '/accords-api', ({body}, res) ->
   stream1.end = ->
     #STEP4 reads sla_agreement and forwards it to brokering
 
-    fs.writeFileSync "sla.xml", @buf
-    data4 = fs.readFileSync 'sla.xml'
-    console.log "sla was: " + data4
+    fs.writeFileSync "agreement.xml", @buf
+    data4 = fs.readFileSync 'agreement.xml'
+    console.log "agreement was: " + data4
 
     uri="localhost:8080"
     uri='https://130.230.142.107:8116/broker'
