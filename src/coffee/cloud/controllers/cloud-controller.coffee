@@ -21,6 +21,8 @@ module.exports = ['$scope','$compile','$routeParams', '$http', '$window', ($scop
   #parameters can easily be printed by:
   #?field1=value1&field2=value2&field3=value3
   $scope.callbackUri = $routeParams["callbackUri"] or "/"
+  $scope.useAccords = $routeParams["useAccords"] or false
+
   $scope.filterSelection = {}
   $scope.filterSelection.memory = 0.5
   $scope.filterSelection.cpucores = 1
@@ -218,11 +220,12 @@ module.exports = ['$scope','$compile','$routeParams', '$http', '$window', ($scop
       type: 'POST'
 
   $("#checkoutbutton").on 'click', (event) ->
-    #communicates with accords
-    createRequest()
-      .done(=> console.log "done:")
-      .fail(=> console.log "fail")
-      .complete(=> console.log "complete")
+    if $scope.useAccords
+      #communicates with accords
+      createRequest()
+        .done(=> console.log "done:")
+        .fail(=> console.log "fail")
+        .complete(=> console.log "complete")
     #forwards the UI
-    $window.location.href = $scope.tableItems[0].callbackParams
+    #$window.location.href = $scope.tableItems[0].callbackParams
 ]
